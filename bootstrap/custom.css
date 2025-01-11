@@ -47,16 +47,36 @@
 
     /* Judul */
 
-    .judul {}
+    .judul{
+        animation: judul 2s ease 0s infinite normal none;
+    }
+
+    @keyframes judul {
+        0% {
+        transform: scale(1);
+        }
+    
+        50% {
+        transform: scale(1.1);
+        }
+    
+        100% {
+        transform: scale(1);
+        }
+    }
+  
 
     .judul h2 {
+        font-family: 'Bryndan', sans-serif; 
         font-size: 2rem;
         margin-bottom: 0;
     }
-
+    
     .judul h1 {
+        font-family: 'Bryndan', sans-serif; 
         font-size: 3rem;
         margin-top: 5px;
+        text-shadow: black;
     }
 
     /* Gambar */
@@ -69,7 +89,74 @@
         height: auto;
     }
 
+    .angin{
+        /* Copy code to element you want to animate */
+    animation: daun 3s ease 0s infinite normal none;
+    }
+
+        /* Copy this code after the above code */
+    @keyframes daun {
+        0% {
+        transform: translate(0);
+        }
+    
+        20% {
+        transform: translate(-2px, 2px);
+        }
+    
+        40% {
+        transform: translate(-2px, -2px);
+        }
+    
+        60% {
+        transform: translate(2px, 2px);
+        }
+    
+        80% {
+        transform: translate(2px, -2px);
+        }
+    
+        100% {
+        transform: translate(0);
+        }
+    }
+    
+
     /* Tombol dengan gradasi */
+
+    .button{
+        animation: button 2s ease 0s infinite normal none;
+    }
+    /* Copy this code after the above code */
+    @keyframes button {
+        0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+        }
+    
+        10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+        }
+    
+        17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+        }
+    
+        33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+        }
+    
+        45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        }
+    }
+
+  
     .btn-gradient {
         background: linear-gradient(to right, #ffa07a, #ff7f50);
         /* Warna gradasi */
