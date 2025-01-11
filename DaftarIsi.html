@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo Baca!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/D1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Hanya judul di kiri */
+            justify-content: flex-start; /* Judul tetap di atas */
+            font-family: Arial, sans-serif;
+            padding-left: 20px; /* Tambahkan jarak untuk judul */
+        }
+        
+        .title {
+            font-size: 10rem;
+            color: white;
+            text-align: left;
+            font-family: 'Merienda', cursive;
+        }
+        
+        /* Buat container baru untuk mengatur elemen lain ke tengah */
+        .content-container {
+            width: 100%; /* Gunakan seluruh lebar */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Pusatkan search-bar dan grid */
+            margin-top: 2px; /* Jarak antara judul dan konten */
+        }
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 90%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 5px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 6px;
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 95%;
+            max-width: 850px;
+            max-height: 390px;
+            overflow: auto;
+            padding: 10px;
+            background: transparent;
+            border-radius: 10px;
+            border-radius: 15px;
+        }
+        
+        /* Sembunyikan scrollbar untuk semua browser */
+        .grid-container::-webkit-scrollbar {
+            display: none;
+        }
+        .grid-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .grid-item {
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 3 / 4;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="title mt-5 ms-4"><h2><b>Ayo Baca!</b></h2></div>
+
+    <div class="content-container">
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-times clear-icon" onclick="document.querySelector('.search-bar input').value = '';"></i>
+        </div>
+
+    <div class="grid-container">
+        <!-- Tambahkan <a> di setiap grid-item -->
+        <div class="grid-item"><a href="page1.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page2.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page3.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page4.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page5.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page6.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page7.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page8.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page9.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page10.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page11.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page12.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page13.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page14.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page15.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page16.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page17.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page18.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page19.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page20.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page21.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page22.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page23.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page24.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="page25.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+    </div>
+    </div>
+</body>
+</html>
