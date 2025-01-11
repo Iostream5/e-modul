@@ -1,0 +1,90 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background: orange;
+    }
+
+    .main {
+        position: relative;
+    }
+
+    .bg-main {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .asset {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .asset2{
+        object-fit: contain;
+        margin-top: 10em;    
+    }
+
+    .cover {
+        position: absolute;
+    }
+
+    .cover {
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    /* Judul */
+
+    .judul {}
+
+    .judul h2 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .judul h1 {
+        font-size: 3rem;
+        margin-top: 5px;
+    }
+
+    /* Gambar */
+
+    .gambar {
+        height: auto;
+    }
+
+    .gambar img {
+        height: auto;
+    }
+
+    /* Tombol dengan gradasi */
+    .btn-gradient {
+        background: linear-gradient(to right, #ffa07a, #ff7f50);
+        /* Warna gradasi */
+        border: none;
+        border-radius: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer Text */
+    .button p {
+        font-size: 0.9rem;
+    }
