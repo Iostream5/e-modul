@@ -6,6 +6,7 @@
     <title>Ayo Baca!</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@600&display=swap');
 
@@ -27,6 +28,7 @@
         }
         
         .title {
+            animation: customBaca 1s ease 0s infinite normal none;
             font-size: 10rem;
             color: white;
             text-align: left;
@@ -53,6 +55,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 5px;
+            animation: customSearch 6s ease 0s infinite normal none;
         }
         
         .search-bar input {
@@ -69,7 +72,7 @@
             gap: 15px;
             width: 95%;
             max-width: 850px;
-            max-height: 390px;
+            max-height: 450px;
             overflow: auto;
             padding: 10px;
             background: transparent;
@@ -87,22 +90,89 @@
         }
         
         .grid-item {
-            background-color: white;
+            animation: customBuku 8s ease 0s infinite normal none;
             border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             aspect-ratio: 3 / 4;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .grid-item img {
-            width: 100%;
+            width: 90%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
+
+        @keyframes customBaca {
+            0% {
+            transform: scale(1);
+            }
         
+            50% {
+            transform: scale(1.1);
+            }
+        
+            100% {
+            transform: scale(1);
+            }
+        }
+
+        @keyframes customBuku {
+            0%,
+            100% {
+            transform: translateX(0%);
+            transform-origin: 50% 50%;
+            }
+        
+            15% {
+            transform: translateX(-6px) rotate(6deg);
+            }
+        
+            30% {
+            transform: translateX(15px) rotate(-6deg);
+            }
+        
+            45% {
+            transform: translateX(-6px) rotate(3.6deg);
+            }
+        
+            60% {
+            transform: translateX(9px) rotate(-2.4deg);
+            }
+        
+            75% {
+            transform: translateX(-6px) rotate(1.2deg);
+            }
+        }
+
+        @keyframes customSearch {
+            0% {
+            transform: translate(0);
+            }
+        
+            20% {
+            transform: translate(2px, -2px);
+            }
+        
+            40% {
+            transform: translate(2px, 2px);
+            }
+        
+            60% {
+            transform: translate(-2px, 2px);
+            }
+        
+            80% {
+            transform: translate(-2px, -2px);
+            }
+        
+            100% {
+            transform: translate(0);
+            }
+        }
+  
     </style>
 </head>
 <body>
@@ -116,33 +186,45 @@
         </div>
 
     <div class="grid-container">
-        <!-- Tambahkan <a> di setiap grid-item -->
-        <div class="grid-item"><a href="page1.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page2.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page3.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page4.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page5.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page6.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page7.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page8.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page9.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page10.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page11.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page12.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page13.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page14.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page15.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page16.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page17.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page18.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page19.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page20.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page21.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page22.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page23.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page24.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="page25.html"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <!-- A --> 
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <!-- B -->
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <!-- A -->
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <!-- B -->
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
     </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        // Inisialisasi WOW.js
+        new WOW().init();
+      </script>
 </body>
 </html>
