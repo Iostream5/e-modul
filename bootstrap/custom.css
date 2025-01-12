@@ -19,6 +19,8 @@
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
+        overflow: hidden;
+
     }
 
     .asset {
@@ -66,15 +68,15 @@
     }
   
 
-    .judul h2 {
+    .judul h3 {
         font-family: 'Bryndan', sans-serif; 
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 0;
     }
     
-    .judul h1 {
+    .judul h2 {
         font-family: 'Bryndan', sans-serif; 
-        font-size: 3rem;
+        font-size: 2.3rem;
         margin-top: 5px;
         text-shadow: black;
     }
@@ -120,7 +122,6 @@
         transform: translate(0);
         }
     }
-    
 
     /* Tombol dengan gradasi */
 
@@ -156,10 +157,32 @@
         }
     }
 
+    .man {
+        width: 20vw; /* Mengatur lebar gambar sebagai persentase dari lebar layar */
+        height: auto; /* Menjaga rasio gambar */
+        position: absolute;
+        right: -100px;
+        bottom: -90px;
+        transform: rotateZ(-35deg);
+    }
+    
+    /* Responsif untuk layar lebih kecil (tablet atau mobile) */
+    @media (max-width: 768px) {
+        .man {
+            width: 30vw; /* Lebar gambar lebih besar pada layar kecil */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .man {
+            width: 50vw; /* Lebar gambar lebih besar lagi pada layar sangat kecil */
+        }
+    }
+    
+
   
     .btn-gradient {
         background: linear-gradient(to right, #ffa07a, #ff7f50);
-        /* Warna gradasi */
         border: none;
         border-radius: 25px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
