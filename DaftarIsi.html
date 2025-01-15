@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="animate/node_modules/animate.css/animate.min.css">
     <!-- Animate.css -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@600&display=swap');
+        /*@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@600&display=swap');
+        @import url('asset/fonts/BryndanWriteBook-nGPM.ttf');*/
 
        /*Efek: Aturan ini akan berlaku jika lebar layar ≥ 600px (tablet atau lebih besar).*/
         @media (min-width: 600px){
@@ -143,14 +144,20 @@
             justify-content: flex-start; /* Judul tetap di atas */
             font-family: Arial, sans-serif;
             padding-left: 20px; /* Tambahkan jarak untuk judul */
-        }
+        }   
         
-        .title {
-            animation: customBaca 1s ease 0s infinite normal none;
-            font-size: 10rem;
+        .title h2{
+            animation: customBaca 2s ease 0s infinite normal none;
+            font-size: 1.8rem;
             color: white;
             text-align: left;
             font-family: 'Merienda', cursive;
+        }
+
+        .title a{
+            display: flex;
+            gap: 0;
+            animation: customBaca 1s ease 0s infinite normal none;
         }
         
         /* Buat container baru untuk mengatur elemen lain ke tengah */
@@ -181,6 +188,61 @@
             aspect-ratio: 3 / 4;
         }
         
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Warna semi-transparan */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Tampilkan di atas semua elemen */
+        }
+    
+        /* Gaya untuk modal box */
+        .modal-box {
+            background-color: whitesmoke;
+            border: 3px solid #ffb300;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+    
+        /* Tombol Close */
+        .btn-danger {
+            background-color: #ffb300;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    
+        .btn-danger:hover {
+            background-color: white;
+            color: #ffb300;
+            border: 3px solid #ffb300;
+        }
+    
+        /* Tombol Open */
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
         
         .grid-item img {
             width: 90%;
@@ -270,16 +332,51 @@
     </style>
 </head>
 <body>
-    <div class="title mt-5 ms-4"><h2><b>Ayo Baca!</b></h2></div>
+    <audio id="backgroundMusic" loop>
+        <source src="asset/sound/Kalam.mp3" type="audio/mpeg">
+        <!-- Your browser does not support the audio element. -->
+    </audio>
+    <div class="container-fluid">
+        <div class="title d-flex align-items-center justify-content-between mt-5">
+            <!-- Teks di pojok kiri -->
+            <h2 class="mb-0"><b>Ayo Membaca!</b></h2>
+            
+            <!-- Gambar tombol di pojok kanan -->
+            <div class="d-flex gap-0">
+                <!-- Gambar tombol Kembali -->
+                <a href="dashboard.html" class="btn p-0">
+                    <img src="asset/button/back.png" alt="B" class="img-fluid rounded" width="35" height="35">
+                </a>
+                <!-- Gambar tombol Setting -->
+                <a href="#" class="btn p-0" id="openModalBtn">
+                    <img src="asset/button/setting.png" alt="Settings" class="img-fluid rounded" width="35" height="35">
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="content-container">
-        <div class="search-bar">
+        <div class="search-bar mt-2">
             <i class="fas fa-search search-icon"></i>
             <input type="text" placeholder="Search...">
-            <i class="fas fa-times clear-icon" onclick="document.querySelector('.search-bar input').value = '';"></i>
+            <i class="fas fa-times clear-icon me-2" onclick="document.querySelector('.search-bar input').value = '';"></i>
         </div>
 
     <div class="grid-container">
+        <div class="modal-overlay" id="modalOverlay" style="display: none;">
+            <div class="modal-box">
+                <h3>Pengaturan</h3>
+                <h5>Music :       
+                <!-- Tombol ON/OFF menggunakan gambar -->
+                <img id="toggleMusicImage" 
+                     src="asset/button/on-btn.png" 
+                     alt="Music ON" 
+                     style="width: 50px; cursor: pointer;" />
+                </h5> 
+                <!-- Tombol Close -->
+                <button class="btn btn-danger" id="closeModalBtn">CLOSE</button>
+            </div>
+        </div>
         <!-- A --> 
         <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
         <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
@@ -315,27 +412,58 @@
         <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
     </div>
     </div>
-    <!--         @media (min-width: 600px) and (max-width: ){}
-                        @media (max-width: 768px){
-            .grid-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
-                width: 95%;
-                max-width: 850px;
-                max-height: 400px;
-                overflow: auto;
-                padding: 10px;
-                background: transparent;
-                border-radius: 10px;
-                border-radius: 15px;
-            }
-        }
- -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="asset/js/wow.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         // Inisialisasi WOW.js
         new WOW().init();
-      </script>
+    </script>
+    <script>
+        // Ambil elemen tombol dan modal
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const toggleMusicImage = document.getElementById('toggleMusicImage');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        // Tambahkan event listener untuk tombol Open
+        openModalBtn.addEventListener('click', function() {
+            modalOverlay.style.display = 'flex'; // Tampilkan modal
+        });
+
+        // Tambahkan event listener untuk tombol Close
+        closeModalBtn.addEventListener('click', function() {
+            modalOverlay.style.display = 'none'; // Sembunyikan modal
+        });
+
+        // Menutup modal saat klik di luar kotak modal
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+    
+        // Event listener untuk tombol close modal
+        closeModalBtn.addEventListener('click', function () {
+            modalOverlay.style.display = 'none';
+        });
+    
+        // Event listener untuk tombol ON/OFF musik menggunakan gambar
+        let isMusicOn = true; // Status awal musik
+        toggleMusicImage.addEventListener('click', function () {
+            isMusicOn = !isMusicOn; // Toggle status
+    
+            if (isMusicOn) {
+                toggleMusicImage.src = "asset/button/on-btn.png"; // Gambar saat musik ON
+                toggleMusicImage.alt = "Music ON"; // Alt text untuk aksesibilitas
+                backgroundMusic.play(); // Putar musik
+            } else {
+                toggleMusicImage.src = "asset/button/off-btn.png"; // Gambar saat musik OFF
+                toggleMusicImage.alt = "Music OFF"; // Alt text untuk aksesibilitas
+                backgroundMusic.pause(); // Hentikan musik
+                backgroundMusic.currentTime = 0; // Reset waktu musik
+            }
+        });
+    </script>
 </body>
 </html>
