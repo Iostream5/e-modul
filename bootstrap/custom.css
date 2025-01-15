@@ -8,10 +8,6 @@
         background: orange;
     }
 
-    .main {
-        position: relative;
-    }
-
     .bg-main {
         position: relative;
         width: 100%;
@@ -47,8 +43,6 @@
         overflow: hidden;
     }
 
-    /* Judul */
-
     .judul{
         animation: judul 2s ease 0s infinite normal none;
     }
@@ -77,14 +71,7 @@
     .judul h2 {
         font-family: 'Bryndan', sans-serif; 
         font-size: 2.3rem;
-        margin-top: 5px;
         text-shadow: black;
-    }
-
-    /* Gambar */
-
-    .gambar {
-        height: auto;
     }
 
     .gambar img {
@@ -92,11 +79,9 @@
     }
 
     .angin{
-        /* Copy code to element you want to animate */
-    animation: daun 3s ease 0s infinite normal none;
+        animation: daun 3s ease 0s infinite normal none;
     }
 
-        /* Copy this code after the above code */
     @keyframes daun {
         0% {
         transform: translate(0);
@@ -123,12 +108,10 @@
         }
     }
 
-    /* Tombol dengan gradasi */
-
     .button{
         animation: button 2s ease 0s infinite normal none;
     }
-    /* Copy this code after the above code */
+
     @keyframes button {
         0% {
         animation-timing-function: ease-out;
@@ -157,30 +140,42 @@
         }
     }
 
+    @media (max-height:700px){
+        
+    }
+
+    .chat{
+        width: 12em;
+        height: auto;
+        position: absolute;
+        right: 25px;
+        bottom: 180px;
+        transform: rotateZ(-50deg);
+    }
+
     .man {
-        width: 20vw; /* Mengatur lebar gambar sebagai persentase dari lebar layar */
-        height: auto; /* Menjaga rasio gambar */
+        width: 15em; 
+        height: auto;
         position: absolute;
         right: -100px;
-        bottom: -90px;
-        transform: rotateZ(-35deg);
+        bottom: -150px;
+        transform: rotateZ(-50deg);
     }
-    
-    /* Responsif untuk layar lebih kecil (tablet atau mobile) */
-    @media (max-width: 768px) {
-        .man {
-            width: 30vw; /* Lebar gambar lebih besar pada layar kecil */
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .man {
-            width: 50vw; /* Lebar gambar lebih besar lagi pada layar sangat kecil */
-        }
-    }
-    
 
-  
+    
+    @media (max-width: 800px) {
+        .man {
+            width: 9em; 
+            right: -70px;
+            bottom: -50px;
+        }
+        .chat{
+            width: 7em; 
+            right: 3px;
+            bottom: 150px;
+        }
+    } 
+    
     .btn-gradient {
         background: linear-gradient(to right, #ffa07a, #ff7f50);
         border: none;
@@ -194,7 +189,6 @@
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
     }
 
-    /* Footer Text */
     .button p {
         font-size: 0.9rem;
     }

@@ -15,32 +15,35 @@
             <img class="asset animate__animated" src="images/asset-langit.png" alt="">
             <div class="asset d-flex justify-content-center">
                 <img class="asset animate__animated animate__bounceInUp" src="images/asset-tanah.png" alt="">
-                <img class="asset angin animate__animated animate__rollIn" src="images/asset_angin.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="images/asset_angin.png" alt="">
+                </div>
                 <img class="asset animate__animated tumbleweed" height="" src="images/unscreen.gif" alt="">
                 <img src="images/unta1.png" class="img-fluid asset2 animate__animated animate__jackInTheBox" alt="Gambar Nabi dan Unta">
             </div>
-            <img class="animate__animated man img-fluid animate__fadeInRight" src="images/man.png" alt="">
-            <img class="animate__animated chat img-fluid animate__fadeInRight" src="images/buble-chat.png" alt="">
+            <div class="motiv">
+                <img class="animate__animated man img-fluid animate__fadeInRight" src="images/man.png" alt="">
+                <img class="animate__animated chat img-fluid animate__fadeInRight" src="images/buble-chat.png" alt="">
+            </div>
         </div>
         <div class="cover container-fluid text-center align-items-baseline p-5 row d-flex" style="height :100vh;">
             <div class="judul my-5 animate__animated animate__bounceInDown">
-                <h3 class="text-warning animate__animated animate__bounceInDown text-nowrap">Kisah Hebat Nabi-Nabi</h2>
-                <h2 class="text-warning fw-bolder animate__animated animate__bounceInDown">Petualangan Iman dan Mukjizat</h1>
+                <h3 class=" animate__animated animate__bounceInDown text-nowrap">Kisah Hebat Nabi-Nabi</h2>
+                <h2 class=" fw-bolder animate__animated animate__bounceInDown">Petualangan Iman dan Mukjizat</h1>
             </div>
             <div class="my-5"></div>
             <div class="my-5"></div>
-            <div class="mt-5 animate__animated animate__bounceInUp">
-                <button id="button" class="btn btn-gradient px-4 py-2 mt-lg-5 text-white fw-bold text-center button">
+            <div class="mt-5 animate__animated animate__bounceInRight">
+                <button id="button" class="btn btn-gradient px-4 py-2 mt-md-5 text-white fw-bold text-center button">
                     <h3 class="mt-2">BACA</h3>
                 </button>
-                <p class="mt-xl-1 mt-5 text-muted" style="bottom: 0;">By TEFATIE</p>
+                <p class="mt-xl-3 mt-3 text-muted" style="bottom: 0;">By TEFATIE</p>
             </div>
         </div>
     </div>
 
     <script>
         document.getElementById('button').addEventListener('click', function() {
-            // Ganti kelas animasi sebelum pindah halaman
             document.querySelectorAll('.animate__bounceInDown').forEach(function(element) {
                 element.classList.remove('animate__bounceInDown');
                 element.classList.add('animate__bounceOutUp');
@@ -53,8 +56,8 @@
                 element.classList.remove('animate__jackInTheBox');
                 element.classList.add('animate__bounceOutDown');
             });
-            document.querySelectorAll('.animate__bounceInUp').forEach(function(element) {
-                element.classList.remove('animate__bounceInUp');
+            document.querySelectorAll('.animate__bounceInRight').forEach(function(element) {
+                element.classList.remove('animate__bounceInRight');
                 element.classList.add('animate__bounceOutDown');
             });
     
