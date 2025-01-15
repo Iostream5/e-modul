@@ -23,7 +23,10 @@
             </div>
             <div class="motiv">
                 <img class="animate__animated man img-fluid animate__fadeInRight" src="images/man.png" alt="">
-                <img class="animate__animated chat img-fluid animate__fadeInRight" src="images/buble-chat.png" alt="">
+                <div class="message">
+                    <p class="pesan animate__animated animate__fadeInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, tenetur? </p>
+                    <img class="animate__animated chat img-fluid animate__fadeInRight" src="images/buble-chat.png" alt="">
+                </div>
             </div>
         </div>
         <div class="cover container-fluid text-center align-items-baseline p-5 row d-flex" style="height :100vh;">
@@ -59,6 +62,10 @@
             document.querySelectorAll('.animate__bounceInRight').forEach(function(element) {
                 element.classList.remove('animate__bounceInRight');
                 element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__fadeInRight').forEach(function(element) {
+                element.classList.remove('animate__fadeInRight');
+                element.classList.add('animate__fadeOutRight');
             });
     
             setTimeout(function() {

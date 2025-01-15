@@ -140,9 +140,6 @@
         }
     }
 
-    @media (max-height:700px){
-        
-    }
 
     .chat{
         width: 12em;
@@ -162,19 +159,38 @@
         transform: rotateZ(-50deg);
     }
 
+    .pesan{
+        width: 12em;
+        height: auto;
+        position: absolute;
+        right: 45px;
+        bottom: 213px;
+        transform: rotateZ(-34deg);
+        font-size: 13px;
+        z-index: 999;
+        text-align: center;
+    }
+
     
     @media (max-width: 800px) {
         .man {
             width: 9em; 
             right: -70px;
-            bottom: -50px;
+            bottom: -90px;
         }
         .chat{
-            width: 7em; 
+            width: 8.5em; 
             right: 3px;
-            bottom: 150px;
+            bottom: 110px;
+        }
+        .pesan{
+            right: 10px;
+            bottom: 125px;
+            font-size: 10px;
         }
     } 
+
+    
     
     .btn-gradient {
         background: linear-gradient(to right, #ffa07a, #ff7f50);
@@ -192,3 +208,5 @@
     .button p {
         font-size: 0.9rem;
     }
+
+    
