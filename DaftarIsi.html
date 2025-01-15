@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="animate/node_modules/animate.css/animate.min.css">
+    <!-- Include Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <!-- Animate.css -->
     <style>
         /*@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@600&display=swap');
@@ -180,7 +183,6 @@
         }
         
         .grid-item {
-            animation: customAwal 4s ease 0s 1 normal forwards, customBuku 8s ease 4s infinite normal forwards;
             border-radius: 10px;
             display: flex;
             justify-content: center;
@@ -250,16 +252,6 @@
             border-radius: 10px;
             cursor: pointer;
         }
-
-        @keyframes customAwal {
-            0% {
-            transform: scale(0.5);
-            }
-        
-            100% {
-            transform: scale(1);
-            }
-        }
   
         @keyframes customBaca {
             0% {
@@ -272,34 +264,6 @@
         
             100% {
             transform: scale(1);
-            }
-        }
-
-        @keyframes customBuku {
-            0%,
-            100% {
-            transform: translateX(0%);
-            transform-origin: 50% 50%;
-            }
-        
-            15% {
-            transform: translateX(-6px) rotate(6deg);
-            }
-        
-            30% {
-            transform: translateX(15px) rotate(-6deg);
-            }
-        
-            45% {
-            transform: translateX(-6px) rotate(3.6deg);
-            }
-        
-            60% {
-            transform: translateX(9px) rotate(-2.4deg);
-            }
-        
-            75% {
-            transform: translateX(-6px) rotate(1.2deg);
             }
         }
 
@@ -333,7 +297,7 @@
 </head>
 <body>
     <audio id="backgroundMusic" loop>
-        <source src="asset/sound/Kalam.mp3" type="audio/mpeg">
+        <source src="asset/sound/" type="audio/mpeg">
         <!-- Your browser does not support the audio element. -->
     </audio>
     <div class="container-fluid">
@@ -356,10 +320,10 @@
     </div>
 
     <div class="content-container">
-        <div class="search-bar mt-2">
+        <div class="search-bar mt-2" data-wow-delay="0.1s">
             <i class="fas fa-search search-icon"></i>
-            <input type="text" placeholder="Search...">
-            <i class="fas fa-times clear-icon me-2" onclick="document.querySelector('.search-bar input').value = '';"></i>
+            <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterItems()">
+            <i class="fas fa-times clear-icon me-2" onclick="clearSearch()"></i>
         </div>
 
     <div class="grid-container">
@@ -378,42 +342,45 @@
             </div>
         </div>
         <!-- A --> 
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1s" id="nabi-adam"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.2s" id="nabi-idris"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.4s" id="nabi-nuh"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
         <!-- B -->
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.6s" id="nabi-hud"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.8s" id="nabi-shalih"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2s" id="nabi-ibrahim"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
         <!-- A -->
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.2s" id="nabi-luth"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.4s" id="nabi-ismail"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.6s" id="nabi-ishaq"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
         <!-- B -->
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.8s" id="nabi-ya'qub"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="3s" id="nabi-yusuf"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="3.4s" id="nabi-ayyub"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-syu'aib"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-musa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-harun"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-dzulkifli"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-daud"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-sulaiman"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-ilyas"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-ilyasa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-yunus"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-zakaria"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-yahya"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item" id="nabi-isa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+
+        <div class="grid-item" data-wow-delay="6s" id="nabi-muhammad"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+
     </div>
     </div>
     <script src="asset/js/wow.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    
     <script>
         // Inisialisasi WOW.js
         new WOW().init();
@@ -463,6 +430,36 @@
                 backgroundMusic.pause(); // Hentikan musik
                 backgroundMusic.currentTime = 0; // Reset waktu musik
             }
+        });
+
+        function filterItems() {
+            const input = document.getElementById('searchInput').value.toLowerCase(); // Ambil input dari user
+            const items = document.querySelectorAll('.grid-item'); // Ambil semua elemen dengan class 'grid-item'
+    
+            // Loop melalui semua elemen untuk memfilter
+            items.forEach(item => {
+                const itemId = item.id.toLowerCase(); // Ambil id elemen dan ubah ke lowercase
+                if (itemId.includes(input)) {
+                    item.style.display = 'block'; // Tampilkan elemen jika cocok
+                } else {
+                    item.style.display = 'none'; // Sembunyikan elemen jika tidak cocok
+                }
+            });
+        }
+    
+        function clearSearch() {
+            document.getElementById('searchInput').value = ''; // Kosongkan input
+            filterItems(); // Tampilkan kembali semua elemen
+        }
+
+        document.getElementsByClassName('grid-item').addEventListener('click', function() {
+            document.querySelectorAll('.animate__fadeInUp').forEach(function(element) {
+                element.classList.remove('animate__fadeInUp');
+                element.classList.add('animate__fadeOutUp');
+            });
+            setTimeout(function() {
+                window.location.href = '';
+            }, 500);
         });
     </script>
 </body>
