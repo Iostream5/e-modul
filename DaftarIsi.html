@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="animate/node_modules/animate.css/animate.min.css">
-    <!-- Include Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    
     <!-- Animate.css -->
     <style>
         /*@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@600&display=swap');
@@ -245,6 +243,10 @@
         .btn-primary:hover {
             background-color: #0056b3;
         }
+
+        .farbtn{
+           animation: customBaca 1.5s ease 0s infinite normal none;
+        }
         
         .grid-item img {
             width: 90%;
@@ -338,43 +340,55 @@
                      style="width: 50px; cursor: pointer;" />
                 </h5> 
                 <!-- Tombol Close -->
-                <button class="btn btn-danger" id="closeModalBtn">CLOSE</button>
+                <img 
+                src="asset/button/x-button.png" 
+                alt="Close" 
+                id="closeModalImg" 
+                style="cursor: pointer; width: 50px; height: auto;"
+                class="farbtn" 
+              />            
             </div>
         </div>
         <!-- A --> 
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1s" id="nabi-adam"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.2s" id="nabi-idris"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.4s" id="nabi-nuh"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi adam">
+            <a href="page/NabiAdam.html"><img src="images/mentahan.jpg" alt="Placeholder"></a>
+        </div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi idris">
+            <a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a>
+        </div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi nuh">
+            <a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a>
+        </div>                         
         <!-- B -->
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.6s" id="nabi-hud"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="1.8s" id="nabi-shalih"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2s" id="nabi-ibrahim"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi hud"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi shalih"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ibrahim"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
         <!-- A -->
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.2s" id="nabi-luth"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.4s" id="nabi-ismail"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.6s" id="nabi-ishaq"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi luth"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi ismail"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ishaq"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
         <!-- B -->
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="2.8s" id="nabi-ya'qub"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="3s" id="nabi-yusuf"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item wow animate__animated animate__fadeInUp" data-wow-delay="3.4s" id="nabi-ayyub"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ya'qub"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi yusuf"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ayyub"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item" id="nabi-syu'aib"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-musa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-harun"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi syu'aib"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi musa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi harun"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item" id="nabi-dzulkifli"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-daud"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-sulaiman"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi dzulkifli"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi daud"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi sulaiman"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item" id="nabi-ilyas"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-ilyasa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-yunus"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi ilyas"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi ilyasa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi yunus"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item" id="nabi-zakaria"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-yahya"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item" id="nabi-isa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi zakaria"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi yahya"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" id="nabi isa"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
-        <div class="grid-item" data-wow-delay="6s" id="nabi-muhammad"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
+        <div class="grid-item animate__animated animate__fadeInUp" data-wow-delay="6s" id="nabi muhammad"><a href="#"><img src="images/mentahan.jpg" alt="Placeholder"></a></div>
 
     </div>
     </div>
@@ -388,7 +402,7 @@
     <script>
         // Ambil elemen tombol dan modal
         const openModalBtn = document.getElementById('openModalBtn');
-        const closeModalBtn = document.getElementById('closeModalBtn');
+        const closeModalBtn = document.getElementById('closeModalImg');
         const modalOverlay = document.getElementById('modalOverlay');
         const toggleMusicImage = document.getElementById('toggleMusicImage');
         const backgroundMusic = document.getElementById('backgroundMusic');
@@ -398,10 +412,6 @@
             modalOverlay.style.display = 'flex'; // Tampilkan modal
         });
 
-        // Tambahkan event listener untuk tombol Close
-        closeModalBtn.addEventListener('click', function() {
-            modalOverlay.style.display = 'none'; // Sembunyikan modal
-        });
 
         // Menutup modal saat klik di luar kotak modal
         modalOverlay.addEventListener('click', function(e) {
@@ -422,13 +432,10 @@
     
             if (isMusicOn) {
                 toggleMusicImage.src = "asset/button/on-btn.png"; // Gambar saat musik ON
-                toggleMusicImage.alt = "Music ON"; // Alt text untuk aksesibilitas
                 backgroundMusic.play(); // Putar musik
             } else {
                 toggleMusicImage.src = "asset/button/off-btn.png"; // Gambar saat musik OFF
-                toggleMusicImage.alt = "Music OFF"; // Alt text untuk aksesibilitas
                 backgroundMusic.pause(); // Hentikan musik
-                backgroundMusic.currentTime = 0; // Reset waktu musik
             }
         });
 
@@ -452,15 +459,33 @@
             filterItems(); // Tampilkan kembali semua elemen
         }
 
-        document.getElementsByClassName('grid-item').addEventListener('click', function() {
-            document.querySelectorAll('.animate__fadeInUp').forEach(function(element) {
+       document.querySelectorAll('.grid-item').forEach(function(item, index) {
+        // Set delay sesuai dengan urutan item
+        item.style.animationDelay = (index * 0.2) + 's';
+
+        item.addEventListener('click', function(event) {
+            // Cek apakah href adalah URL yang valid atau # (jika #, lanjutkan dengan animasi)
+            var destinationUrl = this.getAttribute('data-href');
+            
+            // Jika tujuan valid (bukan #), cegah default action dan lakukan animasi terlebih dahulu
+            if (destinationUrl !== "#") {
+                event.preventDefault(); // Cegah perpindahan halaman langsung
+            }
+
+            // Mengubah animasi semua grid-item menjadi fadeOutUp
+            document.querySelectorAll('.grid-item').forEach(function(element) {
                 element.classList.remove('animate__fadeInUp');
                 element.classList.add('animate__fadeOutUp');
             });
+
+            // Redirect setelah animasi selesai (2600 ms)
             setTimeout(function() {
-                window.location.href = '';
-            }, 500);
+                if (destinationUrl !== "#") {
+                    window.location.href = destinationUrl;  // Arahkan ke URL yang sesuai
+                }
+            }, 2600);  // Sesuaikan waktu delay dengan durasi animasi
         });
+    });
     </script>
 </body>
 </html>
