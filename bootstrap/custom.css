@@ -54,7 +54,7 @@
         margin-top: 5%;
         top: 0;
         margin-bottom: 0;
-        width: 70%;
+        width: auto;
         font-size: 15px;
         font-weight: 600;
         color: #d6821c;
@@ -65,7 +65,6 @@
              1px 1px 0 #eecfac,
              1px 1px 0 #eecfac;
         /* background-color: #ffa07a; */
-        word-spacing: 2em;
         }
 
     .header .part {
@@ -116,10 +115,22 @@
         font-size: 1em;
 
     }
+    
+    .next{
+        position: absolute;
+        bottom: 3%;
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+
+    }
 
     @media (min-width:400px) {
         .header {
             margin-left: 10%;
+        }
+        .next{
+            width: 70%;
         }
     }
 
@@ -127,11 +138,17 @@
         .header {
             margin-left: 20%;
         }
+        .next{
+            width: 50%;
+        }
     }
 
     @media (min-width:700px) {
         .header {
             margin-left: 25%;
+        }
+        .next{
+            width: 50%;
         }
     }
 
@@ -148,18 +165,24 @@
         .part{
             font-size: 1em;
         }
+        .next{
+            width: 50%;
+        }
     }
 
     @media (min-width:900px) {
         .header {
             margin-left: 30%;
         }
+        .next{
+            width: 50%;
+        }
         
     }
 
     @media (min-width:1000px) {
         .header {
-            margin-left: 15%;
+            margin-left: 35%;
             top: 25px;
         }
 
@@ -169,6 +192,9 @@
 
         .content {
             top: 150px;
+        }
+        .next{
+            width: 30%;
         }
     }
 
@@ -200,6 +226,7 @@
         }
     }
 
+   
     @media(min-height:800px) {
         .text {
             top: 57%;
@@ -207,7 +234,14 @@
             max-width: 300px;
             height: 250px;
         }
-    }
+    } 
+    
+    /* @media(min-height:850px) {
+        .next {
+            bottom: 9%;
+                    background-color: red;
+        }
+    } */
 
     @media(min-height:900px) {
         .text {
