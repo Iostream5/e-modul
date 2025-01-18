@@ -17,7 +17,12 @@
     <div class="container-fluid">
         <div class="title d-flex align-items-center justify-content-between mt-5">
             <!-- Teks di pojok kiri -->
-            <h2 class="mb-0"><b>Ayo Membaca!</b></h2>
+            <h2 class="mb-0 d-flex">
+                <b>Ayo Membaca!</b>
+                <div class="org">
+                    <img src="../images/org.png" alt="" srcset="">
+                </div>
+            </h2>
             
             <!-- Gambar tombol di pojok kanan -->
             <div class="d-flex gap-0">
@@ -39,7 +44,7 @@
             <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterItems()">
             <i class="fas fa-times clear-icon me-2" onclick="clearSearch()"></i>
         </div>
-
+    
     <div class="grid-container">
         <div class="modal-overlay" id="modalOverlay" style="display: none;">
             <div class="modal-box">
