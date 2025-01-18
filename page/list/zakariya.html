@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Zakaria adalah seorang nabi yang sangat sabar, bijaksana, dan taat kepada Allah. Beliau hidup di tengah-tengah umat yang membutuhkan petunjuk dan selalu berusaha mengajarkan mereka untuk menyembah Allah yang Maha Esa. Meskipun telah berusia lanjut dan tidak memiliki keturunan, Nabi Zakaria tetap setia dalam menjalankan tugasnya sebagai nabi. Beliau juga sangat peduli terhadap umatnya dan berdoa kepada Allah dengan tulus untuk mendapatkan keturunan yang baik.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+// Deklarasi jumlah total halaman
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Zakaria dan Doa yang Diterima Allah';
+            canvas.innerHTML = `Nabi Zakaria adalah seorang nabi yang sangat sabar, bijaksana, dan taat kepada Allah. Beliau hidup di tengah-tengah umat yang membutuhkan petunjuk dan selalu berusaha mengajarkan mereka untuk menyembah Allah yang Maha Esa. Meskipun telah berusia lanjut dan tidak memiliki keturunan, Nabi Zakaria tetap setia dalam menjalankan tugasnya sebagai nabi. Beliau juga sangat peduli terhadap umatnya dan berdoa kepada Allah dengan tulus untuk mendapatkan keturunan yang baik.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Keinginan Nabi Zakaria untuk Memiliki Anak';
+            canvas.innerHTML = `Nabi Zakaria sudah lama menikah, namun ia dan istrinya belum dikaruniai anak. Beliau merasa sangat ingin memiliki seorang anak, terutama karena usianya yang sudah lanjut. Meskipun demikian, beliau tidak pernah putus asa. Nabi Zakaria tahu bahwa hanya Allah yang bisa memberi apa yang diinginkan hamba-Nya, dan beliau berdoa dengan penuh harapan dan keyakinan. Ia memohon kepada Allah agar diberikan seorang anak yang akan menjadi pewaris yang baik dan melanjutkan dakwah kebenaran.
+
+            Dalam doanya, Nabi Zakaria berkata,
+            "Ya Tuhanku, berikanlah aku seorang anak yang baik. Sesungguhnya, aku telah menjadi tua, dan rambutku telah beruban. Namun, aku percaya bahwa Engkau Maha Kuasa atas segala sesuatu."
+            Doa Nabi Zakaria adalah doa yang penuh harapan dan keikhlasan. Meskipun beliau merasa usianya sudah sangat tua, ia tetap berdoa dengan keyakinan bahwa Allah dapat mengabulkan doanya.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Doa Nabi Zakaria yang Dikabulkan';
+            canvas.innerHTML = `Suatu malam, ketika Nabi Zakaria sedang berdoa di mihrab (tempat beribadah), Allah mengirimkan malaikat untuk menyampaikan kabar gembira bahwa doa Nabi Zakaria akan dikabulkan. Malaikat memberitahukan bahwa istrinya yang sudah tua akan mengandung dan melahirkan seorang anak yang akan diberi nama Yahya. Nabi Zakaria merasa sangat terkejut dan takjub dengan berita ini, karena pada usia yang sudah lanjut dan istrinya yang mandul, hal ini tampak mustahil. Namun, Nabi Zakaria tetap percaya pada kekuasaan Allah.
+
+            Allah berkata kepada Nabi Zakaria,
+            "Demikianlah, Allah melakukan apa yang Dia kehendaki."
+            Nabi Zakaria pun merasa tenang dan menerima keputusan Allah dengan penuh rasa syukur. Allah juga memberi petunjuk kepadanya mengenai peran penting anak yang akan dilahirkannya, yaitu Yahya. Yahya kelak akan menjadi seorang nabi yang sangat mulia.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Mukjizat dan Tanda dari Allah';
+            canvas.innerHTML = `Setelah Nabi Zakaria menerima kabar gembira itu, ia merasa ingin tahu bagaimana hal tersebut bisa terjadi, mengingat usia istrinya yang sudah tua. Allah memberikan sebuah tanda sebagai mukjizat untuk Nabi Zakaria. Allah memberitahukan bahwa Nabi Zakaria akan kehilangan suaranya selama tiga hari setelah ia diberitahu tentang kelahiran Yahya.
+
+            Nabi Zakaria pun menerima tanda itu dengan sabar, dan setelah tiga hari, ia tidak bisa berbicara kecuali dengan isyarat. Namun, selama itu juga, beliau mengajak umatnya untuk bertasbih dan mengingat Allah, meskipun tidak dapat berbicara dengan kata-kata. Mukjizat ini adalah salah satu bukti kekuasaan Allah yang Maha Agung.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Kelahiran Nabi Yahya';
+            canvas.innerHTML = `Setelah berdoa dengan tulus dan sabar, Allah akhirnya mengabulkan doa Nabi Zakaria. Istrinya yang sudah tua melahirkan seorang anak laki-laki yang diberi nama Yahya. Nabi Zakaria sangat bersyukur kepada Allah atas anugerah yang diberikan-Nya. Yahya kelak tumbuh menjadi seorang nabi yang sangat mulia, membawa kebaikan dan petunjuk bagi umatnya, serta menyebarkan wahyu dari Allah.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Kisah Nabi Zakaria mengajarkan kita untuk selalu berdoa dengan penuh harapan dan keikhlasan, tidak peduli seberapa sulit keadaan kita. Nabi Zakaria adalah contoh teladan tentang ketekunan dalam berdoa, kesabaran, dan keyakinan bahwa Allah selalu mendengar doa hamba-Nya. Beliau juga menunjukkan bahwa setiap doa yang tulus dan ikhlas pasti akan dikabulkan Allah, meskipun terkadang dalam cara yang tidak kita duga.`;
+            break;
+
+        case 6:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = 'Pesan Moral';
+            canvas.innerHTML = `Kisah Nabi Zakaria mengajarkan kita untuk selalu berharap kepada Allah dalam setiap keadaan. Allah Maha Pengasih dan Maha Penyayang, dan Dia selalu mendengarkan doa kita. Ketika kita menghadapi kesulitan atau rasa putus asa, kita harus tetap percaya bahwa Allah memiliki rencana terbaik bagi kita.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

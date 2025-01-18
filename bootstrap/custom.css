@@ -11,6 +11,10 @@
         position: relative;
     }
 
+    .monochrome {
+        filter: grayscale(100%);
+    }
+
     .bg-main {
         position: relative;
         width: 100%;
@@ -107,7 +111,6 @@
         overflow-y: auto;
         text-align: center;
         max-width: 250px;
-        border-radius: 10%;
         text-shadow: -1px -1px 0 #E3C49E,
             1px -1px 0 #E3C49E,
             -1px 1px 0 #E3C49E;
@@ -115,10 +118,18 @@
         font-size: 1em;
 
     }
+
+    .next button{
+        border: none;
+        background: none;
+        outline: none;
+        height: 40px;
+        width: 40px;
+    }
     
     .next{
         position: absolute;
-        bottom: 3%;
+        bottom: 1%;
         width: 70%;
         display: flex;
         justify-content: space-around;
@@ -260,6 +271,10 @@
             height: 350px;
             font-size: 20px;
         }
+        .next button{
+            height: 90px;
+            width: 90px;
+        }        
     }
 
     @media(min-height:1200px) {

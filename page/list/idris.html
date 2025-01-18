@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Di masa setelah Nabi Adam, Allah mengutus seorang nabi yang penuh kebijaksanaan dan ilmu pengetahuan. Nabi itu bernama Idris, 
+                seorang keturunan Nabi Syits, putra Nabi Adam. Nabi Idris dikenal sebagai seorang nabi yang mulia, rajin beribadah, dan memiliki kemampuan luar 
+                biasa dalam berbagai bidang kehidupan.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+        // Deklarasi jumlah total halaman
+        const maxPage = 5; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+        function updateContent() {
+            switch (page) {
+                case 0:
+                    part.innerHTML = 'Pendahuluan:';
+                    title.innerHTML = 'Awal Kisah Nabi Idris';
+                    canvas.innerHTML = `Di masa setelah Nabi Adam, Allah mengutus seorang nabi yang penuh kebijaksanaan dan ilmu pengetahuan. Nabi itu bernama Idris, 
+            seorang keturunan Nabi Syits, putra Nabi Adam. Nabi Idris dikenal sebagai seorang nabi yang mulia, rajin beribadah, dan memiliki kemampuan luar 
+            biasa dalam berbagai bidang kehidupan.`;
+                    break;
+
+                case 1:
+                    part.innerHTML = 'Bagian Tengah:';
+                    title.innerHTML = 'Nabi Idris dan Kebijaksanaannya';
+                    canvas.innerHTML = `Nabi Idris adalah nabi pertama yang diberi kemampuan membaca dan menulis. Allah mengajarkan Nabi Idris banyak ilmu, seperti astronomi, 
+            matematika, dan jahitan. Nabi Idris juga yang pertama kali mengenalkan cara menjahit pakaian, menggantikan tradisi sebelumnya yang hanya menggunakan kulit binatang.
+
+            Nabi Idris mengajarkan umatnya untuk menyembah Allah, menjauhi kejahatan, dan hidup dengan penuh kebaikan. Beliau adalah seorang yang sangat sabar dan rajin beribadah, 
+            hingga Allah memuji beliau dalam Al-Qur'an:
+            "Dan ceritakanlah (wahai Muhammad) tentang Idris di dalam kitab (Al-Qur'an). Sesungguhnya ia adalah seorang yang sangat membenarkan dan seorang nabi." (QS. Maryam: 56-57)`;
+                    break;
+
+                case 2:
+                    part.innerHTML = 'Bagian Tengah:';
+                    title.innerHTML = 'Perjalanan Nabi Idris ke Langit';
+                    canvas.innerHTML = `Nabi Idris memiliki hubungan yang sangat dekat dengan malaikat. Suatu hari, Nabi Idris meminta kepada Malaikat Izrail untuk merasakan seperti 
+            apa rasanya kematian. Dengan izin Allah, Malaikat Izrail mencabut nyawanya sementara, lalu menghidupkannya kembali. Nabi Idris pun semakin memahami rahasia kehidupan 
+            dan kematian.
+
+            Dalam perjalanan lainnya, Nabi Idris dibawa oleh Malaikat Jibril naik ke langit. Di salah satu langit, Nabi Idris bertemu dengan para malaikat dan melihat keindahan 
+            serta kedahsyatan ciptaan Allah. Nabi Idris diberi kehormatan oleh Allah untuk tinggal di salah satu tingkatan langit.`;
+                    break;
+
+                case 3:
+                    part.innerHTML = 'Penutup:';
+                    title.innerHTML = 'Kesimpulan';
+                    canvas.innerHTML = `Nabi Idris adalah simbol kesabaran, kebijaksanaan, dan ketaatan kepada Allah. Allah mengangkat Nabi Idris ke tempat yang tinggi karena amal 
+            dan kesalehannya. Kisahnya mengajarkan manusia untuk selalu rajin beribadah, belajar, dan menggunakan ilmu untuk kebaikan.`;
+                    break;
+
+                case 4:
+                    part.innerHTML = 'Pesan Moral:';
+                    title.innerHTML = 'Pesan Moral';
+                    canvas.innerHTML = `Kisah Nabi Idris mengajarkan bahwa ilmu dan iman adalah dua hal yang saling melengkapi. Dengan keduanya, manusia dapat menjadi hamba Allah yang 
+            lebih baik dan bermanfaat bagi sesama.`;
+                    break;
+            }
+
+            prevButton.disabled = (page === 0);
+            nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+            if (prevButton.disabled) {
+                prevImg.classList.add('monochrome');
+            } else {
+                prevImg.classList.remove('monochrome');
+            }
+
+            if (nextButton.disabled) {
+                nextImg.classList.add('monochrome');
+            } else {
+                nextImg.classList.remove('monochrome');
+            }
+
+            // Tambahan Akhir
+            console.log(`Page saat ini adalah: ${page}`);
+        }
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

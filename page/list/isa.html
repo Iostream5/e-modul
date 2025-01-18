@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Isa adalah seorang nabi yang sangat mulia dan penuh kasih sayang. Beliau diutus oleh Allah untuk membawa wahyu dan membimbing umat manusia agar kembali kepada jalan yang benar. Nabi Isa lahir dari seorang ibu yang sangat mulia, Maryam, dan memiliki mukjizat yang luar biasa. Beliau dikenal karena kebaikan hatinya, penyembuhan bagi orang sakit, serta ajarannya yang penuh dengan kasih sayang dan kebijaksanaan.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+// Deklarasi jumlah total halaman
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Isa dan Kebaikan yang Menyentuh Hati';
+            canvas.innerHTML = `Nabi Isa adalah seorang nabi yang sangat mulia dan penuh kasih sayang. Beliau diutus oleh Allah untuk membawa wahyu dan membimbing umat manusia agar kembali kepada jalan yang benar. Nabi Isa lahir dari seorang ibu yang sangat mulia, Maryam, dan memiliki mukjizat yang luar biasa. Beliau dikenal karena kebaikan hatinya, penyembuhan bagi orang sakit, serta ajarannya yang penuh dengan kasih sayang dan kebijaksanaan.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Kelahiran Nabi Isa dan Mukjizat Pertama';
+            canvas.innerHTML = `Nabi Isa lahir dari ibu yang sangat terhormat, Maryam, tanpa ayah, sebagai mukjizat dari Allah. Ketika Maryam mengandung Nabi Isa, banyak orang yang merasa heran dan ragu tentang kelahirannya. Namun, Allah menurunkan wahyu kepada Maryam dan memberinya petunjuk bahwa kelahiran Nabi Isa adalah kehendak-Nya. Nabi Isa lahir dengan penuh cahaya dan mukjizat, dan sejak kecil sudah menunjukkan kemampuan luar biasa.
+
+            Pada saat beliau masih bayi, Nabi Isa memberikan mukjizat pertama dengan berbicara kepada ibunya dan membela kehormatan ibunya. Ia berkata, "Aku adalah hamba Allah. Dia memberiku Kitab dan menjadikanku seorang nabi."`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Isa Menyembuhkan Orang Sakit';
+            canvas.innerHTML = `Nabi Isa dikenal memiliki mukjizat penyembuhan yang luar biasa. Beliau dapat menyembuhkan orang yang buta, lumpuh, dan bahkan menghidupkan orang yang telah meninggal. Suatu ketika, seorang wanita yang sakit berat datang kepada Nabi Isa dan meminta pertolongan. Nabi Isa dengan penuh kasih sayang berdoa kepada Allah, dan dengan izin-Nya, wanita itu sembuh dari penyakitnya.
+
+            Selain itu, Nabi Isa juga menyembuhkan seorang yang buta sejak lahir. Dengan menyentuh mata orang tersebut dan berdoa kepada Allah, orang itu kembali dapat melihat dengan sempurna. Ajaran Nabi Isa selalu mengingatkan umatnya untuk berbuat baik dan saling tolong-menolong.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Dakwah Nabi Isa kepada Umatnya';
+            canvas.innerHTML = `Nabi Isa mengajarkan umatnya untuk mencintai sesama, bersikap rendah hati, dan selalu bersyukur kepada Allah. Beliau menyeru umatnya untuk tidak hanya mengandalkan ibadah lahiriah, tetapi juga memperbaiki hati dan niat. Nabi Isa mengingatkan pentingnya berbuat baik, memberi bantuan kepada yang membutuhkan, dan mengasihi sesama tanpa membeda-bedakan.
+
+            Nabi Isa sering mengajarkan perumpamaan-perumpamaan yang mengandung hikmah, seperti kisah tentang menabur benih yang baik, yang akan menghasilkan buah yang baik pula. Beliau menekankan pentingnya niat yang ikhlas dalam beribadah dan berbuat baik.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Penolakan dan Tantangan yang Dihadapi Nabi Isa';
+            canvas.innerHTML = `Meskipun Nabi Isa memiliki banyak pengikut yang setia, ada juga sebagian orang yang menolak ajaran beliau, terutama dari kalangan pemimpin agama yang merasa terancam dengan dakwah Nabi Isa. Mereka tidak suka dengan cara Nabi Isa yang mengajarkan penyembahan kepada Allah yang Maha Esa, dan mereka pun berusaha untuk membungkam dakwah beliau.
+
+            Pada suatu waktu, sebagian besar orang yang menentang Nabi Isa merencanakan untuk menangkapnya. Namun, Allah melindungi Nabi Isa dan mengangkatnya ke langit sebelum mereka bisa menangkapnya. Sebagai gantinya, mereka menangkap seseorang yang diserupakan dengan Nabi Isa, yang membuat mereka percaya bahwa mereka telah berhasil mengeksekusi Nabi Isa.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Kenaikan Nabi Isa ke Langit';
+            canvas.innerHTML = `Allah mengangkat Nabi Isa ke langit sebelum beliau ditangkap oleh orang-orang yang menentangnya. Nabi Isa tidak meninggal di dunia ini, melainkan Allah mengangkatnya dengan penuh kehormatan. Meskipun demikian, Nabi Isa dijanjikan untuk kembali ke bumi pada masa yang akan datang sebagai tanda akhir zaman.`;
+            break;
+
+        case 6:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Kisah Nabi Isa mengajarkan kita untuk selalu berbuat baik, mencintai sesama, dan menyembah Allah dengan tulus. Nabi Isa adalah contoh teladan tentang kasih sayang, kesabaran, dan keberanian dalam menyampaikan kebenaran meskipun menghadapi penolakan. Beliau mengajarkan umatnya untuk hidup dengan hati yang bersih, penuh kasih sayang, dan selalu mendekatkan diri kepada Allah.`;
+            break;
+
+        case 7:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = 'Pesan Moral';
+            canvas.innerHTML = `Kisah Nabi Isa mengajarkan kita untuk selalu berbuat kebaikan dan hidup dengan hati yang tulus. Kita diajarkan untuk saling mencintai dan mengasihi sesama, serta tidak pernah berhenti berbuat baik. Nabi Isa adalah contoh teladan yang menunjukkan bahwa kebaikan akan selalu menang, meskipun ada tantangan dan penolakan.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

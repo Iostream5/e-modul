@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Sulaiman adalah seorang nabi yang diberi kelebihan oleh Allah berupa kebijaksanaan yang luar biasa, kemampuan berbicara dengan binatang, serta kekuasaan yang sangat besar. Beliau adalah anak dari Nabi Daud dan menggantikan ayahnya sebagai raja Bani Israil. Kisah hidup Nabi Sulaiman penuh dengan mukjizat dan pelajaran tentang keadilan, kebijaksanaan, dan syukur kepada Allah.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+// Deklarasi jumlah total halaman
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Sulaiman dan Kebijaksanaan yang Luar Biasa';
+            canvas.innerHTML = `Nabi Sulaiman adalah seorang nabi yang diberi kelebihan oleh Allah berupa kebijaksanaan yang luar biasa, kemampuan berbicara dengan binatang, serta kekuasaan yang sangat besar. Beliau adalah anak dari Nabi Daud dan menggantikan ayahnya sebagai raja Bani Israil. Kisah hidup Nabi Sulaiman penuh dengan mukjizat dan pelajaran tentang keadilan, kebijaksanaan, dan syukur kepada Allah.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Keputusan Bijaksana Nabi Sulaiman';
+            canvas.innerHTML = `Pada suatu ketika, dua wanita datang menghadap Nabi Sulaiman, masing-masing membawa bayi mereka yang baru lahir. Kedua wanita itu mengklaim bahwa bayi yang ada di tangan mereka adalah milik mereka. Mereka tidak tahu bagaimana menyelesaikan masalah ini, sehingga keduanya memohon kepada Nabi Sulaiman untuk memberi keputusan.
+
+            Nabi Sulaiman, dengan kebijaksanaannya, berkata, "Bayi ini akan dibelah dua, dan masing-masing wanita akan mendapat setengah."
+            Salah satu wanita langsung menangis dan memohon agar bayinya tidak dibelah, sementara wanita yang satunya tetap diam. Nabi Sulaiman mengetahui bahwa wanita yang menangis adalah ibu asli bayi tersebut, karena ia rela menyerahkan haknya demi menyelamatkan anaknya. Dengan demikian, Nabi Sulaiman memutuskan bahwa bayi tersebut adalah milik wanita yang bersedih dan memohon agar bayinya tidak dibelah. Keputusan ini menunjukkan kebijaksanaan Nabi Sulaiman dalam menilai kebenaran.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Sulaiman dan Kekuasaan yang Besar';
+            canvas.innerHTML = `Nabi Sulaiman memiliki kekuasaan yang luar biasa. Allah memberikan kepadanya kendali atas angin, jin, serta binatang. Dengan perintahnya, angin dapat membawa Nabi Sulaiman ke mana pun ia ingin pergi dalam waktu yang sangat singkat. Jin juga berada di bawah kekuasaannya, dan mereka membantu beliau membangun berbagai bangunan megah, termasuk istana yang sangat indah.
+
+            Suatu hari, Nabi Sulaiman mengumpulkan seluruh pasukannya, yang terdiri dari manusia, jin, dan binatang. Mereka berjalan menuju suatu tempat dengan tertib dan saling membantu. Dalam perjalanan tersebut, Nabi Sulaiman mendengar semut-semut yang sedang berbicara satu sama lain. Salah satu semut berkata, "Wahai semut-semut, masuklah ke dalam liang kalian agar kalian tidak diinjak oleh pasukan Sulaiman yang sedang lewat."
+
+            Nabi Sulaiman mendengar percakapan semut-semut tersebut dan tersenyum. Beliau kemudian memerintahkan pasukannya untuk berjalan dengan hati-hati agar tidak menginjak semut-semut itu. Kisah ini menunjukkan bagaimana Nabi Sulaiman dapat memahami bahasa binatang dan betapa berharganya kehidupan makhluk Allah yang kecil sekalipun.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Sulaiman dan Ratu Saba';
+            canvas.innerHTML = `Salah satu kisah terkenal dalam kehidupan Nabi Sulaiman adalah pertemuannya dengan Ratu Saba. Ratu Saba adalah seorang ratu yang sangat bijaksana, tetapi ia mendengar tentang kebesaran Nabi Sulaiman dan memutuskan untuk mengujinya. Ia mengirimkan hadiah-hadiah mewah untuk Nabi Sulaiman sebagai tanda penghormatan dan untuk melihat apakah beliau benar-benar seorang nabi yang luar biasa.
+
+            Nabi Sulaiman, yang tahu bahwa hadiah-hadiah itu dimaksudkan untuk menguji kebijaksanaannya, berkata, "Apa yang kamu bawa, tidak akan lebih besar daripada apa yang telah Allah berikan kepadaku."
+
+            Ratu Saba kemudian datang menghadap Nabi Sulaiman. Nabi Sulaiman menunjukkan kebesaran Allah dengan cara yang mengagumkan. Salah satunya adalah ketika beliau meminta seorang dari jin untuk membawa singgasana Ratu Saba dalam waktu yang sangat singkat. Singgasana itu datang sebelum Ratu Saba sampai di istana Nabi Sulaiman.
+
+            Melihat mukjizat-mukjizat tersebut, Ratu Saba akhirnya menerima kebenaran bahwa Nabi Sulaiman adalah nabi yang diutus oleh Allah. Ia pun memeluk agama Islam dan mengakui kebesaran Allah.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Sulaiman dan Doa untuk Kebijaksanaan';
+            canvas.innerHTML = `Nabi Sulaiman dikenal sangat rendah hati dan selalu memohon kepada Allah agar diberikan kebijaksanaan yang lebih besar dalam memimpin umatnya. Dalam doanya, beliau berkata, "Ya Allah, berikanlah aku hikmah yang benar, dan jadikan aku pemimpin yang adil untuk umat ini."
+            Allah mengabulkan doa Nabi Sulaiman dan memberinya kebijaksanaan yang luar biasa serta kekuasaan yang tidak dimiliki oleh siapa pun setelahnya. Nabi Sulaiman selalu mengingatkan kaumnya untuk tidak sombong dan selalu bersyukur kepada Allah atas segala karunia-Nya.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Sulaiman meninggalkan teladan yang sangat berharga tentang bagaimana seorang pemimpin harus memimpin dengan kebijaksanaan, keadilan, dan rendah hati. Selain itu, beliau mengajarkan kepada kita untuk selalu bersyukur atas segala nikmat Allah dan tidak menyombongkan diri dengan kekuasaan atau kekayaan. Nabi Sulaiman juga mengajarkan pentingnya mendengarkan dan memahami makhluk Allah, baik manusia maupun binatang, serta menjunjung tinggi nilai-nilai kasih sayang dan kepedulian terhadap sesama.`;
+            break;
+
+        case 6:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = 'Pesan Moral';
+            canvas.innerHTML = `Kisah Nabi Sulaiman mengajarkan kita untuk selalu memimpin dengan kebijaksanaan, keadilan, dan rendah hati. Kebesaran dan kekuasaan yang diberikan Allah harus dimanfaatkan dengan sebaik-baiknya, bukan untuk kesombongan, tetapi untuk kebaikan umat manusia. Kita juga diajarkan untuk selalu bersyukur kepada Allah, mendengarkan makhluk-Nya dengan penuh kasih sayang, dan menjalani hidup dengan penuh kebijaksanaan.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

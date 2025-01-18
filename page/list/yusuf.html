@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Yusuf adalah anak kesayangan Nabi Ya'qub yang dikenal dengan kecantikannya dan akhlaknya yang mulia. Kecintaan Nabi Ya'qub terhadap Yusuf membuat saudara-saudaranya cemburu dan iri hati. Kisah hidup Nabi Yusuf penuh dengan ujian yang menguji kesabarannya, tetapi juga menunjukkan betapa besar kasih sayang Allah kepadanya.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Yusuf dan Perjuangan Menghadapi Ujian';
+            canvas.innerHTML = `Nabi Yusuf adalah anak kesayangan Nabi Ya'qub yang dikenal dengan kecantikannya dan akhlaknya yang mulia. Kecintaan Nabi Ya'qub terhadap Yusuf membuat saudara-saudaranya cemburu dan iri hati. Kisah hidup Nabi Yusuf penuh dengan ujian yang menguji kesabarannya, tetapi juga menunjukkan betapa besar kasih sayang Allah kepadanya.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Perasaan Cemburu Saudara-saudara Nabi Yusuf';
+            canvas.innerHTML = `Nabi Yusuf memiliki sebelas saudara laki-laki yang merasa cemburu kepada Yusuf karena ayah mereka, Nabi Ya'qub, sangat mencintainya. Suatu hari, Yusuf menceritakan sebuah mimpi kepada ayahnya yang mengisahkan tentang sebelas bintang, matahari, dan bulan yang sujud kepadanya. Nabi Ya'qub pun memahami bahwa mimpi tersebut menggambarkan bahwa kelak Yusuf akan menjadi orang yang mulia, dan seluruh keluarganya akan menghormatinya.
+
+            Saudara-saudara Yusuf merasa iri dan merencanakan untuk menyingkirkannya. Mereka memutuskan untuk melempar Yusuf ke dalam sumur dan memberi alasan palsu kepada ayah mereka bahwa Yusuf telah dimakan serigala. Mereka lalu membawa baju Yusuf yang ternoda darah sebagai bukti palsu tersebut. Nabi Ya'qub sangat sedih, namun ia tetap bersabar dan berdoa kepada Allah.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Kehidupan Nabi Yusuf di Mesir';
+            canvas.innerHTML = `Setelah dilemparkan ke sumur, Nabi Yusuf diselamatkan oleh kafilah yang lewat dan dibawa ke Mesir, di mana ia dijual sebagai budak kepada seorang pejabat Mesir yang kaya bernama Al-Aziz. Meskipun menjadi budak, Nabi Yusuf tetap menunjukkan akhlak yang baik dan dipercaya oleh majikannya.
+
+            Namun, istri Al-Aziz, yang sangat tertarik dengan kecantikan Yusuf, berusaha menggoda dan memfitnahnya. Nabi Yusuf menolak ajakan tersebut dengan penuh kesabaran, namun ia difitnah dan dipenjara akibat tuduhan yang tidak benar. Di dalam penjara, Nabi Yusuf tetap sabar dan menjaga keimanan, serta membantu sesama narapidana dengan menafsirkan mimpi mereka.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Yusuf Menjadi Penguasa di Mesir';
+            canvas.innerHTML = `Setelah beberapa tahun, raja Mesir mengalami mimpi yang membingungkan, dan hanya Nabi Yusuf yang dapat menafsirkan mimpi tersebut dengan tepat. Nabi Yusuf meramalkan bahwa Mesir akan mengalami tujuh tahun masa subur, diikuti dengan tujuh tahun kelaparan. Berkat penafsiran mimpi itu, Yusuf diangkat menjadi penguasa yang bertanggung jawab atas penyimpanan makanan di Mesir.
+
+            Pada masa kelaparan, saudara-saudara Nabi Yusuf datang ke Mesir untuk membeli makanan, tanpa mengetahui bahwa yang mereka hadapi adalah Yusuf, yang telah menjadi penguasa. Nabi Yusuf mengenali mereka, tetapi mereka tidak mengenalinya. Setelah beberapa pertemuan, Nabi Yusuf akhirnya mengungkapkan identitasnya kepada saudara-saudaranya. Mereka sangat terkejut dan merasa bersalah atas perbuatan mereka.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Pengampunan Nabi Yusuf kepada Saudara-saudaranya';
+            canvas.innerHTML = `Meskipun saudara-saudaranya telah berbuat buruk kepadanya, Nabi Yusuf memaafkan mereka dengan tulus. Ia berkata,
+            "Tidak ada dendam di hati saya terhadap kalian. Allah telah mempersatukan kita kembali, dan saya berdoa semoga Allah mengampuni kalian."
+
+            Nabi Yusuf mengundang seluruh keluarganya, termasuk ayahnya Nabi Ya'qub, untuk datang ke Mesir dan tinggal bersama-sama di sana. Kebahagiaan kembali datang kepada keluarga Nabi Ya'qub yang telah terpisah begitu lama.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Yusuf hidup dengan penuh kebahagiaan dan kemuliaan setelah diuji dengan berbagai ujian hidup. Ia menjadi teladan kesabaran, pengampunan, dan keteguhan iman kepada Allah. Kisah Nabi Yusuf mengajarkan kita untuk selalu bersabar dalam menghadapi cobaan, memaafkan kesalahan orang lain, dan selalu berharap kepada Allah dalam segala keadaan.`;
+            break;
+
+        case 6:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = 'Pesan Moral';
+            canvas.innerHTML = `Kisah Nabi Yusuf mengajarkan kita tentang pentingnya sabar menghadapi ujian hidup, memaafkan orang yang telah menyakiti kita, dan selalu yakin bahwa Allah memiliki rencana yang lebih baik untuk kita. Keteguhan hati, kesabaran, dan keikhlasan akan membawa kebahagiaan dan keberkahan hidup.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

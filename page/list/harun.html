@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Harun adalah saudara kandung Nabi Musa yang juga diutus oleh Allah untuk menyampaikan wahyu kepada umatnya. Nabi Harun dikenal dengan sifatnya yang sabar, bijaksana, dan sangat setia kepada Nabi Musa dalam menjalankan tugas kerasulan. Kisah Nabi Harun lebih banyak terhubung dengan perjalanan dakwah Nabi Musa, di mana ia berperan penting sebagai pembantu dalam perjuangan melawan Fir'aun.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+// Deklarasi jumlah total halaman
+// Deklarasi jumlah total halaman
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Harun dan Kesetiaannya Membantu Nabi Musa';
+            canvas.innerHTML = `Nabi Harun adalah saudara kandung Nabi Musa yang juga diutus oleh Allah untuk menyampaikan wahyu kepada umatnya. Nabi Harun dikenal dengan sifatnya yang sabar, bijaksana, dan sangat setia kepada Nabi Musa dalam menjalankan tugas kerasulan. Kisah Nabi Harun lebih banyak terhubung dengan perjalanan dakwah Nabi Musa, di mana ia berperan penting sebagai pembantu dalam perjuangan melawan Fir'aun.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Kehidupan Nabi Harun dan Kesetiaannya kepada Nabi Musa';
+            canvas.innerHTML = `Nabi Harun dilahirkan di Mesir pada masa pemerintahan Fir'aun yang kejam. Sejak kecil, ia memiliki akhlak yang mulia dan senantiasa taat kepada Allah. Nabi Harun adalah seorang nabi yang sangat mendukung dan membantu tugas dakwah Nabi Musa, terutama dalam menghadapi Fir'aun dan kaumnya yang ingkar.
+
+            Ketika Allah memerintahkan Nabi Musa untuk menghadap Fir'aun dan menyampaikan wahyu-Nya, Nabi Musa merasa cemas akan tugas berat ini. Allah kemudian memerintahkan Nabi Musa untuk meminta bantuan saudaranya, Nabi Harun, agar ia menjadi pembantunya dalam menyampaikan dakwah. Allah berfirman kepada Nabi Musa,
+            "Kami akan menguatkan hatimu dengan saudaramu Harun. Keduanya akan berbicara dengan bahasa yang jelas dan bijaksana." (QS. Al-Qasas: 34)`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Harun Membantu Nabi Musa Menghadapi Fir\'aun';
+            canvas.innerHTML = `Nabi Harun menemani Nabi Musa dalam setiap perjuangan mereka melawan Fir'aun. Mereka berdua menghadapi penolakan keras dari Fir'aun yang sombong dan tidak mau menerima kebenaran. Fir'aun bahkan menantang Nabi Musa dengan meminta mukjizat, yang kemudian Allah berikan melalui berbagai tanda, seperti tongkat Nabi Musa yang berubah menjadi ular dan tangan Nabi Musa yang bercahaya.
+
+            Namun, meskipun dengan berbagai mukjizat yang luar biasa, Fir'aun tetap tidak mau mendengarkan dan menolak ajakan untuk beriman kepada Allah. Nabi Harun bersama Nabi Musa terus bersabar dan berdoa agar Fir'aun mau bertobat dan melepaskan Bani Israil dari perbudakan.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Pemberian Mukjizat dan Kegagalan Fir\'aun';
+            canvas.innerHTML = `Allah memberikan banyak mukjizat kepada Nabi Musa dan Nabi Harun untuk membuktikan bahwa mereka adalah utusan Allah. Salah satunya adalah ketika mereka berdua memperlihatkan mukjizat kepada Fir'aun, seperti tongkat Nabi Musa yang berubah menjadi ular besar dan tangan Nabi Musa yang bersinar putih. Namun, Fir'aun tetap sombong dan menolak untuk menerima kebenaran.
+
+            Di tengah kesulitan ini, Nabi Harun tetap mendukung Nabi Musa dengan penuh kesabaran. Nabi Harun mencoba menenangkan umatnya yang sering ragu-ragu dan berpaling dari kebenaran. Ia terus mengingatkan mereka untuk tetap beriman kepada Allah dan mengikuti petunjuk yang benar.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Pengikut Nabi Harun dan Kesabarannya';
+            canvas.innerHTML = `Nabi Harun menghadapi banyak ujian dari kaumnya yang seringkali meragukan ajaran yang dibawa oleh Nabi Musa dan dirinya. Salah satu ujian terbesar adalah ketika sebagian besar Bani Israil, setelah diselamatkan dari Fir'aun, malah menyembah patung anak sapi emas yang dibuat oleh Samiri. Nabi Harun sangat kecewa dengan mereka dan berusaha mengingatkan mereka untuk kembali kepada Allah, tetapi mereka tetap bersikeras.
+
+            Nabi Harun dengan bijaksana dan sabar menegur kaumnya. Ia berusaha untuk mencegah perbuatan mereka yang sesat, namun mereka tetap tidak mau mendengarkan. Meskipun demikian, Nabi Harun tetap setia dalam mendukung dakwah dan ajaran yang benar.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Harun tidak hanya dikenal sebagai seorang nabi yang bijaksana, tetapi juga sebagai saudara yang sangat setia dan membantu Nabi Musa dalam setiap ujian yang mereka hadapi. Kesetiaannya kepada Allah dan Nabi Musa, serta keteguhan hatinya dalam menegakkan kebenaran, menjadikannya sebagai teladan yang sangat mulia. Kisah Nabi Harun mengajarkan kita tentang pentingnya kesetiaan, kesabaran, dan kebijaksanaan dalam menghadapi tantangan hidup.`;
+            break;
+
+        case 6:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = 'Pesan Moral';
+            canvas.innerHTML = `Kisah Nabi Harun mengajarkan kita untuk selalu setia membantu sesama dalam kebenaran, bersabar dalam menghadapi ujian, dan tidak mudah putus asa ketika menghadapi kesulitan. Selain itu, kita juga diajarkan untuk selalu berdakwah dengan bijaksana dan mengingatkan orang lain agar kembali ke jalan yang benar, meskipun tidak semua orang akan menerima kebenaran tersebut.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>
