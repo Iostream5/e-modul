@@ -57,15 +57,15 @@
         width: 70%;
         font-size: 15px;
         font-weight: 600;
-        color: #E3C49E;
+        color: #d6821c;
         font-size: 1.2em;
-        text-shadow: -2px -2px 0 #6e4f2c,  
-             2px -2px 0 #6e4f2c,
-             -2px 2px 0 #6e4f2c,
-             2px 2px 0 #6e4f2c,
-             2px 2px 0 #6e4f2c;
+        text-shadow: -1px -1px 0 #eecfac,  
+             1px -1px 0 #eecfac,
+             -1px 1px 0 #eecfac,
+             1px 1px 0 #eecfac,
+             1px 1px 0 #eecfac;
         /* background-color: #ffa07a; */
-  
+        word-spacing: 2em;
         }
 
     .header .part {
