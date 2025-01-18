@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Di sebuah daerah bernama Al-Hijr, hiduplah kaum Tsamud, sebuah bangsa yang terkenal kuat dan cerdas. 
+                Mereka mahir membangun rumah dari batu di pegunungan. Allah memberi mereka kekayaan dan kemakmuran, tetapi kaum Tsamud menjadi sombong. 
+                Mereka menyembah berhala dan melupakan Allah yang telah memberi mereka nikmat.
+    
+                Untuk menyelamatkan mereka dari kesesatan, Allah mengutus Nabi Saleh sebagai rasul untuk mengingatkan kaum Tsamud agar kembali kepada-Nya.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+        
+// Deklarasi jumlah total halaman
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Saleh dan Mukjizat Unta';
+            canvas.innerHTML = `Di sebuah daerah bernama Al-Hijr, hiduplah kaum Tsamud, sebuah bangsa yang terkenal kuat dan cerdas. 
+            Mereka mahir membangun rumah dari batu di pegunungan. Allah memberi mereka kekayaan dan kemakmuran, tetapi kaum Tsamud menjadi sombong. 
+            Mereka menyembah berhala dan melupakan Allah yang telah memberi mereka nikmat.
+
+            Untuk menyelamatkan mereka dari kesesatan, Allah mengutus Nabi Saleh sebagai rasul untuk mengingatkan kaum Tsamud agar kembali kepada-Nya.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Dakwah Nabi Saleh';
+            canvas.innerHTML = `Nabi Saleh adalah sosok yang bijaksana dan dihormati di tengah kaumnya. Ia mengajak kaum Tsamud untuk meninggalkan penyembahan berhala dan hanya menyembah Allah.
+            "Wahai kaumku, sembahlah Allah. Tidak ada Tuhan selain Dia. Dialah yang menciptakan kalian dari tanah dan menjadikan kalian pemakmurnya. 
+            Maka mohonlah ampun kepada-Nya dan bertaubatlah."
+
+            Namun, sebagian besar kaum Tsamud menolak seruan Nabi Saleh. Mereka malah mengejek dan berkata,
+            "Wahai Saleh, dahulu kami menghormatimu, tetapi sekarang engkau membawa ajaran yang aneh. Tunjukkan kepada kami bukti jika engkau memang seorang rasul."`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Mukjizat Unta';
+            canvas.innerHTML = `Allah mengabulkan permintaan kaum Tsamud untuk menunjukkan tanda kekuasaan-Nya. Dengan izin Allah, Nabi Saleh memukulkan tangannya ke sebuah batu besar, 
+            dan keluarlah seekor unta betina yang sangat besar sebagai mukjizat.
+            Nabi Saleh memperingatkan kaumnya,
+            "Ini adalah unta Allah, sebagai tanda bagi kalian. Janganlah kalian mengganggunya, biarkan ia minum dan makan dari bumi Allah."
+
+            Pada awalnya, kaum Tsamud kagum pada mukjizat tersebut. Namun, seiring waktu, hati mereka kembali membatu. Beberapa dari mereka malah merencanakan untuk membunuh unta itu. 
+            Mereka membunuh unta Allah tersebut dengan kejam, meskipun Nabi Saleh telah memperingatkan mereka tentang akibatnya.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Azab Kaum Tsamud';
+            canvas.innerHTML = `Setelah membunuh unta, kaum Tsamud menantang Nabi Saleh,
+            "Jika azab Allah benar, datangkanlah kepada kami!"
+
+            Nabi Saleh sangat sedih melihat kedurhakaan kaumnya. Allah kemudian menurunkan azab kepada kaum Tsamud berupa gempa bumi yang dahsyat disertai suara yang menggelegar. 
+            Seluruh kaum Tsamud binasa, kecuali Nabi Saleh dan para pengikutnya yang beriman.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Setelah kehancuran kaum Tsamud, Nabi Saleh dan umat yang selamat melanjutkan hidup mereka di tempat lain. 
+            Nabi Saleh terus mengajarkan kebaikan, ketakwaan, dan pentingnya bersyukur atas nikmat Allah.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = ' ';
+            canvas.innerHTML = `Kisah Nabi Saleh mengajarkan bahwa kesombongan dan kedurhakaan hanya akan membawa kehancuran. Mukjizat Allah adalah tanda kekuasaan-Nya yang harus dihormati. 
+            Ketaatan kepada Allah adalah kunci keselamatan dan keberkahan.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

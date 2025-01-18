@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+            <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Daud adalah seorang nabi yang dikenal dengan kepemimpinan yang bijaksana, keberanian yang luar biasa, serta kemampuan luar biasa dalam bidang seni dan militer. Selain menjadi seorang nabi, Nabi Daud juga seorang raja yang memimpin Bani Israil dengan keadilan dan kebijaksanaan. Nabi Daud memiliki mukjizat yang diberikan oleh Allah, termasuk kemampuan untuk membuat besi lunak seperti tanah liat, yang ia gunakan untuk membuat berbagai senjata dan peralatan. Ia juga dikenal karena melantunkan Zabur, kitab yang diwahyukan kepadanya.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function home() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                page++;
+                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                    element.classList.remove('animate__bounceOutUp');
+                    element.classList.add('animate__bounceInDown');
+                });
+                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                    element.classList.remove('animate__fadeOut');
+                    element.classList.add('animate__fadeIn');
+                });
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                        element.classList.remove('animate__bounceOutUp');
+                        element.classList.add('animate__bounceInDown');
+                    });
+                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                        element.classList.remove('animate__fadeOut');
+                        element.classList.add('animate__fadeIn');
+                    });
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+const maxPage = 6; // Total halaman sesuai jumlah case (case dimulai dari 1, tapi index case tetap mulai dari 0)
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Daud dan Keberanian dalam Menegakkan Keadilan';
+            canvas.innerHTML = `Nabi Daud adalah seorang nabi yang dikenal dengan kepemimpinan yang bijaksana, keberanian yang luar biasa, serta kemampuan luar biasa dalam bidang seni dan militer. Selain menjadi seorang nabi, Nabi Daud juga seorang raja yang memimpin Bani Israil dengan keadilan dan kebijaksanaan. Nabi Daud memiliki mukjizat yang diberikan oleh Allah, termasuk kemampuan untuk membuat besi lunak seperti tanah liat, yang ia gunakan untuk membuat berbagai senjata dan peralatan. Ia juga dikenal karena melantunkan Zabur, kitab yang diwahyukan kepadanya.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Daud dan Kisah Perang Melawan Jalut';
+            canvas.innerHTML = `Pada masa muda, Nabi Daud dihadapkan pada ujian besar, yaitu pertempuran melawan seorang raksasa bernama Jalut. Ketika Bani Israil sedang berperang melawan pasukan Filistin yang dipimpin oleh Jalut, banyak tentara Bani Israil yang ketakutan, termasuk raja mereka. Namun, Nabi Daud yang masih muda, penuh dengan keberanian dan kepercayaan diri, menyatakan kesediaannya untuk melawan Jalut.
+
+            Dengan hanya membawa sebuah batu dan sebuah ketapel, Nabi Daud berhadapan langsung dengan Jalut. Dengan izin Allah, Nabi Daud melemparkan batu tersebut dengan sangat tepat ke arah dahi Jalut, dan batu itu membuat Jalut jatuh tersungkur. Nabi Daud berhasil mengalahkan musuh yang sangat kuat itu, dan kemenangan ini mengangkatnya sebagai pahlawan di mata kaumnya.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Daud sebagai Raja dan Keadilannya';
+            canvas.innerHTML = `Setelah kemenangan besar tersebut, Nabi Daud diangkat menjadi raja oleh Bani Israil. Sebagai raja, Nabi Daud memimpin dengan penuh kebijaksanaan dan keadilan. Ia selalu memastikan bahwa hak-hak rakyatnya dihormati dan diurus dengan baik. Nabi Daud juga memerintah dengan mengajarkan kebenaran dan menjauhkan umatnya dari perbuatan maksiat.
+
+            Suatu hari, dua orang datang menghadap Nabi Daud dengan sebuah permasalahan. Mereka mengadu tentang kebun anggur yang diperebutkan oleh keduanya. Salah satu dari mereka memiliki kebun anggur, namun kebun tersebut dirusak oleh kambing milik yang satunya. Nabi Daud mendengarkan keduanya dengan hati-hati dan memutuskan dengan adil.
+
+            Nabi Daud berkata, "Kebun anggur itu harus diberikan kepada pemiliknya yang asli, dan pemilik kambing yang merusaknya harus mengganti kerugian dengan memberikan kambing miliknya sebagai ganti rugi."
+            Putusan ini sangat adil dan memberikan ketenangan bagi kedua belah pihak.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Mukjizat Nabi Daud, Menjinakkan Besi dan Menyanyi Zabur';
+            canvas.innerHTML = `Selain kepemimpinan dan keberaniannya, Nabi Daud juga diberi kemampuan luar biasa oleh Allah. Salah satu mukjizat yang diberikan kepadanya adalah kemampuan untuk membuat besi menjadi lunak. Allah memudahkan Nabi Daud untuk membuat peralatan perang yang sangat kuat dan juga senjata untuk membela umatnya.
+
+            Nabi Daud juga dianugerahi suara yang sangat merdu, dan Allah memberinya kitab Zabur yang berisi pujian kepada-Nya. Nabi Daud sering melantunkan ayat-ayat Zabur dengan suaranya yang indah, yang membuat hati orang-orang yang mendengarnya menjadi tenang dan penuh kedamaian. Bahkan, burung-burung dan gunung-gunung pun turut bertasbih mengikuti lantunan lagu-lagu suci beliau.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Daud meninggalkan teladan besar tentang bagaimana seorang pemimpin harus memimpin dengan keadilan, kebijaksanaan, dan rasa tanggung jawab. Selain itu, ia mengajarkan kepada kita pentingnya keberanian dalam menegakkan kebenaran dan menghadapi tantangan, serta sikap rendah hati meskipun telah meraih kemenangan besar. Nabi Daud juga mengajarkan kepada kita tentang pentingnya bersyukur kepada Allah atas segala anugerah-Nya dan senantiasa mengingat-Nya dalam setiap langkah kehidupan.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = ' ';
+            canvas.innerHTML = `Kisah Nabi Daud mengajarkan kita untuk selalu berani dalam menghadapi kesulitan, baik itu berupa musuh yang kuat atau tantangan dalam kehidupan. Keberanian harus diimbangi dengan kebijaksanaan dan keadilan dalam memimpin. Selain itu, kita diajarkan untuk selalu bersyukur kepada Allah, menggunakan kemampuan yang diberikan-Nya untuk kebaikan, dan selalu mengingat-Nya dalam setiap amal perbuatan kita.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+
+    if (prevButton.disabled) {
+        prevImg.classList.add('monochrome');
+    } else {
+        prevImg.classList.remove('monochrome');
+    }
+
+    if (nextButton.disabled) {
+        nextImg.classList.add('monochrome');
+    } else {
+        nextImg.classList.remove('monochrome');
+    }
+
+    // Tambahan Akhir
+    console.log(`Page saat ini adalah: ${page}`);
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>
