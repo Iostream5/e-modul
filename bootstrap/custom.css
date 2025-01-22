@@ -96,6 +96,8 @@
         top: 130px;
         height: 80%;
         padding: 15px;
+        display: flex;
+        justify-content: center;
     }
 
     .paperin {
@@ -139,10 +141,10 @@
     .next{
         position: absolute;
         bottom: 4%;
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: space-around;
-        /* gap: 20px; */
+        gap: 20px;
     }
 
     @media (min-width:400px) {
@@ -161,8 +163,8 @@
         .next{
             width: 50%;
         }
-        .image_cerita{
-            left: 6.5em;
+        .content .image_cerita{
+            left: 6em;
         }
     }
 
@@ -228,7 +230,10 @@
         .header .part{
             font-size: 1.8em;
         }
+        
     }
+/*     
+    @media (min-width:1;) */
 
     /* ============height================*/
 
@@ -242,7 +247,7 @@
         }
         .next{
             bottom: 1%;
-            width: 20%;
+            /* width: 20%;  */
         }
         .image_cerita{
             width: 8em;
@@ -288,15 +293,15 @@
         .image_cerita{
             width: 15em;
             top: 4em;
-            left: 5.5em;
+            left: 4.5em;
         }
     }   
    
     @media(min-height:700px) {
         .image_cerita{
             width: 15em;
-            top: 4em;
-            left: 6.5em;
+            top: 5.5em;
+            left: 4em;
         }
         .next{
             bottom: 4%;
@@ -326,16 +331,16 @@
             bottom: 7%;
         }
         .image_cerita{
-            width: 18em;
-            top: 6em;
-            left: 6em;
+            width: 16em;
+            top: 8em;
+            left: 4em;
         }
     } 
     @media(min-height:850px) {
         .image_cerita{
-            width: 20em;
-            top: 7em;
-            left: 7em;
+            width: 16em;
+            top: 8em;
+            left: 5em;
         }
     } 
 
@@ -348,9 +353,9 @@
             font-size: 1.3em;
         }
         .image_cerita{
-            width: 20em;
-            top: 7em;
-            left: 7em;
+            width: 17em;
+            top: 9em;
+            left: 5em;
         }
     }
     @media(min-height:950px) {
@@ -366,12 +371,12 @@
             top: 55%;
             overflow-y: auto;
             max-width: 400px;
-            height: 350px;
+            height: 300px;
             font-size: 20px;
         }
         .next button{
-            height: 90px;
-            width: 90px;
+            height: 60px;
+            width: 60px;
         }  
         .image_cerita{
             width: 23em;
@@ -427,7 +432,7 @@
         .text {
             top: 53%;
             overflow-y: auto;
-            max-width: 700px;
+            max-width: 500px;
             height: 400px;
             font-size: 25px;
         }
