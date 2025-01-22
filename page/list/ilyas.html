@@ -184,22 +184,26 @@ function updateContent() {
     }
 
     prevButton.disabled = (page === 0);
-    nextButton.disabled = (page === maxPage - 1); // maxPage disesuaikan dengan index terakhir case
+            if (page === maxPage) {
+                nextImg.src = '../../asset/button/finish.png';
+                nextButton.onclick = () => {
+                    transitionOutAll()
+                    setTimeout(() => {
 
-    if (prevButton.disabled) {
-        prevImg.classList.add('monochrome');
-    } else {
-        prevImg.classList.remove('monochrome');
-    }
+                        window.location.href = '../../soal/NabiAdam.html';
+                    }, 1000)
+                };
 
-    if (nextButton.disabled) {
-        nextImg.classList.add('monochrome');
-    } else {
-        nextImg.classList.remove('monochrome');
-    }
+            } else {
+                nextImg.src = '../../asset/button/next.png';
+                nextButton.onclick = next;
+            }
 
-    // Tambahan Akhir
-    console.log(`Page saat ini adalah: ${page}`);
+            if (prevButton.disabled) {
+                prevImg.classList.add('monochrome');
+            } else {
+                prevImg.classList.remove('monochrome');
+            }
 }
 
     </script>
