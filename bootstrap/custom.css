@@ -59,7 +59,7 @@
         top: 0;
         margin-bottom: 0;
         width: auto;
-        font-size: 15px;
+        font-size: 2em;
         font-weight: 600;
         color: #d6821c;
         font-size: 1.2em;
@@ -104,6 +104,16 @@
         height: 100%;
     }
 
+    .image_cerita{
+        position: absolute;
+        top: 7em;
+        left: 4.5em;
+        object-fit: 9/18;
+        width: 20em;
+        height: auto;
+        border-radius: 10px;
+    }
+
     .text {
         position: absolute;
         top: 57%;
@@ -116,7 +126,6 @@
             -1px 1px 0 #E3C49E;
         color: #6e4f2c;
         font-size: 1em;
-
     }
 
     .next button{
@@ -129,11 +138,11 @@
     
     .next{
         position: absolute;
-        bottom: 1%;
+        bottom: 4%;
         width: 70%;
         display: flex;
         justify-content: space-around;
-
+        /* gap: 20px; */
     }
 
     @media (min-width:400px) {
@@ -152,6 +161,9 @@
         .next{
             width: 50%;
         }
+        .image_cerita{
+            left: 6.5em;
+        }
     }
 
     @media (min-width:700px) {
@@ -160,6 +172,9 @@
         }
         .next{
             width: 50%;
+        }
+        .image_cerita{
+            left: 7em;
         }
     }
 
@@ -207,7 +222,15 @@
         .next{
             width: 30%;
         }
+        .header .bagian{
+            font-size: 2.8em;
+        }
+        .header .part{
+            font-size: 1.8em;
+        }
     }
+
+    /* ============height================*/
 
     @media(min-height:400px) {
         .text {
@@ -217,27 +240,81 @@
             height: 180px;
             font-size: 15px;
         }
-    }
-
-    @media(min-height:600px) {
-        .text {
-            top: 53%;
-            overflow-y: auto;
-            max-width: 280px;
-            height: 250px;
+        .next{
+            bottom: 1%;
+            width: 20%;
+        }
+        .image_cerita{
+            width: 8em;
+            top: 1.5em;
+            left: 3.8em;
         }
     }
 
+    @media(min-height:500px) {
+        .image_cerita{
+            width: 12em;
+            top: 3em;
+            left: 3.8em;
+        }
+    }
+    @media(min-height:550px) {
+        .image_cerita{
+            width: 15em;
+            top: 3em;
+            left: 3.8em;
+        }
+    }
+    @media(min-height:600px) {
+        .text {
+            top: 60%;
+            overflow-y: auto;
+            max-width: 280px;
+            height: 200px;
+        }
+        .image_cerita{
+            width: 15em;
+            top: 4em;
+            left: 3.8em;
+        }
+    }
     @media(min-height:650px) {
         .text {
-            top: 53%;
+            top: 57%;
             overflow-y: auto;
             max-width: 250px;
             height: 250px;
         }
+        .image_cerita{
+            width: 15em;
+            top: 4em;
+            left: 5.5em;
+        }
+    }   
+   
+    @media(min-height:700px) {
+        .image_cerita{
+            width: 15em;
+            top: 4em;
+            left: 6.5em;
+        }
+        .next{
+            bottom: 4%;
+        }
+    }
+    @media(min-height:750px) {
+        .image_cerita{
+            width: 18em;
+            top: 4em;
+            left: 6em;
+        }
+
+        .next button{
+            height: 60px;
+            width: 60px;
+        }
     }
 
-   
     @media(min-height:800px) {
         .text {
             top: 57%;
@@ -245,14 +322,22 @@
             max-width: 300px;
             height: 250px;
         }
-    } 
-    
-    /* @media(min-height:850px) {
-        .next {
-            bottom: 9%;
-                    background-color: red;
+        .next{
+            bottom: 7%;
         }
-    } */
+        .image_cerita{
+            width: 18em;
+            top: 6em;
+            left: 6em;
+        }
+    } 
+    @media(min-height:850px) {
+        .image_cerita{
+            width: 20em;
+            top: 7em;
+            left: 7em;
+        }
+    } 
 
     @media(min-height:900px) {
         .text {
@@ -260,21 +345,53 @@
             overflow-y: auto;
             max-width: 320px;
             height: 250px;
+            font-size: 1.3em;
+        }
+        .image_cerita{
+            width: 20em;
+            top: 7em;
+            left: 7em;
+        }
+    }
+    @media(min-height:950px) {
+        .image_cerita{
+            width: 23em;
+            top: 8em;
+            left: 7.5em;
         }
     }
 
     @media(min-height:1000px) {
         .text {
-            top: 50%;
+            top: 55%;
             overflow-y: auto;
-            max-width: 520px;
+            max-width: 400px;
             height: 350px;
             font-size: 20px;
         }
         .next button{
             height: 90px;
             width: 90px;
-        }        
+        }  
+        .image_cerita{
+            width: 23em;
+            top: 8em;
+            left: 7.5em;
+        }      
+    }
+    @media(min-height:1050px) {
+        .image_cerita{
+            width: 25em;
+            top: 8em;
+            left: 7.5em;
+        }      
+    }
+    @media(min-height:1150px) {
+        .image_cerita{
+            width: 28em;
+            top: 8em;
+            left: 7.5em;
+        }      
     }
 
     @media(min-height:1200px) {
@@ -285,16 +402,40 @@
             height: 400px;
             font-size: 25px;
         }
+        .image_cerita{
+            width: 30em;
+            top: 8em;
+            left: 7.5em;
+        }     
+    }
+    @media(min-height:1250px) {
+        .text {
+            top: 53%;
+            overflow-y: auto;
+            max-width: 650px;
+            height: 400px;
+            font-size: 25px;
+        }
+        .image_cerita{
+            width: 35em;
+            top: 8em;
+            left: 7.5em;
+        }     
     }
 
     @media(min-height:1300px) {
         .text {
-            top: 50%;
+            top: 53%;
             overflow-y: auto;
             max-width: 700px;
             height: 400px;
             font-size: 25px;
         }
+        .image_cerita{
+            width: 35em;
+            top: 8em;
+            left: 8em;
+        }  
     }
 
 
