@@ -57,7 +57,29 @@
         const nextImg = nextButton.querySelector('img');
         let page = 0;
 
-        function home() {
+        function transitionOut() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+        }
+
+        function transitionIn() {
+            document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                element.classList.remove('animate__bounceOutUp');
+                element.classList.add('animate__bounceInDown');
+            });
+            document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                element.classList.remove('animate__fadeOut');
+                element.classList.add('animate__fadeIn');
+            });
+        }
+
+        function transitionOutAll() {
             document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
                 element.classList.remove('animate__bounceInDown');
                 element.classList.add('animate__bounceOutUp');
@@ -74,54 +96,31 @@
                 element.classList.remove('animate__bounceInDown2');
                 element.classList.add('animate__bounceOutUp');
             });
+        }
+
+
+       function home() {
+            transitionOutAll()
             setTimeout(() => {
                 window.location = "../DaftarIsi.html"
             }, 1000);
         }
 
         function next() {
-            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
-                element.classList.remove('animate__bounceInDown');
-                element.classList.add('animate__bounceOutUp');
-            });
-            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
-                element.classList.remove('animate__fadeIn');
-                element.classList.add('animate__fadeOut');
-            });
+            transitionOut()
             setTimeout(() => {
                 page++;
-                document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
-                    element.classList.remove('animate__bounceOutUp');
-                    element.classList.add('animate__bounceInDown');
-                });
-                document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
-                    element.classList.remove('animate__fadeOut');
-                    element.classList.add('animate__fadeIn');
-                });
+                transitionIn()
                 updateContent();
             }, 500);
         }
 
         function prev() {
-            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
-                element.classList.remove('animate__bounceInDown');
-                element.classList.add('animate__bounceOutUp');
-            });
-            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
-                element.classList.remove('animate__fadeIn');
-                element.classList.add('animate__fadeOut');
-            });
+            transitionOut()
             setTimeout(() => {
                 if (page > 0) {
                     page--;
-                    document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
-                        element.classList.remove('animate__bounceOutUp');
-                        element.classList.add('animate__bounceInDown');
-                    });
-                    document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
-                        element.classList.remove('animate__fadeOut');
-                        element.classList.add('animate__fadeIn');
-                    });
+                    transitionIn()
                     updateContent();
                 }
             }, 1000);
