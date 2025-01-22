@@ -30,10 +30,10 @@
            isMusicOn = !isMusicOn; // Toggle status
    
            if (isMusicOn) {
-               toggleMusicImage.src = "asset/button/on-btn.png"; // Gambar saat musik ON
+               toggleMusicImage.src = "../asset/button/on-btn.png"; // Gambar saat musik ON
                backgroundMusic.play(); // Putar musik
            } else {
-               toggleMusicImage.src = "asset/button/off-btn.png"; // Gambar saat musik OFF
+               toggleMusicImage.src = "../asset/button/off-btn.png"; // Gambar saat musik OFF
                backgroundMusic.pause(); // Hentikan musik
            }
        });
