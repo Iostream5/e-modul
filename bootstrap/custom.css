@@ -56,7 +56,7 @@
         position: relative;
         padding: 0 15px;
         margin-top: 5%;
-        top: 0;
+        top: -1.5%;
         margin-bottom: 0;
         width: auto;
         font-size: 2em;
@@ -73,11 +73,11 @@
 
     .header .part {
         position: relative;
-        top: 0;
+        top: -2%;
         padding: 0 15px;
         /* background-color: #ffa07a; */
         font-size: 1.1em;
-        width: 95%;
+        width: 50%;
         color: #E3C49E;
         text-shadow: -1px -1px 0 #6e4f2c,  
              1px -1px 0 #6e4f2c,
@@ -229,6 +229,7 @@
         }
         .header .part{
             font-size: 1.8em;
+            width: 70%;
         }
         
     }

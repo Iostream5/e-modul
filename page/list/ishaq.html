@@ -176,7 +176,7 @@ function updateContent() {
     }
 
     prevButton.disabled = (page === 0);
-            if (page === maxPage) {
+            if (page >= maxPage) {
                 nextImg.src = '../../asset/button/finish.png';
                 nextButton.onclick = () => {
                     transitionOutAll()
