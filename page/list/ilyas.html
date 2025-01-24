@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+<img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../images/img.png" alt="">        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Ilyas adalah seorang nabi yang diutus oleh Allah untuk membimbing umatnya agar menyembah Allah dan menjauhi penyembahan berhala. Beliau dikenal sebagai seorang nabi yang sangat tabah dan tidak pernah menyerah dalam menyampaikan wahyu Allah meskipun menghadapi tantangan berat. Nabi Ilyas diutus kepada kaumnya, yang disebut sebagai kaum Ba'al, yang pada waktu itu sangat terpengaruh oleh penyembahan berhala Ba'al, dewa yang mereka anggap sebagai pelindung.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function transitionOut() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+        }
+
+        function transitionIn() {
+            document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                element.classList.remove('animate__bounceOutUp');
+                element.classList.add('animate__bounceInDown');
+            });
+            document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                element.classList.remove('animate__fadeOut');
+                element.classList.add('animate__fadeIn');
+            });
+        }
+
+        function transitionOutAll() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+        }
+
+
+       function home() {
+            transitionOutAll()
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            transitionOut()
+            setTimeout(() => {
+                page++;
+                transitionIn()
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            transitionOut()
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    transitionIn()
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+
+const maxPage = 6; 
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Ilyas dan Perjuangan Menyebarkan Kebenaran';
+            canvas.innerHTML = `Nabi Ilyas adalah seorang nabi yang diutus oleh Allah untuk membimbing umatnya agar menyembah Allah dan menjauhi penyembahan berhala. Beliau dikenal sebagai seorang nabi yang sangat tabah dan tidak pernah menyerah dalam menyampaikan wahyu Allah meskipun menghadapi tantangan berat. Nabi Ilyas diutus kepada kaumnya, yang disebut sebagai kaum Ba'al, yang pada waktu itu sangat terpengaruh oleh penyembahan berhala Ba'al, dewa yang mereka anggap sebagai pelindung.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Penyembahan Berhala di Kaum Ba\'al';
+            canvas.innerHTML = `Kaum Ba'al, tempat Nabi Ilyas diutus, sangat menyembah berhala Ba'al. Mereka menolak menyembah Allah yang Maha Esa, dan banyak di antara mereka yang hidup dalam kemaksiatan dan kezaliman. Nabi Ilyas berjuang keras untuk mengajak mereka kembali kepada Allah dan meninggalkan penyembahan terhadap berhala.
+
+            Nabi Ilyas berdakwah dengan penuh kesabaran dan ketekunan, menyampaikan wahyu Allah dengan cara yang lembut namun tegas. Ia mengingatkan mereka tentang akibat dari menyembah selain Allah dan menyatakan bahwa hanya Allah yang berhak disembah. Namun, kebanyakan dari mereka tetap keras kepala dan tidak mau mendengarkan ajakannya.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Tantangan dan Penolakan';
+            canvas.innerHTML = `Meskipun begitu, Nabi Ilyas tidak menyerah. Ia menghadapi banyak penolakan dari kaumnya. Mereka bahkan menganggapnya sebagai orang yang tidak waras dan mencoba mengusirnya dari negeri mereka. Nabi Ilyas merasa sangat kecewa karena umatnya tidak mau mendengarkan nasihat dan peringatan yang diberikan oleh Allah melalui dirinya.
+
+            Namun, Nabi Ilyas tetap teguh pada misinya. Suatu hari, Allah memerintahkan Nabi Ilyas untuk pergi dan menyelamatkan diri dari kaum yang membangkang. Nabi Ilyas meninggalkan mereka dan melanjutkan dakwahnya ke tempat lain, namun perlawanan terhadap beliau tetap ada. Meskipun demikian, beliau tidak merasa putus asa, karena ia tahu bahwa Allah selalu bersama orang-orang yang sabar dalam menjalankan tugas-Nya.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Doa Nabi Ilyas untuk Kaumnya';
+            canvas.innerHTML = `Setelah sekian lama berdakwah dan menghadapi penolakan, Nabi Ilyas tidak berhenti berdoa kepada Allah untuk memberi petunjuk kepada kaumnya. Nabi Ilyas memohon kepada Allah agar mengampuni mereka dan memberikan petunjuk kepada orang-orang yang masih tersesat. Beliau sangat berharap agar kaumnya dapat kembali ke jalan yang benar, meskipun mereka telah berbuat dosa yang besar.
+
+            Nabi Ilyas berdoa dengan tulus, berharap agar Allah memberikan mereka kesempatan untuk bertaubat. Allah mendengar doanya, tetapi kaumnya tetap menolak kebenaran yang dibawa oleh beliau.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Ujian dan Mukjizat Nabi Ilyas';
+            canvas.innerHTML = `Selama perjuangannya, Nabi Ilyas menghadapi banyak ujian. Suatu ketika, Allah memberi mukjizat kepadanya untuk menunjukkan kebenaran dakwahnya. Nabi Ilyas berdoa agar Allah menurunkan hujan untuk menandakan bahwa hanya Allah yang bisa memberi kehidupan dan rahmat. Dengan izin Allah, hujan yang sangat deras pun turun, menyiram bumi yang kering dan memberikan harapan baru bagi umat yang taat kepada Allah.
+
+            Meskipun sebagian besar dari kaumnya tetap menolak, ada beberapa orang yang mulai menyadari kebenaran dan menerima ajaran Nabi Ilyas. Mereka mulai menyembah Allah yang Maha Esa, tetapi jumlahnya sangat sedikit.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Ilyas terus berjuang untuk menyebarkan kebenaran dan memperbaiki kaumnya. Meskipun beliau menghadapi banyak rintangan dan penolakan, beliau tetap sabar dan terus berusaha menyampaikan wahyu Allah. Kisah Nabi Ilyas mengajarkan kita tentang pentingnya kesabaran dalam menjalani tugas dakwah, keteguhan hati dalam menghadapi ujian, serta pengabdian yang tulus kepada Allah.`;
+            break;
+
+        case 6:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = ' ';
+            canvas.innerHTML = `Kisah Nabi Ilyas mengajarkan kita untuk selalu bersabar dalam menghadapi kesulitan dan penolakan saat kita berusaha menyebarkan kebenaran. Kita diajarkan untuk tidak mudah putus asa meskipun menghadapi tantangan yang besar. Selain itu, kita juga diajarkan untuk selalu berdoa kepada Allah, memohon petunjuk-Nya, dan senantiasa berusaha untuk memberi manfaat kepada orang lain dengan cara yang baik.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+            if (page === maxPage) {
+                nextImg.src = '../../asset/button/finish.png';
+                nextButton.onclick = () => {
+                    transitionOutAll()
+                    setTimeout(() => {
+
+                        window.location.href = '../../soal/NabiAdam.html';
+                    }, 1000)
+                };
+
+            } else {
+                nextImg.src = '../../asset/button/next.png';
+                nextButton.onclick = next;
+            }
+
+            if (prevButton.disabled) {
+                prevImg.classList.add('monochrome');
+            } else {
+                prevImg.classList.remove('monochrome');
+            }
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

@@ -11,6 +11,10 @@
         position: relative;
     }
 
+    .monochrome {
+        filter: grayscale(100%);
+    }
+
     .bg-main {
         position: relative;
         width: 100%;
@@ -54,8 +58,8 @@
         margin-top: 5%;
         top: 0;
         margin-bottom: 0;
-        width: 70%;
-        font-size: 15px;
+        width: auto;
+        font-size: 2em;
         font-weight: 600;
         color: #d6821c;
         font-size: 1.2em;
@@ -65,7 +69,6 @@
              1px 1px 0 #eecfac,
              1px 1px 0 #eecfac;
         /* background-color: #ffa07a; */
-        word-spacing: 2em;
         }
 
     .header .part {
@@ -74,7 +77,7 @@
         padding: 0 15px;
         /* background-color: #ffa07a; */
         font-size: 1.1em;
-        width: 90%;
+        width: 95%;
         color: #E3C49E;
         text-shadow: -1px -1px 0 #6e4f2c,  
              1px -1px 0 #6e4f2c,
@@ -93,12 +96,24 @@
         top: 130px;
         height: 80%;
         padding: 15px;
+        display: flex;
+        justify-content: center;
     }
 
     .paperin {
         z-index: 0;
         width: 100%;
         height: 100%;
+    }
+
+    .image_cerita{
+        position: absolute;
+        top: 7em;
+        left: 4.5em;
+        object-fit: 9/18;
+        width: 20em;
+        height: auto;
+        border-radius: 10px;
     }
 
     .text {
@@ -108,18 +123,36 @@
         overflow-y: auto;
         text-align: center;
         max-width: 250px;
-        border-radius: 10%;
         text-shadow: -1px -1px 0 #E3C49E,
             1px -1px 0 #E3C49E,
             -1px 1px 0 #E3C49E;
         color: #6e4f2c;
         font-size: 1em;
+    }
 
+    .next button{
+        border: none;
+        background: none;
+        outline: none;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .next{
+        position: absolute;
+        bottom: 4%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
     }
 
     @media (min-width:400px) {
         .header {
             margin-left: 10%;
+        }
+        .next{
+            width: 70%;
         }
     }
 
@@ -127,11 +160,23 @@
         .header {
             margin-left: 20%;
         }
+        .next{
+            width: 50%;
+        }
+        .content .image_cerita{
+            left: 6em;
+        }
     }
 
     @media (min-width:700px) {
         .header {
             margin-left: 25%;
+        }
+        .next{
+            width: 50%;
+        }
+        .image_cerita{
+            left: 7em;
         }
     }
 
@@ -148,18 +193,24 @@
         .part{
             font-size: 1em;
         }
+        .next{
+            width: 50%;
+        }
     }
 
     @media (min-width:900px) {
         .header {
             margin-left: 30%;
         }
+        .next{
+            width: 50%;
+        }
         
     }
 
     @media (min-width:1000px) {
         .header {
-            margin-left: 15%;
+            margin-left: 35%;
             top: 25px;
         }
 
@@ -170,7 +221,21 @@
         .content {
             top: 150px;
         }
+        .next{
+            width: 30%;
+        }
+        .header .bagian{
+            font-size: 2.8em;
+        }
+        .header .part{
+            font-size: 1.8em;
+        }
+        
     }
+/*     
+    @media (min-width:1;) */
+
+    /* ============height================*/
 
     @media(min-height:400px) {
         .text {
@@ -180,23 +245,78 @@
             height: 180px;
             font-size: 15px;
         }
-    }
-
-    @media(min-height:600px) {
-        .text {
-            top: 53%;
-            overflow-y: auto;
-            max-width: 280px;
-            height: 250px;
+        .next{
+            bottom: 1%;
+            /* width: 20%;  */
+        }
+        .image_cerita{
+            width: 8em;
+            top: 1.5em;
+            left: 3.8em;
         }
     }
 
+    @media(min-height:500px) {
+        .image_cerita{
+            width: 12em;
+            top: 3em;
+            left: 3.8em;
+        }
+    }
+    @media(min-height:550px) {
+        .image_cerita{
+            width: 15em;
+            top: 3em;
+            left: 3.8em;
+        }
+    }
+    @media(min-height:600px) {
+        .text {
+            top: 60%;
+            overflow-y: auto;
+            max-width: 280px;
+            height: 200px;
+        }
+        .image_cerita{
+            width: 15em;
+            top: 4em;
+            left: 3.8em;
+        }
+    }
     @media(min-height:650px) {
         .text {
-            top: 53%;
+            top: 57%;
             overflow-y: auto;
             max-width: 250px;
             height: 250px;
+        }
+        .image_cerita{
+            width: 15em;
+            top: 4em;
+            left: 4.5em;
+        }
+    }   
+   
+    @media(min-height:700px) {
+        .image_cerita{
+            width: 15em;
+            top: 5.5em;
+            left: 4em;
+        }
+        .next{
+            bottom: 4%;
+        }
+    }
+    @media(min-height:750px) {
+        .image_cerita{
+            width: 18em;
+            top: 4em;
+            left: 6em;
+        }
+
+        .next button{
+            height: 60px;
+            width: 60px;
         }
     }
 
@@ -207,7 +327,22 @@
             max-width: 300px;
             height: 250px;
         }
-    }
+        .next{
+            bottom: 7%;
+        }
+        .image_cerita{
+            width: 16em;
+            top: 8em;
+            left: 4em;
+        }
+    } 
+    @media(min-height:850px) {
+        .image_cerita{
+            width: 16em;
+            top: 8em;
+            left: 5em;
+        }
+    } 
 
     @media(min-height:900px) {
         .text {
@@ -215,17 +350,53 @@
             overflow-y: auto;
             max-width: 320px;
             height: 250px;
+            font-size: 1.3em;
+        }
+        .image_cerita{
+            width: 17em;
+            top: 9em;
+            left: 5em;
+        }
+    }
+    @media(min-height:950px) {
+        .image_cerita{
+            width: 23em;
+            top: 8em;
+            left: 7.5em;
         }
     }
 
     @media(min-height:1000px) {
         .text {
-            top: 50%;
+            top: 55%;
             overflow-y: auto;
-            max-width: 520px;
-            height: 350px;
+            max-width: 400px;
+            height: 300px;
             font-size: 20px;
         }
+        .next button{
+            height: 60px;
+            width: 60px;
+        }  
+        .image_cerita{
+            width: 23em;
+            top: 8em;
+            left: 7.5em;
+        }      
+    }
+    @media(min-height:1050px) {
+        .image_cerita{
+            width: 25em;
+            top: 8em;
+            left: 7.5em;
+        }      
+    }
+    @media(min-height:1150px) {
+        .image_cerita{
+            width: 28em;
+            top: 8em;
+            left: 7.5em;
+        }      
     }
 
     @media(min-height:1200px) {
@@ -236,16 +407,40 @@
             height: 400px;
             font-size: 25px;
         }
+        .image_cerita{
+            width: 30em;
+            top: 8em;
+            left: 7.5em;
+        }     
+    }
+    @media(min-height:1250px) {
+        .text {
+            top: 53%;
+            overflow-y: auto;
+            max-width: 650px;
+            height: 400px;
+            font-size: 25px;
+        }
+        .image_cerita{
+            width: 35em;
+            top: 8em;
+            left: 7.5em;
+        }     
     }
 
     @media(min-height:1300px) {
         .text {
-            top: 50%;
+            top: 53%;
             overflow-y: auto;
-            max-width: 700px;
+            max-width: 500px;
             height: 400px;
             font-size: 25px;
         }
+        .image_cerita{
+            width: 35em;
+            top: 8em;
+            left: 8em;
+        }  
     }
 
 

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+<img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../images/img.png" alt="">        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Dzulkifli adalah seorang nabi yang dikenal dengan kesabarannya yang luar biasa dan keteguhannya dalam menjalankan tugas dakwah. Nama Dzulkifli sendiri berarti "yang memiliki dua bagian" atau "yang memiliki dua tanggung jawab", yang menunjukkan betapa besar amanah yang diembannya. Nabi Dzulkifli diutus untuk membimbing umatnya agar hidup dalam kebenaran dan ketakwaan kepada Allah.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function transitionOut() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+        }
+
+        function transitionIn() {
+            document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                element.classList.remove('animate__bounceOutUp');
+                element.classList.add('animate__bounceInDown');
+            });
+            document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                element.classList.remove('animate__fadeOut');
+                element.classList.add('animate__fadeIn');
+            });
+        }
+
+        function transitionOutAll() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+        }
+
+
+       function home() {
+            transitionOutAll()
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            transitionOut()
+            setTimeout(() => {
+                page++;
+                transitionIn()
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            transitionOut()
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    transitionIn()
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+
+const maxPage = 5; 
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Dzulkifli dan Kesabaran yang Luar Biasa';
+            canvas.innerHTML = `Nabi Dzulkifli adalah seorang nabi yang dikenal dengan kesabarannya yang luar biasa dan keteguhannya dalam menjalankan tugas dakwah. Nama Dzulkifli sendiri berarti "yang memiliki dua bagian" atau "yang memiliki dua tanggung jawab", yang menunjukkan betapa besar amanah yang diembannya. Nabi Dzulkifli diutus untuk membimbing umatnya agar hidup dalam kebenaran dan ketakwaan kepada Allah.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Kepribadian dan Tugas Nabi Dzulkifli';
+            canvas.innerHTML = `Nabi Dzulkifli adalah seorang nabi yang sangat sabar, rendah hati, dan penuh pengabdian. Ia dikenal sebagai sosok yang selalu menjalankan tugas dakwah dengan penuh keteguhan hati. Nabi Dzulkifli juga dikenal sangat adil dan selalu memimpin umatnya dengan hikmah.
+
+            Ia diberi tugas oleh Allah untuk mengingatkan kaumnya yang menyimpang dari ajaran-Nya. Kaumnya banyak yang melakukan perbuatan maksiat, seperti berbuat zalim dan menyembah selain Allah. Nabi Dzulkifli menyeru mereka untuk kembali kepada jalan yang benar, tetapi meskipun banyak yang menentang, ia tetap bersabar dan tidak pernah berhenti dalam menyampaikan wahyu Allah.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Ujian dan Kesabaran Nabi Dzulkifli';
+            canvas.innerHTML = `Ujian terbesar bagi Nabi Dzulkifli datang ketika beliau dihadapkan pada situasi yang sangat sulit. Kaumnya menentang keras dakwahnya dan bahkan banyak yang tidak mau mendengarkan ajakan beliau. Meski demikian, Nabi Dzulkifli tidak pernah menyerah dan selalu berusaha dengan sabar untuk membimbing mereka ke jalan Allah.
+
+            Suatu ketika, Nabi Dzulkifli mendapatkan ujian yang sangat berat. Ia harus menghadapi tugas berat dan ujian kehidupan, tetapi ia tetap tabah dan terus berdoa kepada Allah. Dalam menghadapi kesulitan tersebut, ia berusaha untuk tidak marah atau putus asa, tetapi tetap menjaga kesabarannya.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Dzulkifli dan Pengampunan Allah';
+            canvas.innerHTML = `Dalam menjalankan tugasnya, Nabi Dzulkifli menunjukkan sifat pengampun dan rendah hati. Ia selalu mengingatkan kaumnya agar tidak berbuat dosa dan selalu memohon ampun kepada Allah jika mereka melakukan kesalahan. Banyak orang yang datang kepada Nabi Dzulkifli dengan penyesalan, dan beliau selalu menerima mereka dengan penuh kasih sayang dan memohonkan ampunan untuk mereka.
+
+            Allah memberikan kekuatan kepada Nabi Dzulkifli untuk tetap sabar dalam menghadapi tantangan dan kesulitan, serta memberikan petunjuk kepada kaumnya. Meskipun sebagian besar dari mereka tetap tidak mau mendengarkan, Nabi Dzulkifli tetap sabar dan berusaha untuk tidak terpengaruh oleh penolakan tersebut.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Dzulkifli meninggalkan teladan yang sangat berharga bagi umat manusia tentang kesabaran, keteguhan, dan pengampunan. Ia mengajarkan kita bahwa dalam menghadapi ujian hidup, kita harus tetap sabar, tidak mudah putus asa, dan selalu memohon pertolongan Allah. Selain itu, kesabaran dalam menghadapi orang-orang yang sulit dan pengampunan kepada orang yang berbuat salah adalah bagian dari akhlak mulia yang harus kita teladani.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = ' ';
+            canvas.innerHTML = `Kisah Nabi Dzulkifli mengajarkan kita untuk selalu bersabar dalam menghadapi setiap ujian hidup. Kita diajarkan untuk tidak cepat putus asa, untuk tetap sabar dan tegar dalam menjalankan kebenaran, meskipun banyak tantangan yang harus dihadapi. Selain itu, penting untuk selalu menunjukkan sifat pengampunan dan kasih sayang kepada sesama, serta selalu memohon pertolongan dan ampunan dari Allah.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+            if (page === maxPage) {
+                nextImg.src = '../../asset/button/finish.png';
+                nextButton.onclick = () => {
+                    transitionOutAll()
+                    setTimeout(() => {
+
+                        window.location.href = '../../soal/NabiAdam.html';
+                    }, 1000)
+                };
+
+            } else {
+                nextImg.src = '../../asset/button/next.png';
+                nextButton.onclick = next;
+            }
+
+            if (prevButton.disabled) {
+                prevImg.classList.add('monochrome');
+            } else {
+                prevImg.classList.remove('monochrome');
+            }
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+<img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../images/img.png" alt="">        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Di sebuah negeri bernama Babilonia, hiduplah seorang nabi yang mulia bernama Ibrahim. Pada masa itu, penduduk Babilonia menyembah berhala-berhala yang mereka buat sendiri dari batu dan kayu. 
+                Bahkan, Raja Namrud, penguasa negeri itu, mengaku sebagai Tuhan. Nabi Ibrahim, sejak kecil, tidak pernah percaya pada berhala. Ia merasa hanya ada satu Tuhan yang menciptakan langit, bumi, dan segala isinya.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function transitionOut() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+        }
+
+        function transitionIn() {
+            document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                element.classList.remove('animate__bounceOutUp');
+                element.classList.add('animate__bounceInDown');
+            });
+            document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                element.classList.remove('animate__fadeOut');
+                element.classList.add('animate__fadeIn');
+            });
+        }
+
+        function transitionOutAll() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+        }
+
+
+       function home() {
+            transitionOutAll()
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            transitionOut()
+            setTimeout(() => {
+                page++;
+                transitionIn()
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            transitionOut()
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    transitionIn()
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+        
+
+
+const maxPage = 5; 
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Ibrahim, Sang Penghancur Berhala';
+            canvas.innerHTML = `Di sebuah negeri bernama Babilonia, hiduplah seorang nabi yang mulia bernama Ibrahim. Pada masa itu, penduduk Babilonia menyembah berhala-berhala yang mereka buat sendiri dari batu dan kayu. 
+            Bahkan, Raja Namrud, penguasa negeri itu, mengaku sebagai Tuhan. Nabi Ibrahim, sejak kecil, tidak pernah percaya pada berhala. Ia merasa hanya ada satu Tuhan yang menciptakan langit, bumi, dan segala isinya.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Dakwah Nabi Ibrahim';
+            canvas.innerHTML = `Ketika Nabi Ibrahim tumbuh dewasa, ia mulai mengajak kaumnya untuk meninggalkan berhala dan hanya menyembah Allah. Ia berkata,
+            "Wahai kaumku, mengapa kalian menyembah benda yang tidak bisa mendengar, tidak bisa melihat, dan tidak bisa menolong kalian sedikit pun? Sembahlah Allah yang menciptakan langit dan bumi!"
+
+            Namun, kaumnya menolak dan menganggap Nabi Ibrahim gila. Nabi Ibrahim tidak menyerah. Suatu hari, saat penduduk pergi untuk merayakan hari besar, Nabi Ibrahim masuk ke kuil tempat berhala-berhala disimpan. Ia menghancurkan semua berhala itu dengan kapak, kecuali satu berhala yang terbesar. Kapak itu ia gantungkan di leher berhala besar tersebut.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Ibrahim Diuji';
+            canvas.innerHTML = `Ketika penduduk kembali, mereka terkejut melihat berhala-berhala mereka hancur. Mereka bertanya,
+            "Siapa yang melakukan ini?"
+
+            Nabi Ibrahim berkata,
+            "Bukankah berhala besar itu yang menghancurkan yang lain? Tanyakan saja padanya jika ia bisa berbicara!"
+
+            Penduduk sadar bahwa berhala itu tidak bisa berbicara apalagi bertindak, tetapi mereka tetap marah kepada Nabi Ibrahim. Raja Namrud memerintahkan agar Nabi Ibrahim dihukum dengan dibakar di sebuah api besar. Dengan izin Allah, api yang membara itu menjadi dingin dan tidak membahayakan Nabi Ibrahim. Allah menyelamatkannya karena keimanannya yang kuat.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Ibrahim dan Pengorbanan Besar';
+            canvas.innerHTML = `Nabi Ibrahim juga dikenal karena kesabaran dan ketaatannya yang luar biasa kepada Allah. Ketika Allah memerintahkannya untuk menyembelih putranya, Nabi Ismail, sebagai ujian, Nabi Ibrahim siap melaksanakannya. 
+            Namun, Allah menggantikan Nabi Ismail dengan seekor domba sebagai tanda bahwa ketaatan Nabi Ibrahim telah diterima.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Ibrahim terus menyebarkan ajaran tauhid (keesaan Allah) hingga akhir hayatnya. Ajarannya diteruskan oleh anak-anaknya, termasuk Nabi Ismail dan Nabi Ishaq, yang juga menjadi nabi. 
+            Nabi Ibrahim menjadi simbol keteguhan iman, ketaatan, dan pengorbanan kepada Allah.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = ' ';
+            canvas.innerHTML = `Kisah Nabi Ibrahim mengajarkan pentingnya keberanian untuk menegakkan kebenaran, kesabaran dalam menghadapi ujian, dan ketaatan mutlak kepada Allah. Keimanan sejati membawa perlindungan dan keberkahan dari Allah.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+            if (page === maxPage) {
+                nextImg.src = '../../asset/button/finish.png';
+                nextButton.onclick = () => {
+                    transitionOutAll()
+                    setTimeout(() => {
+
+                        window.location.href = '../../soal/NabiAdam.html';
+                    }, 1000)
+                };
+
+            } else {
+                nextImg.src = '../../asset/button/next.png';
+                nextButton.onclick = next;
+            }
+
+            if (prevButton.disabled) {
+                prevImg.classList.add('monochrome');
+            } else {
+                prevImg.classList.remove('monochrome');
+            }
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

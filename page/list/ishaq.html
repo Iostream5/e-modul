@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../animate/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap/custom.css">
+</head>
+
+<body class="">
+    <div class="main d-flex align-items-center justify-content-center">
+        <div class="bg-main">
+            <img class="asset animate__animated" src="../../images/asset-langit.png" alt="">
+            <div class="asset d-flex justify-content-center">
+                <img class="asset animate__animated animate__bounceInUp" src="../../images/asset-tanah2.png" alt="">
+                <div class="animate__animated animate__flash">
+                    <img class="asset angin" src="../../images/asset_angin.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="header overflow-hidden">
+            <img class="roll animate__animated animate__bounceInDown2 img-fluid" src="../../images/roll2.png" alt="">
+        </div>
+        <div class="header">
+            <p id="part" class="bagian animate__animated animate__bounceInDown">Pendahuluan</p>
+            <p id="title" class="part animate__animated animate__bounceInDown">Awal Mula Cerita</p>
+        </div>
+        <div class="content ">
+<img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
+            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../images/img.png" alt="">        </div>
+        <div class="text animate__animated ">
+            <p id="text" class="animate__animated animate__fadeIn">Nabi Ishaq adalah putra Nabi Ibrahim dan Siti Sarah, yang lahir sebagai berkah setelah lama menunggu. Nabi Ibrahim dan istrinya sudah lanjut usia ketika Allah mengabulkan doa mereka dan memberikan anak yang sangat mereka dambakan. Nabi Ishaq dilahirkan dengan penuh kegembiraan, dan ia menjadi anak yang saleh serta pengganti perjuangan ayahnya dalam menyebarkan wahyu Allah.</p>
+        </div>
+        <div class="next">
+            <button class="animate__animated animate__fadeIn2" onclick="prev()" id="prevButton" disabled><img id="img"
+                    src="../../asset/button/prev.png" alt="Prev" class="img-fluid btn-img"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="home()"><img src="../../asset/button/home.png"
+                    alt="" class="img-fluid"></button>
+            <button class="animate__animated animate__fadeIn2" onclick="next()" id="nextButton"><img id="img"
+                    src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
+        </div>
+    </div>
+
+    <script>
+        const part = document.getElementById('part');
+        const canvas = document.getElementById('text');
+        const title = document.getElementById('title');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevImg = prevButton.querySelector('img');
+        const nextImg = nextButton.querySelector('img');
+        let page = 0;
+
+        function transitionOut() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+        }
+
+        function transitionIn() {
+            document.querySelectorAll('.animate__bounceOutUp').forEach(function (element) {
+                element.classList.remove('animate__bounceOutUp');
+                element.classList.add('animate__bounceInDown');
+            });
+            document.querySelectorAll('.animate__fadeOut').forEach(function (element) {
+                element.classList.remove('animate__fadeOut');
+                element.classList.add('animate__fadeIn');
+            });
+        }
+
+        function transitionOutAll() {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown');
+                element.classList.add('animate__bounceOutUp');
+            });
+            document.querySelectorAll('.animate__fadeIn').forEach(function (element) {
+                element.classList.remove('animate__fadeIn');
+                element.classList.add('animate__fadeOut');
+            });
+            document.querySelectorAll('.animate__bounceInUp').forEach(function (element) {
+                element.classList.remove('animate__bounceInUp');
+                element.classList.add('animate__bounceOutDown');
+            });
+            document.querySelectorAll('.animate__bounceInDown2').forEach(function (element) {
+                element.classList.remove('animate__bounceInDown2');
+                element.classList.add('animate__bounceOutUp');
+            });
+        }
+
+
+       function home() {
+            transitionOutAll()
+            setTimeout(() => {
+                window.location = "../DaftarIsi.html"
+            }, 1000);
+        }
+
+        function next() {
+            transitionOut()
+            setTimeout(() => {
+                page++;
+                transitionIn()
+                updateContent();
+            }, 500);
+        }
+
+        function prev() {
+            transitionOut()
+            setTimeout(() => {
+                if (page > 0) {
+                    page--;
+                    transitionIn()
+                    updateContent();
+                }
+            }, 1000);
+        }
+
+        
+
+const maxPage = 5; 
+
+function updateContent() {
+    switch (page) {
+        case 0:
+            part.innerHTML = 'Pendahuluan:';
+            title.innerHTML = 'Nabi Ishaq dan Keberkahan Keluarga yang Saleh';
+            canvas.innerHTML = `Nabi Ishaq adalah putra Nabi Ibrahim dan Siti Sarah, yang lahir sebagai berkah setelah lama menunggu. Nabi Ibrahim dan istrinya sudah lanjut usia ketika Allah mengabulkan doa mereka dan memberikan anak yang sangat mereka dambakan. Nabi Ishaq dilahirkan dengan penuh kegembiraan, dan ia menjadi anak yang saleh serta pengganti perjuangan ayahnya dalam menyebarkan wahyu Allah.`;
+            break;
+
+        case 1:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Doa Nabi Ibrahim dan Kelahiran Nabi Ishaq';
+            canvas.innerHTML = `Setelah lama menunggu, Nabi Ibrahim dan istrinya, Siti Sarah, berdoa kepada Allah untuk diberi anak. Allah mengabulkan doa mereka, dan Siti Sarah hamil di usia yang sangat tua. Ketika Nabi Ibrahim diberitahu bahwa ia akan memiliki seorang putra, ia bersyukur dan merasa sangat bahagia. Allah berfirman dalam Al-Qur'an:
+            "Dan Kami beri dia berita gembira tentang kelahiran seorang anak yang sabar." (QS. As-Saffat: 101)
+
+            Anak itu adalah Nabi Ishaq. Nabi Ibrahim sangat mencintai putranya dan berharap agar Ishaq menjadi seorang nabi yang meneruskan perjuangan dakwahnya.`;
+            break;
+
+        case 2:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Ishaq sebagai Nabi dan Penyebar Kebenaran';
+            canvas.innerHTML = `Seiring bertambahnya usia, Nabi Ishaq tumbuh menjadi seorang anak yang saleh dan taat kepada Allah. Allah memerintahkan Nabi Ibrahim untuk mendidik putranya agar menjadi nabi yang meneruskan dakwahnya. Nabi Ishaq pun diutus untuk membimbing kaumnya agar menyembah Allah dan menjauhi kemusyrikan. Ia mengajarkan pentingnya iman, ketakwaan, dan hidup menurut petunjuk Allah.
+
+            Kaum yang diajak Nabi Ishaq beriman kepadanya dan menjadi pengikut yang setia. Nabi Ishaq sangat dihormati dan dicintai oleh kaumnya karena sifatnya yang lembut, sabar, dan bijaksana dalam menyampaikan wahyu Allah.`;
+            break;
+
+        case 3:
+            part.innerHTML = 'Bagian Tengah:';
+            title.innerHTML = 'Nabi Ishaq dan Putranya, Nabi Ya\'qub';
+            canvas.innerHTML = `Nabi Ishaq menikah dengan wanita yang bernama Rifqah dan memiliki dua anak, yaitu Esau dan Ya'qub. Dari anak-anak Nabi Ishaq, Nabi Ya'qub (juga dikenal sebagai Israel) menjadi penerus dakwah dan seorang nabi yang besar.
+
+            Nabi Ishaq sangat mencintai kedua anaknya dan mendidik mereka dengan penuh kasih sayang. Ia mengajarkan mereka tentang keesaan Allah dan pentingnya menjalankan perintah-Nya. Nabi Ishaq menyaksikan bagaimana anaknya, Nabi Ya'qub, tumbuh menjadi pemimpin yang membawa umat kepada jalan yang benar.`;
+            break;
+
+        case 4:
+            part.innerHTML = 'Penutup:';
+            title.innerHTML = 'Penutup';
+            canvas.innerHTML = `Nabi Ishaq meninggal dalam keadaan penuh berkah dan diterima oleh Allah dengan penghormatan. Ia dikenal sebagai nabi yang sangat sabar, taat, dan penuh kasih kepada keluarganya. Nabi Ishaq menjadi teladan dalam hal ketakwaan kepada Allah dan pentingnya mendidik generasi penerus yang saleh.`;
+            break;
+
+        case 5:
+            part.innerHTML = 'Pesan Moral:';
+            title.innerHTML = ' ';
+            canvas.innerHTML = `Kisah Nabi Ishaq mengajarkan kita tentang pentingnya doa, sabar, dan keimanan yang kuat kepada Allah. Ia juga mengajarkan nilai pentingnya pendidikan agama bagi anak-anak agar mereka tumbuh menjadi pribadi yang saleh dan menjadi penerus dakwah yang baik. Keberkahan hidup datang dari ketakwaan dan kepatuhan kepada Allah.`;
+            break;
+    }
+
+    prevButton.disabled = (page === 0);
+            if (page === maxPage) {
+                nextImg.src = '../../asset/button/finish.png';
+                nextButton.onclick = () => {
+                    transitionOutAll()
+                    setTimeout(() => {
+
+                        window.location.href = '../../soal/NabiAdam.html';
+                    }, 1000)
+                };
+
+            } else {
+                nextImg.src = '../../asset/button/next.png';
+                nextButton.onclick = next;
+            }
+
+            if (prevButton.disabled) {
+                prevImg.classList.add('monochrome');
+            } else {
+                prevImg.classList.remove('monochrome');
+            }
+}
+
+    </script>
+
+    <script src="../../node_modules/swiper/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>
