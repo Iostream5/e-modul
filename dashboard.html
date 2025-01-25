@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="animate/node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="bootstrap/custom.css">
 </head>
+
 <body background="">
     <div class="main d-flex align-items-center justify-content-center">
         <div class="bg-main">
@@ -19,20 +20,23 @@
                     <img class="asset angin" src="images/asset_angin.png" alt="">
                 </div>
                 <img class="asset animate__animated tumbleweed" height="" src="images/unscreen.gif" alt="">
-                <img src="images/unta1.png" class="img-fluid asset2 animate__animated animate__jackInTheBox" alt="Gambar Nabi dan Unta">
+                <img src="images/unta1.png" class="img-fluid asset2 animate__animated animate__jackInTheBox"
+                    alt="Gambar Nabi dan Unta">
             </div>
             <div class="motiv">
                 <img class="animate__animated man img-fluid animate__fadeInRight" src="images/man.png" alt="">
                 <div class="message">
-                    <p class="pesan animate__animated animate__fadeInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, tenetur? </p>
-                    <img class="animate__animated chat img-fluid animate__fadeInRight" src="images/buble-chat.png" alt="">
+                    <p class="pesan animate__animated animate__fadeInRight">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Mollitia, tenetur? </p>
+                    <img class="animate__animated chat img-fluid animate__fadeInRight" src="images/buble-chat.png"
+                        alt="">
                 </div>
             </div>
         </div>
         <div class="cover container-fluid text-center align-items-baseline p-5 row d-flex" style="height :100vh;">
             <div class="judul my-5 animate__animated animate__bounceInDown">
                 <h3 class=" animate__animated animate__bounceInDown text-nowrap">Kisah Hebat Nabi-Nabi</h2>
-                <h2 class=" fw-bolder animate__animated animate__bounceInDown">Petualangan Iman dan Mukjizat</h1>
+                    <h2 class=" fw-bolder animate__animated animate__bounceInDown">Petualangan Iman dan Mukjizat</h1>
             </div>
             <div class="my-5"></div>
             <div class="my-5"></div>
@@ -44,34 +48,46 @@
             </div>
         </div>
     </div>
-
+    <audio style="display: none;" id="clickSound2">
+        <source src="asset/sound/play.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <script>
-        document.getElementById('button').addEventListener('click', function() {
-            document.querySelectorAll('.animate__bounceInDown').forEach(function(element) {
+        const clickSound2 = document.getElementById('clickSound2');
+
+        document.getElementById('button').addEventListener('click', function () {
+            document.querySelectorAll('.animate__bounceInDown').forEach(function (element) {
                 element.classList.remove('animate__bounceInDown');
                 element.classList.add('animate__bounceOutUp');
             });
-            document.querySelectorAll('.animate__rollIn').forEach(function(element) {
+            document.querySelectorAll('.animate__rollIn').forEach(function (element) {
                 element.classList.remove('animate__rollIn');
                 element.classList.add('animate__rollOut');
             });
-            document.querySelectorAll('.animate__jackInTheBox').forEach(function(element) {
+            document.querySelectorAll('.animate__jackInTheBox').forEach(function (element) {
                 element.classList.remove('animate__jackInTheBox');
                 element.classList.add('animate__bounceOutDown');
             });
-            document.querySelectorAll('.animate__bounceInRight').forEach(function(element) {
+            document.querySelectorAll('.animate__bounceInRight').forEach(function (element) {
                 element.classList.remove('animate__bounceInRight');
                 element.classList.add('animate__bounceOutDown');
             });
-            document.querySelectorAll('.animate__fadeInRight').forEach(function(element) {
+            document.querySelectorAll('.animate__fadeInRight').forEach(function (element) {
                 element.classList.remove('animate__fadeInRight');
                 element.classList.add('animate__fadeOutRight');
             });
-    
-            setTimeout(function() {
+            
+
+            setTimeout(function () {
                 window.location.href = 'page/DaftarIsi.html';
             }, 500);
+            clicks2();
         });
+
+
+        function clicks2() {
+            clickSound2.play();
+        }
     </script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>

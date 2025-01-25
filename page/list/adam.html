@@ -105,6 +105,10 @@
                 element.classList.remove('animate__bounceInDown2');
                 element.classList.add('animate__bounceOutUp');
             });
+            document.querySelectorAll('.animate__fadeIn2').forEach(function (element) {
+                element.classList.remove('animate__fadeIn2');
+                element.classList.add('animate__bounceOutDown');
+            });
         }
 
         const maxPage = 6;
@@ -198,7 +202,7 @@
 
             prevButton.disabled = (page === 0);
             if (page >= maxPage) {
-                nextImg.src = '../../asset/button/finish.png';
+                nextImg.src = '../../images/gameBtn.png';
                 nextButton.onclick = () => {
                     transitionOutAll()
                     setTimeout(() => {
