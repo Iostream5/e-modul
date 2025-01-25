@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Pilihan Ganda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .question {
+            display: none;
+        }
+        .question.active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soal Pilihan Ganda</h1>
+
+    <form id="quiz-form">
+        <div id="questions-container"></div>
+        <button id="next-button" type="button" style="display:none" onclick="nextQuestion()">Next</button>
+        <button id="submit-button" type="button" style="display:none" onclick="showResult()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        const allQuestions = [
+            { id: 1, question: "Apa ibu kota Indonesia?", options: { a: "Surabaya", b: "Jakarta", c: "Bandung", d: "Medan" }, answer: "b" },
+            { id: 2, question: "Apa hasil dari 5 + 3?", options: { a: "6", b: "7", c: "8", d: "9" }, answer: "c" },
+            { id: 3, question: "Siapa penemu bola lampu?", options: { a: "Alexander Graham Bell", b: "Nikola Tesla", c: "Thomas Edison", d: "Isaac Newton" }, answer: "c" },
+            { id: 4, question: "Apa warna bendera Indonesia?", options: { a: "Merah-Putih", b: "Putih-Merah", c: "Biru-Putih", d: "Hijau-Kuning" }, answer: "a" },
+            { id: 5, question: "Hewan apa yang dikenal sebagai raja hutan?", options: { a: "Harimau", b: "Gajah", c: "Singa", d: "Beruang" }, answer: "c" },
+            // Tambahkan total hingga 30 soal di sini
+        ];
+
+        const selectedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+        const answeredQuestions = new Set();
+        const answers = {};
+        let currentQuestionIndex = 0;
+
+        function renderQuestion(index) {
+            const container = document.getElementById("questions-container");
+            const question = selectedQuestions[index];
+
+            container.innerHTML = `
+                <div class="question active">
+                    <p>${index + 1}. ${question.question}</p>
+                    <div class="options">
+                        ${Object.entries(question.options).map(([key, value]) => `
+                            <label><input type="radio" name="q${index}" value="${key}"> ${key}) ${value}</label><br>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("next-button").style.display = index < selectedQuestions.length - 1 ? "block" : "none";
+            document.getElementById("submit-button").style.display = index === selectedQuestions.length - 1 ? "block" : "none";
+        }
+
+        function nextQuestion() {
+            const form = document.getElementById("quiz-form");
+            const userAnswer = form[`q${currentQuestionIndex}`].value;
+
+            if (!userAnswer) {
+                alert("Harap pilih jawaban terlebih dahulu!");
+                return;
+            }
+
+            answers[`q${currentQuestionIndex}`] = userAnswer;
+            answeredQuestions.add(currentQuestionIndex);
+
+            do {
+                currentQuestionIndex++;
+            } while (answeredQuestions.has(currentQuestionIndex) && currentQuestionIndex < selectedQuestions.length);
+
+            if (currentQuestionIndex < selectedQuestions.length) {
+                renderQuestion(currentQuestionIndex);
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const form = document.getElementById("quiz-form");
+            const userAnswer = form[`q${currentQuestionIndex}`]?.value;
+
+            if (userAnswer) {
+                answers[`q${currentQuestionIndex}`] = userAnswer;
+            }
+
+            let score = 0;
+            selectedQuestions.forEach((question, index) => {
+                if (answers[`q${index}`] === question.answer) {
+                    score++;
+                }
+            });
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = `Skor Anda: ${score} dari ${selectedQuestions.length}`;
+
+            document.getElementById("questions-container").style.display = "none";
+            document.getElementById("next-button").style.display = "none";
+            document.getElementById("submit-button").style.display = "none";
+        }
+
+        // Render pertanyaan pertama saat halaman dimuat
+        renderQuestion(currentQuestionIndex);
+    </script>
+</body>
+</html>
