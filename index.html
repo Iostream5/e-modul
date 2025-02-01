@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Persistent Example</title>
+  <link rel="stylesheet" href="bootstrap/DaftarIsi.css">
+
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      /* position: absolute;
+      top: 0;
+      left: 0; */
+    }
+    #audio-player {
+        display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #f1f1f1;
+      padding: 10px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .option{
+      position: absolute;
+      right: 10%;
+      top: 5%;
+    }
+  </style>
+</head>
+<body>
+  <div id="audio-player">
+    <audio id="backgroundMusic" controls autoplay loop>
+      <source src="asset/sound/happy-kids-background-286908.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="d-flex gap-0 option">
+    <a href="#" class="btn p-0" onclick="clicks()" id="openModalBtn" >
+        <img src="asset/button/setting.png" alt="Settings" class="img-fluid rounded" width="35" height="35">
+    </a>
+</div>
+  <div class="modal-overlay" id="modalOverlay" style="display: none;">
+    <div class="modal-box">
+        <h3>Pengaturan</h3>
+        <h5 style="align-items: center;display: flex;justify-content: center;">Music :       
+        <!-- Tombol ON/OFF menggunakan gambar -->
+        <img id="toggleMusicImage" 
+             src="asset/button/on-btn.png" 
+             alt="Music ON" 
+             style="width: 50px; cursor: pointer;" />
+        </h5> 
+        <!-- Tombol Close -->
+        <img 
+        src="asset/button/x-button.png" 
+        alt="Close" 
+        id="closeModalImg" 
+        style="cursor: pointer; width: 50px; height: auto;"
+        class="farbtn" 
+        onclick="clicks()"
+      />            
+    </div>
+</div>
+
+
+  <!-- Main Content with Iframe -->
+  <iframe src="dashboard.html" id="content"></iframe>
+
+  <audio style="display: none;" id="clickSound">
+    <source src="asset/sound/click.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio style="display: none;" id="clickSound2">
+    <source src="asset/sound/click2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Script to handle iframe navigation
+    function navigateTo(url) {
+      document.getElementById('content').src = url;
+    }
+
+    
+    const openModalBtn = document.getElementById('openModalBtn');
+       const closeModalBtn = document.getElementById('closeModalImg');
+       const modalOverlay = document.getElementById('modalOverlay');
+       const toggleMusicImage = document.getElementById('toggleMusicImage');
+       const backgroundMusic = document.getElementById('backgroundMusic');
+
+       // Membuka Layar Setting
+       openModalBtn.addEventListener('click', function() {
+           modalOverlay.style.display = 'flex'; // Tampilkan modal
+       });
+
+
+       // Menutup Layar setting
+       modalOverlay.addEventListener('click', function(e) {
+           if (e.target === modalOverlay) {
+               modalOverlay.style.display = 'none';
+           }
+       });
+   
+       // Event listener untuk tombol close modal
+       closeModalBtn.addEventListener('click', function () {
+           modalOverlay.style.display = 'none';
+       });
+   
+       // Event listener untuk tombol ON/OFF musik menggunakan gambar
+       let isMusicOn = true; // Status awal musik
+       toggleMusicImage.addEventListener('click', function () {
+           isMusicOn = !isMusicOn; // Toggle status
+   
+           if (isMusicOn) {
+               toggleMusicImage.src = "asset/button/on-btn.png"; // Gambar saat musik ON
+               backgroundMusic.play();
+               clicks2() // Putar musik
+           } else {
+               toggleMusicImage.src = "asset/button/off-btn.png"; // Gambar saat musik OFF
+               backgroundMusic.pause();
+               clicks2() // Hentikan musik
+           }
+       });
+
+       // Ambil elemen tombol dan elemen audio
+    const clickSound = document.getElementById('clickSound');
+    const clickSound2 = document.getElementById('clickSound2');
+
+    // Tambahkan event listener untuk menangani klik
+    function clicks(){
+      clickSound.play();
+    }
+    function clicks2(){
+      clickSound2.play();
+    }
+  </script>
+</body>
+</html>

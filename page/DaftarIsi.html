@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 </head>
 <body class="body">
     <audio id="backgroundMusic" loop>
-        <source src="../asset/sound/" type="audio/mpeg">
+        <source src="../asset/sound/Kalam.mp3" type="audio/mpeg">
         <!-- Your browser does not support the audio element. -->
     </audio>
     <div class="container-fluid">
@@ -23,18 +24,6 @@
                     <img src="../images/org.png" alt="" srcset="">
                 </div>
             </h2>
-            
-            <!-- Gambar tombol di pojok kanan -->
-            <div class="d-flex gap-0">
-                <!-- Gambar tombol Kembali -->
-                <a href="../dashboard.html" class="btn p-0">
-                    <img src="../asset/button/back.png" alt="B" class="img-fluid rounded" width="35" height="35">
-                </a>
-                <!-- Gambar tombol Setting -->
-                <a href="#" class="btn p-0" id="openModalBtn">
-                    <img src="../asset/button/setting.png" alt="Settings" class="img-fluid rounded" width="35" height="35">
-                </a>
-            </div>
         </div>
     </div>
 
@@ -42,75 +31,190 @@
         <div class="search-bar mt-2" data-wow-delay="0.1s">
             <i class="fas fa-search search-icon"></i>
             <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterItems()">
+            <!--tombol x pada search-->
             <i class="fas fa-times clear-icon me-2" onclick="clearSearch()"></i>
         </div>
-    
-    <div class="grid-container">
-        <div class="modal-overlay" id="modalOverlay" style="display: none;">
-            <div class="modal-box">
-                <h3>Pengaturan</h3>
-                <h5>Music :       
-                <!-- Tombol ON/OFF menggunakan gambar -->
-                <img id="toggleMusicImage" 
-                     src="../asset/button/on-btn.png" 
-                     alt="Music ON" 
-                     style="width: 50px; cursor: pointer;" />
-                </h5> 
-                <!-- Tombol Close -->
-                <img 
-                src="../asset/button/x-button.png" 
-                alt="Close" 
-                id="closeModalImg" 
-                style="cursor: pointer; width: 50px; height: auto;"
-                class="farbtn" 
-              />            
+
+        <div class="grid-container">
+            <div class="modal-overlay" id="modalOverlay" style="display: none;">
+                <div class="modal-box">
+                    <h3>Pengaturan</h3>
+                    <h5>Music :
+                        <!-- Tombol ON/OFF menggunakan gambar -->
+                        <img id="toggleMusicImage" src="../asset/button/on-btn.png" alt="Music ON"
+                            style="width: 50px; cursor: pointer;" />
+                    </h5>
+                    <!-- Tombol Close -->
+                    <img src="../asset/button/x-button.png" alt="Close" id="closeModalImg"
+                        style="cursor: pointer; width: 50px; height: auto;" class="farbtn" />
+                </div>
             </div>
+            <!-- A -->
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi adam">
+                <button id="openModalBtn" onclick="delayedRedirect('list/adam.html')">
+                    <img src="../images/adam.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi idris">
+                <button id="openModalBtn" onclick="delayedRedirect('list/idris.html')">
+                    <img src="../images/idris.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi nuh">
+                <button id="openModalBtn" onclick="delayedRedirect('list/nuh.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <!-- B -->
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi hud">
+                <button id="openModalBtn" onclick="delayedRedirect('list/hud.html')">
+                    <img src="../images/hud.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi shalih">
+                <button id="openModalBtn" onclick="delayedRedirect('list/soleh.html')">
+                    <img src="../images/sholeh.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ibrahim">
+                <button id="openModalBtn" onclick="delayedRedirect('list/ibrahim.html')">
+                    <img src="../images/ibrohim.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <!-- A -->
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi luth">
+                <button id="openModalBtn" onclick="delayedRedirect('list/luth.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ismail">
+                <button id="openModalBtn" onclick="delayedRedirect('list/ismail.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ishaq">
+                <button id="openModalBtn" onclick="delayedRedirect('list/ishaq.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <!-- B -->
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ya'qub">
+                <button id="openModalBtn" onclick="delayedRedirect('list/yakub.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi yusuf">
+                <button id="openModalBtn" onclick="delayedRedirect('list/yusuf.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ayyub">
+                <button id="openModalBtn" onclick="delayedRedirect('list/ayub.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi syu'aib">
+                <button id="openModalBtn" onclick="delayedRedirect('list/suaib.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi musa">
+                <button id="openModalBtn" onclick="delayedRedirect('list/musa.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi harun">
+                <button id="openModalBtn" onclick="delayedRedirect('list/harun.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi dzulkifli">
+                <button id="openModalBtn" onclick="delayedRedirect('list/dzulkifli.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi daud">
+                <button id="openModalBtn" onclick="delayedRedirect('list/daud.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi sulaiman">
+                <button id="openModalBtn" onclick="delayedRedirect('list/sulaiman.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ilyas">
+                <button id="openModalBtn" onclick="delayedRedirect('list/ilyas.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi ilyasa">
+                <button id="openModalBtn" onclick="delayedRedirect('list/ilyasa.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi yunus">
+                <button id="openModalBtn" onclick="delayedRedirect('list/yunus.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi zakaria">
+                <button id="openModalBtn" onclick="delayedRedirect('list/zakariya.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi yahya">
+                <button id="openModalBtn" onclick="delayedRedirect('list/yahya.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+            <div class="grid-item animate__animated animate__fadeInUp" id="nabi isa">
+                <button id="openModalBtn" onclick="delayedRedirect('list/isa.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+
+            <div class="grid-item animate__animated animate__fadeInUp" data-wow-delay="6s" id="nabi muhammad">
+                <button onclick="delayedRedirect('list/muhammad.html')">
+                    <img src="../images/mentahan.jpg" alt="Placeholder">
+                </button>
+            </div>
+
+
+
+
         </div>
-        <!-- A --> 
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi adam">
-            <a href="list/adam.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a>
-        </div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi idris">
-            <a href="list/idris.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a>
-        </div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi nuh">
-            <a href="list/nuh.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a>
-        </div>                         
-        <!-- B -->
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi hud"><a href="list/hud.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi shalih"><a href="list/soleh.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ibrahim"><a href="list/ibrahim.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <!-- A -->
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi luth"><a href="list/luth.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi ismail"><a href="list/ismail.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ishaq"><a href="list/ishaq.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <!-- B -->
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ya'qub"><a href="list/yakub.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi yusuf"><a href="list/yusuf.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp"  id="nabi ayyub"><a href="list/ayub.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi syu'aib"><a href="list/suaib.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi musa"><a href="list/musa.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi harun"><a href="list/harun.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi dzulkifli"><a href="list/dzulkifli.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi daud"><a href="list/daud.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi sulaiman"><a href="list/sulaiman.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi ilyas"><a href="list/ilyas.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi ilyasa"><a href="list/ilyasa.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi yunus"><a href="list/yunus.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi zakaria"><a href="list/zakariya.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi yahya"><a href="list/yahya.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-        <div class="grid-item animate__animated animate__fadeInUp" id="nabi isa"><a href="list/isa.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-
-        <div class="grid-item animate__animated animate__fadeInUp" data-wow-delay="6s" id="nabi muhammad"><a href="list/muhammad.html"><img src="../images/mentahan.jpg" alt="Placeholder"></a></div>
-
     </div>
-    </div>
+    <audio style="display: none;" id="clickSound">
+        <source src="../asset/sound/bubble.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const openModalBtn = document.getElementById('openModalBtn');
+        const clickSound = document.getElementById('clickSound');
+        function delayedRedirect(url) {
+            clickSound.play();
+            transitionOutAll()
+            setTimeout(function () {
+                window.location.href = url;
+            }, 1000); // Delay 1 detik sebelum berpindah
+        }
+
+
+        function transitionOutAll() {
+            document.querySelectorAll('.animate__fadeInUp').forEach(function (element) {
+                element.classList.remove('animate__fadeInUp');
+                element.classList.add('animate__fadeOutUp');
+            });
+        }
+
+    </script>
     <script src="../asset/js/wow.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../bootstrap/DaftarIsi.js"></script>
 </body>
+
 </html>

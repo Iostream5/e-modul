@@ -54,8 +54,36 @@
                     src="../../asset/button/next.png" alt="Next" class="img-fluid btn-img"></button>
         </div>
     </div>
+    <audio style="display: none;" id="clickSound2">
+        <source src="../../asset/sound/click2.mp3" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="clickSound">
+        <source src="../../asset/sound/click.mp3" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="home">
+        <source src="../../asset/sound/play.mp3" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="buble">
+        <source src="../../asset/sound/bubble.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
+        const clickSound2 = document.getElementById('clickSound2');
+        function clicks2() {
+            clickSound2.play();
+         }
+        const clickSound = document.getElementById('clickSound');
+        function clicks() {
+            clickSound.play();
+         }
+        const homeClick = document.getElementById('home');
+        function homeClicks() {
+            homeClick.play();
+         }
+        const buble= document.getElementById('buble');
+        function bubble() {
+            buble.play();
+         }
         const part = document.getElementById('part');
         const canvas = document.getElementById('text');
         const title = document.getElementById('title');
@@ -105,11 +133,16 @@
                 element.classList.remove('animate__bounceInDown2');
                 element.classList.add('animate__bounceOutUp');
             });
+            document.querySelectorAll('.animate__fadeIn2').forEach(function (element) {
+                element.classList.remove('animate__fadeIn2');
+                element.classList.add('animate__bounceOutDown');
+            });
         }
 
         const maxPage = 6;
 
         function home() {
+            homeClicks()
             transitionOutAll()
             setTimeout(() => {
                 window.location = "../DaftarIsi.html"
@@ -117,6 +150,7 @@
         }
 
         function next() {
+            clicks2()
             transitionOut()
             setTimeout(() => {
                 page++;
@@ -126,6 +160,7 @@
         }
 
         function prev() {
+            clicks()
             transitionOut()
             setTimeout(() => {
                 if (page > 0) {
@@ -197,10 +232,11 @@
             }
 
             prevButton.disabled = (page === 0);
-            if (page === maxPage) {
-                nextImg.src = '../../asset/button/finish.png';
+            if (page >= maxPage) {
+                nextImg.src = '../../images/gameBtn.png';
                 nextButton.onclick = () => {
                     transitionOutAll()
+                    bubble()
                     setTimeout(() => {
 
                         window.location.href = '../../soal/NabiAdam.html';
