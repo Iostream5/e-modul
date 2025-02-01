@@ -138,7 +138,7 @@
         border-radius: 10px 0 0 10px;
     }
 }
-body {
+.body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -161,6 +161,7 @@ body {
     color: white;
     text-align: left;
     font-family: 'Merienda', cursive;
+    -webkit-animation: customBaca 2s ease 0s infinite normal none;
 }
 
 .title a{
@@ -349,3 +350,496 @@ body {
 }
   }
   
+
+
+
+
+
+
+
+
+  /* css soal  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bryndan', sans-serif;
+
+}
+
+body {
+    background: orange;
+    position: relative;
+}
+
+.bg-main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+}
+
+.asset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+}
+
+.question-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    width: 70%;
+    text-align: center;
+    z-index: 10; 
+}
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6e4f2c;
+    margin-bottom: 15px;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 2px;
+    /* background-color: yellow; */
+    height: 100%;
+    padding: 0;
+}
+
+.header img{
+    width: 95%;
+    height: 35%;
+}
+
+.header .bagian {
+    position: relative;
+    padding: 0 15px;
+    margin-top: 5%;
+    top: 0;
+    margin-bottom: 0;
+    width: 70%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #d6821c;
+    font-size: 1.2em;
+    text-shadow: -1px -1px 0 #eecfac,  
+         1px -1px 0 #eecfac,
+         -1px 1px 0 #eecfac,
+         1px 1px 0 #eecfac,
+         1px 1px 0 #eecfac;
+    /* background-color: #ffa07a; */
+    word-spacing: 2em;
+    }
+
+.header .part {
+    position: relative;
+    top: 0;
+    padding: 0 15px;
+    /* background-color: #ffa07a; */
+    font-size: 1.1em;
+    width: 90%;
+    color: #E3C49E;
+    text-shadow: -1px -1px 0 #6e4f2c,  
+         1px -1px 0 #6e4f2c,
+         -1px 1px 0 #6e4f2c,
+         1px 1px 0 #6e4f2c,
+         1px 1px 0 #6e4f2c;
+    line-height: 1em;
+}
+
+.header .icon .planet{
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    animation: bln 16s ease 0s infinite normal none;
+}
+
+.header .icon .awan{
+    width: 80px;
+    height: 60px;
+    margin-left: 200px;
+    animation: awan 5s ease 0s infinite alternate none;
+}
+
+/* Copy this code after the above code */
+@keyframes bln {
+    0%,
+    100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+    }
+
+    10% {
+    transform: rotate(8deg);
+    }
+
+    20%,
+    40%,
+    60% {
+    transform: rotate(-10deg);
+    }
+
+    30%,
+    50%,
+    70% {
+    transform: rotate(10deg);
+    }
+
+    80% {
+    transform: rotate(-8deg);
+    }
+
+    90% {
+    transform: rotate(8deg);
+    }
+}
+
+/* Copy this code after the above code */
+@keyframes awan {
+    0% {
+    transform: translateX(10);
+    }
+
+    100% {
+    transform: translateX(30px);
+    }
+}
+
+
+
+.roll {
+    width: 200px;
+}
+
+.content {
+    position: absolute;
+    top: 300px;
+    height: 50%;
+    width: 95%;
+    padding: 15px;
+}
+
+.paperin {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    position: absolute;
+    top: 57%;
+    height: 220px;
+    overflow-y: auto;
+    text-align: center;
+    max-width: 250px;
+    border-radius: 10%;
+    text-shadow: -1px -1px 0 #E3C49E,
+        1px -1px 0 #E3C49E,
+        -1px 1px 0 #E3C49E;
+    color: #6e4f2c;
+    font-size: 1em;
+
+}
+
+@media (min-width:400px) {
+    .header {
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .question {
+        font-size: 18px;
+    }
+
+    .btn-container button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .question-container {
+        width: 90%;
+    }
+}
+
+@media (min-width:500px) {
+    .header {
+        margin-left: 20%;
+    }
+    .header .icon .planet{
+        width: 100px;
+        height: 100px;
+    }
+
+    .header .icon .awan{
+        width: 150px;
+        height: 120px;
+        margin-left: 450px;
+    }
+}
+
+@media (min-width:700px) {
+    .header {
+        margin-left: 5%;
+    }
+}
+
+@media (min-width:850px) {
+    .header {
+        margin-left: 7%;
+    }
+    .bagian,.part{
+        left: 20px;
+    }
+    .bagian{
+        font-size: 1em;
+    }
+    .part{
+        font-size: 1em;
+    }
+}
+
+@media (min-width:900px) {
+    .header {
+        margin-left: 7%;
+    }
+    
+}
+
+@media (min-width:1000px) {
+    .header {
+        margin-left: 25%;
+        top: 25px;
+    }
+
+    .roll {
+        width: 350px;
+    }
+
+    .content {
+        top: 150px;
+    }
+    .header .icon .planet{
+        width: 80px;
+        height: 80px;
+    }
+
+    .header .icon .awan{
+        width: 120px;
+        height: 100px;
+        margin-left: 400px;
+    }
+}
+
+@media(min-height:400px) {
+    .text {
+        top: 60%;
+        overflow-y: auto;
+        max-width: 200px;
+        height: 180px;
+        font-size: 15px;
+    }
+}
+
+@media(min-height:600px) {
+    .text {
+        top: 53%;
+        overflow-y: auto;
+        max-width: 280px;
+        height: 250px;
+    }
+}
+
+@media(min-height:650px) {
+    .text {
+        top: 53%;
+        overflow-y: auto;
+        max-width: 250px;
+        height: 250px;
+    }
+}
+
+@media(min-height:800px) {
+    .text {
+        top: 57%;
+        overflow-y: auto;
+        max-width: 300px;
+        height: 250px;
+    }
+}
+
+@media(min-height:900px) {
+    .text {
+        top: 57%;
+        overflow-y: auto;
+        max-width: 320px;
+        height: 250px;
+    }
+}
+
+@media(min-height:1000px) {
+    .text {
+        top: 50%;
+        overflow-y: auto;
+        max-width: 520px;
+        height: 350px;
+        font-size: 20px;
+    }
+}
+
+@media(min-height:1200px) {
+    .text {
+        top: 50%;
+        overflow-y: auto;
+        max-width: 650px;
+        height: 400px;
+        font-size: 25px;
+    }
+}
+
+@media(min-height:1300px) {
+    .text {
+        top: 50%;
+        overflow-y: auto;
+        max-width: 700px;
+        height: 400px;
+        font-size: 25px;
+    }
+}    
+
+.btna button{
+    width: 145px;
+    height: 25px;
+    padding: 18px;
+    border-radius: 8px;
+    border: none;
+}
+.content {
+    padding: 20px;
+}
+
+.content .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Jarak antar tombol */
+    justify-content: center;
+}
+
+.btn-container .btn {
+    flex: 1 1 100%; /* Default: tombol lebar penuh */
+    max-width: 100%; /* Hindari tombol melebar lebih besar */
+    animation: jawaban 20s ease 0s infinite alternate;
+}
+
+@keyframes jawaban {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+    }
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+    }
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+    }
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
+}
+
+.btn-container .btn button {
+    width: 100%; /* Pastikan tombol mengikuti lebar kontainer */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #5A3E2B; /* Warna teks */
+    background-color: #ddc082; /* Warna cokelat terang seperti kertas */
+    border: 2px solid #B89B6A; /* Border cokelat lebih gelap */
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Georgia', serif; /* Gaya font yang klasik */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+.btn-container .btn button:hover {
+    background-color: #C4A778; /* Warna lebih gelap saat hover */
+    border-color: #9A7B4A;
+    color: white;
+}
+
+/* Untuk layar tablet/ipad dan laptop (tampilkan 2 tombol per baris) */
+@media (min-width: 768px) {
+    .btn-container .btn {
+        flex: 1 1 calc(50% - 10px); /* 2 tombol per baris */
+        max-width: calc(50% - 10px); /* Hindari overflow */
+    }
+    .content{
+        margin-top: 20%;
+    }
+}
+
+/* Untuk layar besar (desktop/laptop lebih besar) */
+@media (min-width: 1200px) {
+    .btn-container .btn {
+        flex: 1 1 calc(25% - 10px); /* 4 tombol per baris */
+        max-width: calc(25% - 10px);
+    }
+}
+
+#modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#modal-overlay.fade-in {
+    opacity: 1;
+}
+
+#modal-overlay.fade-out {
+    opacity: 0;
+}
+
+#modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+}
