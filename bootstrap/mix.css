@@ -646,6 +646,9 @@ body {
     scrollbar-width: none;
 }
 
+
+/* css 2 combination */
+
 @media (min-width: 600px){
     .org img{
         width: 50px;
@@ -786,6 +789,9 @@ body {
         border-radius: 10px 0 0 10px;
     }
 }
+
+
+
 .body {
     margin: 0;
     padding: 0;
@@ -1132,7 +1138,7 @@ body {
     width: 200px;
 }
 
-.content {
+.contents {
     position: absolute;
     top: 300px;
     height: 50%;
@@ -1207,7 +1213,7 @@ body {
         width: 350px;
     }
 
-    .content {
+    .contents {
         top: 150px;
     }
     .headerSoal .icon .planet{
@@ -1229,11 +1235,11 @@ body {
     border-radius: 8px;
     border: none;
 }
-.content {
+.contents {
     padding: 20px;
 }
 
-.content .btn-container {
+.contents .btn-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1294,10 +1300,10 @@ body {
     .btn-container .btn {
         flex: 1 1 calc(50% - 10px);
         max-width: calc(50% - 10px);
-    /* }
-    .content{
+    }
+    .contents{
         margin-top: 20%;
-    } */
+    }
 }
 
 
