@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../animate/node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="../bootstrap/mix.css">
 </head>
+
 <body class="overflow-hidden">
     <div class="main d-flex align-items-center justify-content-center">
         <div class="bg-main">
@@ -58,51 +60,53 @@
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
-    
+
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
+            { id: 1, question: "Siapakah Nabi Daud?", answers: ["Seorang penyair", "Seorang nabi dan raja", "Seorang saudagar", "Seorang panglima perang"], correct: "Seorang nabi dan raja" },
+            { id: 2, question: "Apa mukjizat yang dimiliki oleh Nabi Daud?", answers: ["Membelah lautan", "Menghidupkan orang mati", "Melunakkan besi", "Menyembuhkan orang sakit"], correct: "Melunakkan besi" },
+            { id: 3, question: "Kitab suci yang diwahyukan kepada Nabi Daud adalah?", answers: ["Taurat", "Zabur", "Injil", "Al-Qur'an"], correct: "Zabur" },
+            { id: 4, question: "Siapakah raksasa yang dikalahkan oleh Nabi Daud?", answers: ["Fir'aun", "Jalut", "Namrud", "Abu Jahal"], correct: "Jalut" },
+            { id: 5, question: "Apa senjata yang digunakan Nabi Daud untuk mengalahkan Jalut?", answers: ["Pedang", "Busur dan anak panah", "Tombak", "Ketapel dan batu"], correct: "Ketapel dan batu" },
+            { id: 6, question: "Apa yang terjadi setelah Nabi Daud mengalahkan Jalut?", answers: ["Ia diangkat sebagai raja", "Ia menjadi panglima perang", "Ia diasingkan", "Ia kembali bertani"], correct: "Ia diangkat sebagai raja" },
+            { id: 7, question: "Nabi Daud dikenal sebagai raja yang ...", answers: ["Keji", "Zalim", "Bijaksana dan adil", "Suka berperang"], correct: "Bijaksana dan adil" },
+            { id: 8, question: "Nabi Daud mendapat wahyu dalam bentuk?", answers: ["Surat", "Mimpi", "Zabur", "Petir"], correct: "Zabur" },
+            { id: 9, question: "Siapa yang datang mengadu kepada Nabi Daud dalam kasus kebun anggur?", answers: ["Dua orang saudara", "Dua orang petani", "Dua orang penggembala", "Dua orang pedagang"], correct: "Dua orang penggembala" },
+            { id: 10, question: "Bagaimana keputusan Nabi Daud dalam kasus kebun anggur?", answers: ["Memberikan kebun kepada pemilik kambing", "Menghukum pemilik kebun", "Mengganti rugi dengan kambing", "Membagi dua kebun"], correct: "Mengganti rugi dengan kambing" },
+            { id: 11, question: "Apa yang terjadi saat Nabi Daud melantunkan Zabur?", answers: ["Gunung dan burung ikut bertasbih", "Langit berubah warna", "Bumi bergetar", "Orang-orang menangis"], correct: "Gunung dan burung ikut bertasbih" },
+            { id: 12, question: "Apa pelajaran dari kisah Nabi Daud melawan Jalut?", answers: ["Keberanian dan keimanan", "Kekuasaan lebih penting", "Harus selalu takut", "Hanya orang besar yang bisa menang"], correct: "Keberanian dan keimanan" },
+            { id: 13, question: "Nabi Daud melantunkan Zabur dengan suara yang ...", answers: ["Sangat keras", "Merdu", "Pelan", "Tidak jelas"], correct: "Merdu" },
+            { id: 14, question: "Apa salah satu kebijakan Nabi Daud sebagai raja?", answers: ["Menyiksa rakyatnya", "Membantu orang miskin", "Menguasai negara lain", "Mengumpulkan kekayaan"], correct: "Membantu orang miskin" },
+            { id: 15, question: "Apa yang dapat kita pelajari dari kepemimpinan Nabi Daud?", answers: ["Menjadi pemimpin yang adil", "Memimpin dengan kekerasan", "Mencari keuntungan pribadi", "Mengabaikan rakyat"], correct: "Menjadi pemimpin yang adil" },
+            { id: 16, question: "Apa yang menjadi salah satu kelebihan Nabi Daud?", answers: ["Memiliki pasukan terbesar", "Dapat mengangkat benda berat", "Dapat melunakkan besi", "Dapat terbang"], correct: "Dapat melunakkan besi" },
+            { id: 17, question: "Mengapa Bani Israil memilih Nabi Daud sebagai raja?", answers: ["Karena keturunannya", "Karena kekayaannya", "Karena kebijaksanaannya", "Karena ketampanannya"], correct: "Karena kebijaksanaannya" },
+            { id: 18, question: "Bagaimana Nabi Daud menunjukkan rasa syukur kepada Allah?", answers: ["Dengan menyembah berhala", "Dengan memimpin dengan adil", "Dengan mengabaikan rakyatnya", "Dengan menumpuk harta"], correct: "Dengan memimpin dengan adil" },
+            { id: 19, question: "Apa yang menjadi contoh dari ketegasan Nabi Daud?", answers: ["Memimpin dengan bijaksana", "Menyerang negara lain", "Menolak berdagang", "Mengabaikan keadilan"], correct: "Memimpin dengan bijaksana" },
+            { id: 20, question: "Siapa yang menjadi musuh utama Nabi Daud dalam perang?", answers: ["Fir'aun", "Jalut", "Namrud", "Raja Romawi"], correct: "Jalut" },
+            { id: 21, question: "Apa hikmah dari kisah Nabi Daud?", answers: ["Kekuasaan adalah segalanya", "Keberanian dan keadilan", "Hanya orang besar yang bisa menang", "Harus selalu takut"], correct: "Keberanian dan keadilan" },
+            { id: 22, question: "Apa yang membedakan kepemimpinan Nabi Daud dengan yang lain?", answers: ["Kekerasan", "Keadilan dan kebijaksanaan", "Paksaan", "Kekuasaan mutlak"], correct: "Keadilan dan kebijaksanaan" },
+            { id: 23, question: "Apa yang seharusnya kita teladani dari Nabi Daud?", answers: ["Menjadi pemimpin yang zalim", "Menghindari tanggung jawab", "Bersikap adil dan bijaksana", "Mengabaikan rakyat"], correct: "Bersikap adil dan bijaksana" }
         ];
-    
+
+
         let randomQuestions = [];
         let currentQuestionIndex = 0;
         let correctAnswersCount = 0;
-    
+
         function getRandomQuestions(total) {
             const shuffled = [...questions].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, total);
         }
-    
+
         function loadQuestion(index) {
             const questionElement = document.getElementById("question");
             const buttons = document.querySelectorAll(".btn-container .btn button");
-        
+
             if (index >= randomQuestions.length) {
-                const stars = correctAnswersCount > 0 
+                const stars = correctAnswersCount > 0
                     ? `⭐️`.repeat(correctAnswersCount)
                     : "";
-        
+
                 buttons.forEach((button, i) => {
                     if (i === 0) {
                         if (correctAnswersCount > 0) {
@@ -120,34 +124,34 @@
                         button.onclick = () => {
                             window.location.href = "../page/list/daud.html"; // Ganti href sesuai keinginan
                         };
-                    }else if (i === 2) {
+                    } else if (i === 2) {
                         button.style.display = "block"; // Pastikan tombol kedua terlihat
                         button.textContent = "Kembali Ke Daftar Isi";
                         button.onclick = () => {
                             window.location.href = "../page/DaftarIsi.html"; // Ganti href sesuai keinginan
                         };
                     }
-                     else {
+                    else {
                         button.style.display = "none";
                     }
                 });
                 return;
             }
-        
+
             const currentQuestion = randomQuestions[index];
             questionElement.textContent = currentQuestion.question;
-        
+
             buttons.forEach((button, i) => {
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
             });
         }
-    
+
         function handleAnswer(question, selectedAnswer) {
             const modalOverlay = document.getElementById("modal-overlay");
             const modalContent = document.getElementById("modal-contents");
-    
+
             if (selectedAnswer === question.correct) {
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
@@ -156,14 +160,14 @@
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
             }
-    
+
             modalOverlay.style.display = "flex"; // Tampilkan modal
             modalOverlay.classList.add("fade-in");
-    
+
             setTimeout(() => {
                 modalOverlay.classList.remove("fade-in");
                 modalOverlay.classList.add("fade-out");
-    
+
                 setTimeout(() => {
                     modalOverlay.style.display = "none";
                     modalOverlay.classList.remove("fade-out");
@@ -172,13 +176,14 @@
                 }, 500);
             }, 2000);
         }
-    
+
         document.addEventListener("DOMContentLoaded", () => {
             randomQuestions = getRandomQuestions(5);
             loadQuestion(currentQuestionIndex);
         });
     </script>
     <script src="../node_modules/swiper/swiper-element-bundle.min.js"></script>
-    
+
 </body>
+
 </html>

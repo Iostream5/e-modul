@@ -61,29 +61,27 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa nabi yang dikenal dengan kesabarannya yang luar biasa?", answers: ["Nabi Musa", "Nabi Ayub", "Nabi Nuh", "Nabi Ibrahim"], correct: "Nabi Ayub" },
+    { id: 2, question: "Apa yang pertama kali diuji oleh Allah kepada Nabi Ayub?", answers: ["Kesehatannya", "Hartanya", "Keluarganya", "Imannya"], correct: "Hartanya" },
+    { id: 3, question: "Bagaimana sikap Nabi Ayub ketika diuji dengan kehilangan harta?", answers: ["Mengeluh", "Menyesali hidupnya", "Tetap bersyukur", "Marah kepada Allah"], correct: "Tetap bersyukur" },
+    { id: 4, question: "Apa ujian selanjutnya setelah Nabi Ayub kehilangan hartanya?", answers: ["Ia terkena penyakit yang parah", "Ia kehilangan imannya", "Ia diasingkan oleh masyarakat", "Ia dipenjara"], correct: "Ia terkena penyakit yang parah" },
+    { id: 5, question: "Siapa yang selalu setia mendampingi Nabi Ayub selama ujiannya?", answers: ["Saudaranya", "Istrinya", "Malaikat", "Tetangganya"], correct: "Istrinya" },
+    { id: 6, question: "Apa doa yang selalu dipanjatkan Nabi Ayub saat sakit?", answers: ["Ya Allah, sembuhkan aku segera", "Ya Allah, sesungguhnya aku telah ditimpa penyakit, dan Engkau adalah Tuhan yang Maha Penyayang", "Ya Allah, angkatlah penderitaanku", "Ya Allah, bebaskan aku dari ujian ini"], correct: "Ya Allah, sesungguhnya aku telah ditimpa penyakit, dan Engkau adalah Tuhan yang Maha Penyayang" },
+    { id: 7, question: "Apa yang ditanyakan istri Nabi Ayub kepadanya di tengah penderitaan?", answers: ["Mengapa engkau tidak mengeluh?", "Mengapa engkau tidak meminta kesembuhan kepada Allah?", "Mengapa engkau tidak pergi ke tabib?", "Mengapa engkau tetap berdoa?"], correct: "Mengapa engkau tidak meminta kesembuhan kepada Allah?" },
+    { id: 8, question: "Bagaimana jawaban Nabi Ayub kepada istrinya?", answers: ["Aku tidak berhak mengeluh kepada Allah", "Aku ingin sembuh sekarang juga", "Aku akan mencari tabib", "Aku menyerah dengan penderitaan ini"], correct: "Aku tidak berhak mengeluh kepada Allah" },
+    { id: 9, question: "Bagaimana akhirnya Allah menolong Nabi Ayub?", answers: ["Mengangkatnya ke surga", "Memberinya kesehatan kembali", "Membiarkannya sakit selamanya", "Menggantinya dengan nabi lain"], correct: "Memberinya kesehatan kembali" },
+    { id: 10, question: "Apa yang dikembalikan Allah kepada Nabi Ayub setelah ujiannya berakhir?", answers: ["Hartanya", "Keluarganya", "Kesehatannya", "Semua benar"], correct: "Semua benar" },
+    { id: 11, question: "Apa pelajaran utama dari kisah Nabi Ayub?", answers: ["Kesabaran dalam menghadapi ujian", "Kekayaan adalah segalanya", "Jangan percaya kepada Allah", "Menyalahkan keadaan"], correct: "Kesabaran dalam menghadapi ujian" },
+    { id: 12, question: "Apa yang Allah firmankan dalam QS. Sad: 43 tentang Nabi Ayub?", answers: ["Kami beri dia kembali kesehatannya dan keluarganya yang lebih baik", "Kami biarkan dia dalam penderitaan", "Kami mengangkatnya menjadi malaikat", "Kami jadikan dia seorang raja"], correct: "Kami beri dia kembali kesehatannya dan keluarganya yang lebih baik" },
+    { id: 13, question: "Berapa lama Nabi Ayub bersabar dalam penderitaannya?", answers: ["Beberapa hari", "Beberapa bulan", "Beberapa tahun", "Selamanya"], correct: "Beberapa tahun" },
+    { id: 14, question: "Bagaimana sikap Nabi Ayub saat mendapatkan kembali kesehatannya?", answers: ["Tetap bersyukur kepada Allah", "Menyesal atas penderitaannya", "Melupakan Allah", "Berhenti beribadah"], correct: "Tetap bersyukur kepada Allah" },
+    { id: 15, question: "Apa yang menunjukkan keteguhan hati Nabi Ayub?", answers: ["Tidak pernah menyerah", "Terus berdoa", "Tidak mengeluh kepada Allah", "Semua benar"], correct: "Semua benar" },
+    { id: 16, question: "Mengapa Allah menguji Nabi Ayub?", answers: ["Untuk melihat kesabarannya", "Untuk menghukumnya", "Untuk menggantinya dengan nabi lain", "Untuk membuatnya putus asa"], correct: "Untuk melihat kesabarannya" },
+    { id: 17, question: "Siapa yang berusaha membujuk Nabi Ayub agar menyerah?", answers: ["Tetangganya", "Istrinya", "Setan", "Saudaranya"], correct: "Setan" },
+    { id: 18, question: "Apa makna sabar dalam kisah Nabi Ayub?", answers: ["Tidak pernah menyerah dan terus berdoa kepada Allah", "Menahan rasa sakit tanpa berbuat apa-apa", "Tidak peduli dengan penderitaan", "Berhenti berharap"], correct: "Tidak pernah menyerah dan terus berdoa kepada Allah" },
+    { id: 19, question: "Bagaimana akhir dari kisah Nabi Ayub?", answers: ["Ia meninggal dalam kesengsaraan", "Ia menjadi raja", "Allah mengangkatnya sebagai nabi yang lebih besar", "Allah memberinya kebahagiaan kembali"], correct: "Allah memberinya kebahagiaan kembali" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

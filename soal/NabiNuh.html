@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang diutus oleh Allah untuk mengingatkan kaumnya?", answers: ["Nabi Nuh", "Nabi Musa", "Nabi Ibrahim", "Nabi Isa"], correct: "Nabi Nuh" },
+    { id: 2, question: "Apa yang dilakukan oleh sebagian besar kaumnya terhadap dakwah Nabi Nuh?", answers: ["Menolak dan mencemooh", "Menerima dengan lapang hati", "Menghargai Nabi Nuh", "Membantunya membangun bahtera"], correct: "Menolak dan mencemooh" },
+    { id: 3, question: "Berapa lama Nabi Nuh berdakwah kepada kaumnya?", answers: ["Ratusan tahun", "Satu tahun", "Sepuluh tahun", "Lima tahun"], correct: "Ratusan tahun" },
+    { id: 4, question: "Apa yang diperintahkan oleh Allah kepada Nabi Nuh setelah kaumnya menolak dakwah?", answers: ["Membangun bahtera", "Menyerah dan pergi", "Menghadapi mereka dengan perang", "Berdoa untuk mereka"], correct: "Membangun bahtera" },
+    { id: 5, question: "Apa yang Allah perintahkan untuk dimasukkan ke dalam bahtera?", answers: ["Orang-orang yang beriman dan sepasang hewan", "Hanya orang yang beriman", "Hanya sepasang hewan", "Keluarga Nabi Nuh"], correct: "Orang-orang yang beriman dan sepasang hewan" },
+    { id: 6, question: "Apa yang terjadi ketika waktu yang dijanjikan tiba?", answers: ["Banjir besar melanda", "Nabi Nuh meninggalkan kaumnya", "Kaum Nabi Nuh bertobat", "Allah mengirimkan api"], correct: "Banjir besar melanda" },
+    { id: 7, question: "Bagaimana nasib anak Nabi Nuh yang menolak ikut dalam bahtera?", answers: ["Tenggelam bersama kaum yang durhaka", "Selamat dan beriman", "Bertobat dan masuk bahtera", "Mengikuti Nabi Nuh ke Gunung Judi"], correct: "Tenggelam bersama kaum yang durhaka" },
+    { id: 8, question: "Di mana bahtera Nabi Nuh mendarat setelah banjir reda?", answers: ["Gunung Judi", "Gunung Sinai", "Padang pasir", "Laut Merah"], correct: "Gunung Judi" },
+    { id: 9, question: "Apa yang dilakukan Nabi Nuh setelah bahtera mendarat?", answers: ["Mengajarkan kebaikan dan ketakwaan", "Mendirikan kota baru", "Menunggu wahyu baru", "Meninggalkan kaumnya"], correct: "Mengajarkan kebaikan dan ketakwaan" },
+    { id: 10, question: "Apa pesan moral dari kisah Nabi Nuh?", answers: ["Pentingnya ketaatan kepada Allah", "Keingkaran itu diperbolehkan", "Kesombongan itu baik", "Meninggalkan dakwah adalah pilihan"], correct: "Pentingnya ketaatan kepada Allah" },
+    { id: 11, question: "Apa yang Allah lakukan ketika kaumnya tetap menolak Nabi Nuh?", answers: ["Menurunkan azab banjir besar", "Menghukum Nabi Nuh", "Memberikan wahyu baru", "Mengubah mereka menjadi hewan"], correct: "Menurunkan azab banjir besar" },
+    { id: 12, question: "Apa yang dilakukan Nabi Nuh ketika kaumnya mencemooh dakwahnya?", answers: ["Tetap sabar dan terus berdakwah", "Menyerah dan pergi", "Mengutuk mereka", "Mengundang mereka untuk berdiskusi"], correct: "Tetap sabar dan terus berdakwah" },
+    { id: 13, question: "Apa yang disebutkan dalam wahyu kepada Nabi Nuh tentang banjir?", answers: ["Azab berupa banjir besar", "Badai petir yang dahsyat", "Kehancuran seluruh kota", "Perang besar melawan Fir'aun"], correct: "Azab berupa banjir besar" },
+    { id: 14, question: "Siapa yang ikut bersama Nabi Nuh dalam bahtera?", answers: ["Orang-orang yang beriman dan sepasang hewan", "Kaum yang setia", "Keluarga Nabi Nuh saja", "Malaikat Jibril"], correct: "Orang-orang yang beriman dan sepasang hewan" },
+    { id: 15, question: "Apa yang dilakukan Allah untuk menyelamatkan Nabi Nuh dan pengikutnya?", answers: ["Mengarahkan mereka ke bahtera", "Menurunkan api dari langit", "Mengubah mereka menjadi hewan", "Memberikan mereka senjata"], correct: "Mengarahkan mereka ke bahtera" },
+    { id: 16, question: "Kenapa anak Nabi Nuh tidak ikut dalam bahtera?", answers: ["Ia menolak dan memilih bertahan di daratan", "Ia tidak mendengar perintah Nabi Nuh", "Ia tersesat", "Ia percaya pada kekuatan sendiri"], correct: "Ia menolak dan memilih bertahan di daratan" },
+    { id: 17, question: "Apa yang terjadi dengan bahtera Nabi Nuh setelah banjir reda?", answers: ["Mendarat di Gunung Judi", "Tenggelam ke dasar laut", "Hancur menjadi serpihan", "Mengapung tanpa arah"], correct: "Mendarat di Gunung Judi" },
+    { id: 18, question: "Siapa yang selamat dari banjir besar?", answers: ["Nabi Nuh dan orang-orang yang beriman", "Semua orang di dunia", "Hanya keluarga Nabi Nuh", "Kaum yang bertaubat"], correct: "Nabi Nuh dan orang-orang yang beriman" },
+    { id: 19, question: "Apa yang Nabi Nuh ajarkan setelah bahtera mendarat?", answers: ["Kebaikan dan ketakwaan kepada Allah", "Cara bertahan hidup", "Pertanian dan peternakan", "Membaca dan menulis"], correct: "Kebaikan dan ketakwaan kepada Allah" },
+    { id: 20, question: "Apa yang menjadi inti dari dakwah Nabi Nuh?", answers: ["Menyeru kepada penyembahan Allah", "Membangun peradaban baru", "Menaklukkan bangsa lain", "Menghancurkan berhala"], correct: "Menyeru kepada penyembahan Allah" },
+    { id: 21, question: "Apa yang membuat Nabi Nuh begitu teguh dalam dakwahnya?", answers: ["Kesabaran dan keimanan kepada Allah", "Keinginan untuk dihormati", "Rasa takut akan kematian", "Harapan akan kekayaan"], correct: "Kesabaran dan keimanan kepada Allah" },
+    { id: 22, question: "Apa yang terjadi dengan orang-orang yang menolak dakwah Nabi Nuh?", answers: ["Mereka tenggelam dalam banjir", "Mereka berpindah ke tempat lain", "Mereka berdamai dengan Nabi Nuh", "Mereka menjadi pengikut Nabi Nuh"], correct: "Mereka tenggelam dalam banjir" },
+    { id: 23, question: "Apa yang Nabi Nuh lakukan setelah azab datang?", answers: ["Menjaga orang-orang yang beriman dan berdoa", "Berjuang melawan azab", "Menghadapi kaumnya dengan marah", "Bergabung dengan pasukan Allah"], correct: "Menjaga orang-orang yang beriman dan berdoa" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

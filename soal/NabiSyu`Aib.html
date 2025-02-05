@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang diutus untuk membimbing kaum Madyan?", answers: ["Nabi Shu'aib", "Nabi Ibrahim", "Nabi Musa", "Nabi Daud"], correct: "Nabi Shu'aib" },
+    { id: 2, question: "Apa masalah utama yang dihadapi kaum Madyan?", answers: ["Kecurangan dalam perdagangan dan penyembahan berhala", "Kemiskinan dan kelaparan", "Kekurangan air dan sumber daya", "Perang antar suku"], correct: "Kecurangan dalam perdagangan dan penyembahan berhala" },
+    { id: 3, question: "Apa yang diajarkan Nabi Shu'aib kepada kaum Madyan?", answers: ["Keadilan, kejujuran, dan menyembah Allah", "Kekuatan dan keberanian", "Pentingnya berperang", "Pentingnya kekayaan dan kemakmuran"], correct: "Keadilan, kejujuran, dan menyembah Allah" },
+    { id: 4, question: "Bagaimana kaum Madyan merespon seruan Nabi Shu'aib?", answers: ["Mereka menolak dan menghina Nabi Shu'aib", "Mereka menerima ajaran Nabi Shu'aib dengan baik", "Mereka meminta lebih banyak mukjizat", "Mereka mendengarkan dengan penuh perhatian"], correct: "Mereka menolak dan menghina Nabi Shu'aib" },
+    { id: 5, question: "Apa yang menjadi ancaman dari kaum Madyan kepada Nabi Shu'aib?", answers: ["Mereka mengancam akan mengusir Nabi Shu'aib", "Mereka berencana untuk membunuh Nabi Shu'aib", "Mereka mengancam akan menghancurkan wahyu yang disampaikan", "Mereka mengancam akan menghancurkan kota Nabi Shu'aib"], correct: "Mereka mengancam akan mengusir Nabi Shu'aib" },
+    { id: 6, question: "Apa yang diperintahkan Nabi Shu'aib kepada kaum Madyan?", answers: ["Untuk bertobat, menyembah Allah, dan tidak berlaku curang", "Untuk meninggalkan tanah air mereka", "Untuk melawan pemerintah", "Untuk memberikan semua harta mereka kepada kaum yang miskin"], correct: "Untuk bertobat, menyembah Allah, dan tidak berlaku curang" },
+    { id: 7, question: "Apa yang diancamkan Nabi Shu'aib jika kaum Madyan tidak bertobat?", answers: ["Azab Allah akan datang", "Kehilangan semua harta mereka", "Perpecahan dalam masyarakat", "Kehilangan sumber daya alam"], correct: "Azab Allah akan datang" },
+    { id: 8, question: "Bagaimana reaksi kaum Madyan terhadap peringatan Nabi Shu'aib?", answers: ["Mereka tetap keras kepala dan menantang Nabi Shu'aib", "Mereka mulai bertobat", "Mereka meminta Nabi Shu'aib untuk memberi mereka mukjizat", "Mereka menyesal dan meminta ampunan"], correct: "Mereka tetap keras kepala dan menantang Nabi Shu'aib" },
+    { id: 9, question: "Apa yang terjadi setelah Nabi Shu'aib memberikan peringatan terus-menerus?", answers: ["Allah menurunkan azab-Nya berupa gempa bumi", "Allah mengirimkan angin kencang", "Allah menurunkan hujan deras", "Allah mengirimkan api yang membakar"], correct: "Allah menurunkan azab-Nya berupa gempa bumi" },
+    { id: 10, question: "Apa yang terjadi pada kaum Madyan setelah azab Allah datang?", answers: ["Mereka semua binasa", "Mereka bertobat dan diselamatkan", "Hanya sebagian yang selamat", "Mereka ditangkap dan dihukum"], correct: "Mereka semua binasa" },
+    { id: 11, question: "Siapa yang selamat dari azab Allah?", answers: ["Nabi Shu'aib dan pengikutnya yang beriman", "Kaum Madyan yang bertobat", "Raja dan pejabat Madyan", "Orang miskin yang tinggal di luar kota"], correct: "Nabi Shu'aib dan pengikutnya yang beriman" },
+    { id: 12, question: "Apa yang diajarkan Nabi Shu'aib tentang kejujuran?", answers: ["Kejujuran harus dijaga dalam segala aspek kehidupan", "Kejujuran hanya penting dalam urusan agama", "Kejujuran tidak penting jika sudah kaya", "Kejujuran hanya penting dalam keluarga"], correct: "Kejujuran harus dijaga dalam segala aspek kehidupan" },
+    { id: 13, question: "Apa yang diajarkan Nabi Shu'aib tentang ketakwaan?", answers: ["Ketakwaan adalah jalan menuju keselamatan", "Ketakwaan hanya berlaku untuk pemimpin", "Ketakwaan tidak penting dalam kehidupan sosial", "Ketakwaan hanya untuk orang yang miskin"], correct: "Ketakwaan adalah jalan menuju keselamatan" },
+    { id: 14, question: "Apa yang terjadi pada kaum yang berlaku curang menurut kisah Nabi Shu'aib?", answers: ["Mereka akan dihancurkan oleh azab Allah", "Mereka akan mendapatkan kekayaan berlimpah", "Mereka akan dihormati oleh Allah", "Mereka akan mendapatkan mukjizat"], correct: "Mereka akan dihancurkan oleh azab Allah" },
+    { id: 15, question: "Apa yang diajarkan Nabi Shu'aib tentang keadilan?", answers: ["Keadilan adalah prinsip utama dalam kehidupan sosial", "Keadilan hanya berlaku untuk pemerintah", "Keadilan hanya berlaku dalam agama", "Keadilan tidak penting dalam kehidupan sehari-hari"], correct: "Keadilan adalah prinsip utama dalam kehidupan sosial" },
+    { id: 16, question: "Apa yang seharusnya kita lakukan berdasarkan kisah Nabi Shu'aib?", answers: ["Berlaku adil dan jujur dalam setiap aspek kehidupan", "Menjadi kaya dengan cara apapun", "Berperang untuk membela kebenaran", "Menghindari segala peringatan dan nasihat"], correct: "Berlaku adil dan jujur dalam setiap aspek kehidupan" },
+    { id: 17, question: "Apa yang penting dalam berbisnis menurut Nabi Shu'aib?", answers: ["Menjaga kejujuran dalam timbangan dan takaran", "Meningkatkan keuntungan tanpa batas", "Menggunakan segala cara untuk memenangkan persaingan", "Membantu orang lain menjadi kaya"], correct: "Menjaga kejujuran dalam timbangan dan takaran" },
+    { id: 18, question: "Apa yang diajarkan Nabi Shu'aib tentang hubungan sosial?", answers: ["Kita harus menjaga hubungan baik dengan Allah dan sesama", "Kita harus mengabaikan orang miskin", "Kita hanya perlu peduli dengan keluarga sendiri", "Kita harus mendominasi orang lain"], correct: "Kita harus menjaga hubungan baik dengan Allah dan sesama" },
+    { id: 19, question: "Apa yang dimaksud dengan keadilan dalam kisah Nabi Shu'aib?", answers: ["Memberikan hak kepada setiap orang sesuai dengan yang seharusnya", "Menghukum orang yang bersalah", "Membagi kekayaan secara merata", "Menolong orang miskin tanpa memandang status"], correct: "Memberikan hak kepada setiap orang sesuai dengan yang seharusnya" },
+    { id: 20, question: "Apa pesan moral dari kisah Nabi Shu'aib?", answers: ["Pentingnya berlaku adil, jujur, dan menjaga integritas", "Kekuasaan harus diperjuangkan dengan keras", "Kekayaan adalah tujuan utama hidup", "Berperang untuk memenangkan kebenaran"], correct: "Pentingnya berlaku adil, jujur, dan menjaga integritas" },
+    { id: 21, question: "Apa yang terjadi jika kita tidak mengikuti ajaran Allah?", answers: ["Kita akan menghadapi azab Allah", "Kita akan diberkahi dengan kekayaan", "Kita akan mendapatkan penghargaan dunia", "Kita akan dilupakan oleh Allah"], correct: "Kita akan menghadapi azab Allah" },
+    { id: 22, question: "Apa yang harus kita lakukan agar terhindar dari azab Allah?", answers: ["Bertobat, berbuat baik, dan mengikuti ajaran Allah", "Menjadi kaya dan sukses", "Menghindari peringatan dan nasihat", "Mengabaikan kehidupan sosial"], correct: "Bertobat, berbuat baik, dan mengikuti ajaran Allah" },
+    { id: 23, question: "Apa yang dapat kita pelajari dari kisah Nabi Shu'aib?", answers: ["Kejujuran, keadilan, dan ketakwaan adalah kunci kehidupan yang baik", "Hanya kekayaan yang membuat hidup bahagia", "Perang adalah solusi bagi masalah besar", "Menjadi kaya adalah tujuan hidup utama"], correct: "Kejujuran, keadilan, dan ketakwaan adalah kunci kehidupan yang baik" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

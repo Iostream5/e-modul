@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa ibu Nabi Ishaq?", answers: ["Siti Sarah", "Siti Hajar", "Siti Aisyah", "Siti Maryam"], correct: "Siti Sarah" },
+    { id: 2, question: "Siapa ayah Nabi Ishaq?", answers: ["Nabi Ibrahim", "Nabi Musa", "Nabi Nuh", "Nabi Muhammad"], correct: "Nabi Ibrahim" },
+    { id: 3, question: "Berapa lama Nabi Ibrahim dan Siti Sarah menunggu untuk memiliki anak?", answers: ["Lama", "Tidak lama", "Satu tahun", "Tiga bulan"], correct: "Lama" },
+    { id: 4, question: "Apa doa Nabi Ibrahim dan Siti Sarah yang dikabulkan oleh Allah?", answers: ["Doa untuk diberikan anak", "Doa untuk kesehatan", "Doa untuk kekayaan", "Doa untuk kemenangan"], correct: "Doa untuk diberikan anak" },
+    { id: 5, question: "Siapa yang memberitahukan Nabi Ibrahim bahwa ia akan memiliki anak?", answers: ["Malaikat", "Nabi Ishaq", "Nabi Muhammad", "Siti Sarah"], correct: "Malaikat" },
+    { id: 6, question: "Apa yang Allah firmankan tentang kelahiran Nabi Ishaq?", answers: ["Dan Kami beri dia berita gembira tentang kelahiran seorang anak yang sabar", "Anakmu adalah seorang nabi", "Kehadiran anakmu akan membawa berkah", "Engkau akan menjadi bapak dari banyak nabi"], correct: "Dan Kami beri dia berita gembira tentang kelahiran seorang anak yang sabar" },
+    { id: 7, question: "Apa yang Nabi Ibrahim harapkan dari Nabi Ishaq?", answers: ["Menjadi seorang nabi", "Menjadi seorang raja", "Menjadi seorang pejuang", "Menjadi seorang ilmuwan"], correct: "Menjadi seorang nabi" },
+    { id: 8, question: "Apa tugas utama Nabi Ishaq?", answers: ["Menyebarkan wahyu Allah", "Menjadi pemimpin perang", "Mengajar orang kaya", "Menjadi raja"], correct: "Menyebarkan wahyu Allah" },
+    { id: 9, question: "Apa yang diajarkan oleh Nabi Ishaq kepada kaumnya?", answers: ["Menyembah Allah dan menjauhi kemusyrikan", "Bersyukur kepada raja", "Berperang demi kemenangan", "Menjadi kaya"], correct: "Menyembah Allah dan menjauhi kemusyrikan" },
+    { id: 10, question: "Apa sifat yang dimiliki Nabi Ishaq sehingga dihormati kaumnya?", answers: ["Lembut, sabar, dan bijaksana", "Kuat, cepat, dan berani", "Kaya dan berkuasa", "Tegas dan keras"], correct: "Lembut, sabar, dan bijaksana" },
+    { id: 11, question: "Siapa istri Nabi Ishaq?", answers: ["Rifqah", "Aisyah", "Fatimah", "Maryam"], correct: "Rifqah" },
+    { id: 12, question: "Siapa anak-anak Nabi Ishaq?", answers: ["Esau dan Ya'qub", "Ismail dan Ishaq", "Nabi Musa dan Harun", "Muhammad dan Ali"], correct: "Esau dan Ya'qub" },
+    { id: 13, question: "Siapa yang menjadi penerus dakwah setelah Nabi Ishaq?", answers: ["Nabi Ya'qub", "Nabi Ibrahim", "Nabi Muhammad", "Nabi Musa"], correct: "Nabi Ya'qub" },
+    { id: 14, question: "Siapa yang dikenal dengan nama Israel?", answers: ["Nabi Ya'qub", "Nabi Ibrahim", "Nabi Ismail", "Nabi Muhammad"], correct: "Nabi Ya'qub" },
+    { id: 15, question: "Bagaimana cara Nabi Ishaq mendidik anak-anaknya?", answers: ["Dengan kasih sayang dan mengajarkan keesaan Allah", "Dengan keras dan menghukum mereka", "Dengan membiarkan mereka hidup bebas", "Dengan mengutamakan duniawi"], correct: "Dengan kasih sayang dan mengajarkan keesaan Allah" },
+    { id: 16, question: "Apa yang diajarkan Nabi Ishaq kepada anak-anaknya tentang Allah?", answers: ["Tentang keesaan Allah dan menjalankan perintah-Nya", "Tentang kemewahan dunia", "Tentang kekuatan perang", "Tentang kehidupan sosial"], correct: "Tentang keesaan Allah dan menjalankan perintah-Nya" },
+    { id: 17, question: "Apa yang menjadi teladan Nabi Ishaq dalam hidupnya?", answers: ["Ketakwaan kepada Allah", "Kekayaan dan kemewahan", "Kekuasaan dan dominasi", "Kekuatan tubuh"], correct: "Ketakwaan kepada Allah" },
+    { id: 18, question: "Apa yang dapat dipelajari dari kehidupan Nabi Ishaq?", answers: ["Pentingnya sabar, doa, dan pendidikan agama", "Pentingnya kekayaan dan kekuasaan", "Pentingnya keberanian dan kekuatan fisik", "Pentingnya berperang"], correct: "Pentingnya sabar, doa, dan pendidikan agama" },
+    { id: 19, question: "Apa pesan moral yang dapat diambil dari kisah Nabi Ishaq?", answers: ["Keberkahan hidup datang dari ketakwaan dan kepatuhan kepada Allah", "Hidup yang kaya akan kebahagiaan", "Selalu berperang untuk kemenangan", "Mencari kemewahan adalah yang utama"], correct: "Keberkahan hidup datang dari ketakwaan dan kepatuhan kepada Allah" },
+    { id: 20, question: "Apa yang penting dalam mendidik anak menurut Nabi Ishaq?", answers: ["Pendidikan agama dan kasih sayang", "Memberikan kekayaan", "Mengajarkan seni berperang", "Mengajarkan politik"], correct: "Pendidikan agama dan kasih sayang" },
+    { id: 21, question: "Bagaimana Nabi Ishaq meninggal?", answers: ["Dalam keadaan penuh berkah dan diterima oleh Allah", "Dalam perang", "Dikenal sebagai raja", "Meninggal muda"], correct: "Dalam keadaan penuh berkah dan diterima oleh Allah" },
+    { id: 22, question: "Apa yang Nabi Ishaq ajarkan tentang kehidupan yang saleh?", answers: ["Hidup yang saleh adalah hidup yang taat kepada Allah dan mendidik generasi penerus yang baik", "Hidup yang saleh adalah hidup yang kaya dan berkuasa", "Hidup yang saleh adalah hidup tanpa perjuangan", "Hidup yang saleh adalah hidup tanpa doa"], correct: "Hidup yang saleh adalah hidup yang taat kepada Allah dan mendidik generasi penerus yang baik" },
+    { id: 23, question: "Apa yang diajarkan Nabi Ishaq tentang sabar?", answers: ["Sabar adalah kunci untuk mendapatkan berkah dalam hidup", "Sabar adalah kelemahan", "Sabar tidak penting", "Sabar hanya untuk orang miskin"], correct: "Sabar adalah kunci untuk mendapatkan berkah dalam hidup" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

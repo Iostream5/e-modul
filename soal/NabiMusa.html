@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang menyelamatkan Nabi Musa dari pembunuhan Fir'aun?", answers: ["Istri Fir'aun", "Ibunya", "Saudaranya", "Asiyah"], correct: "Istri Fir'aun" },
+    { id: 2, question: "Mengapa Fir'aun takut terhadap bayi laki-laki Bani Israil?", answers: ["Mereka akan menggulingkan kekuasaannya", "Karena mereka kuat", "Karena mereka terlalu pintar", "Karena mereka mendukung Nabi Musa"], correct: "Mereka akan menggulingkan kekuasaannya" },
+    { id: 3, question: "Apa yang dilakukan Nabi Musa setelah membunuh orang Mesir?", answers: ["Melarikan diri ke Madyan", "Bertobat", "Minta maaf kepada Fir'aun", "Pergi ke Gua Sinai"], correct: "Melarikan diri ke Madyan" },
+    { id: 4, question: "Di mana Nabi Musa menerima wahyu untuk kembali ke Mesir?", answers: ["Di Gunung Sinai", "Di Madyan", "Di Mesir", "Di Laut Merah"], correct: "Di Gunung Sinai" },
+    { id: 5, question: "Apa mukjizat pertama yang diberikan Allah kepada Nabi Musa?", answers: ["Tongkat yang berubah menjadi ular", "Tangan yang bercahaya", "Laut Merah terbelah", "Pemberian Taurat"], correct: "Tongkat yang berubah menjadi ular" },
+    { id: 6, question: "Apa yang terjadi ketika Nabi Musa memukulkan tongkatnya ke Laut Merah?", answers: ["Laut terbelah", "Laut membeku", "Laut meluap", "Laut menjadi darah"], correct: "Laut terbelah" },
+    { id: 7, question: "Apa yang terjadi dengan pasukan Fir'aun setelah mengikuti Nabi Musa?", answers: ["Tenggelam di Laut Merah", "Kalah dalam perang", "Bertobat", "Meninggal di gurun"], correct: "Tenggelam di Laut Merah" },
+    { id: 8, question: "Apa wahyu yang diberikan Allah kepada Nabi Musa setelah selamat?", answers: ["Taurat", "Al-Qur'an", "Injil", "Zabur"], correct: "Taurat" },
+    { id: 9, question: "Apa yang dilakukan Bani Israil yang mengecewakan Nabi Musa setelah diberi wahyu?", answers: ["Menyembah patung anak sapi emas", "Melawan Nabi Musa", "Menghina Taurat", "Meninggalkan doa"], correct: "Menyembah patung anak sapi emas" },
+    { id: 10, question: "Apa yang menjadi ciri utama dari Nabi Musa dalam menghadapi ujian?", answers: ["Kesabaran", "Kemarahan", "Keteguhan", "Keberanian"], correct: "Kesabaran" },
+    { id: 11, question: "Bagaimana Nabi Musa memimpin Bani Israil setelah selamat?", answers: ["Dengan sabar dan bijaksana", "Dengan kekerasan", "Dengan ancaman", "Dengan perintah keras"], correct: "Dengan sabar dan bijaksana" },
+    { id: 12, question: "Apa yang menjadi pesan moral dari kisah Nabi Musa?", answers: ["Keimanan, perjuangan, dan kesabaran", "Hanya berdoa", "Menghindari ujian hidup", "Mencari kekayaan"], correct: "Keimanan, perjuangan, dan kesabaran" },
+    { id: 13, question: "Siapa yang memberikan wahyu kepada Nabi Musa di Gunung Sinai?", answers: ["Allah", "Malaikat Jibril", "Ibrahim", "Nabi Isa"], correct: "Allah" },
+    { id: 14, question: "Apa yang dilakukan Fir'aun setelah mendengar wahyu dari Nabi Musa?", answers: ["Menolak dan menentang", "Bertobat", "Menghukum Nabi Musa", "Menerima dan melepaskan Bani Israil"], correct: "Menolak dan menentang" },
+    { id: 15, question: "Apa yang dilakukan istri Fir'aun terhadap bayi Musa?", answers: ["Mengadopsi bayi tersebut", "Membuang bayi tersebut", "Menyerahkan bayi kepada Fir'aun", "Menjaga bayi dengan ketat"], correct: "Mengadopsi bayi tersebut" },
+    { id: 16, question: "Apa yang dilakukan Nabi Musa setelah melihat perlawanan dari Fir'aun?", answers: ["Memohon pertolongan kepada Allah", "Membalas dengan kekerasan", "Berdoa untuk keselamatan", "Menghadapi Fir'aun dengan senjata"], correct: "Memohon pertolongan kepada Allah" },
+    { id: 17, question: "Apa yang terjadi ketika Nabi Musa memimpin Bani Israil menyeberangi Laut Merah?", answers: ["Laut terbelah dan memberi jalan", "Laut membeku", "Laut berubah menjadi darah", "Laut mengangkat mereka ke langit"], correct: "Laut terbelah dan memberi jalan" },
+    { id: 18, question: "Bagaimana sikap Nabi Musa terhadap Bani Israil yang sering melakukan kemaksiatan?", answers: ["Kecewa dan tetap sabar", "Mengutuk mereka", "Meninggalkan mereka", "Memberikan hukuman keras"], correct: "Kecewa dan tetap sabar" },
+    { id: 19, question: "Apa yang diminta Fir'aun sebagai bukti kenabian Nabi Musa?", answers: ["Mukjizat", "Kekayaan", "Kekuatan", "Sungai Nil"], correct: "Mukjizat" },
+    { id: 20, question: "Siapa yang ikut bersama Nabi Musa ketika ia meninggalkan Mesir?", answers: ["Bani Israil", "Fir'aun", "Pasukan Mesir", "Penduduk Mesir"], correct: "Bani Israil" },
+    { id: 21, question: "Bagaimana reaksi Fir'aun setelah melihat mukjizat Nabi Musa?", answers: ["Menentang dan merencanakan pembunuhan", "Menerima Islam", "Meminta maaf kepada Nabi Musa", "Bertobat"], correct: "Menentang dan merencanakan pembunuhan" },
+    { id: 22, question: "Apa yang diberikan Allah kepada Nabi Musa di padang pasir?", answers: ["Taurat", "Makanan dari langit", "Keajaiban air", "Perisai"], correct: "Taurat" },
+    { id: 23, question: "Apa yang menjadi pembelajaran dari kisah Nabi Musa?", answers: ["Kesabaran dan keimanan kepada Allah", "Menghindari tantangan", "Mengejar kekayaan", "Menyerah pada kesulitan"], correct: "Kesabaran dan keimanan kepada Allah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

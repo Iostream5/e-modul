@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../animate/node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="../bootstrap/mix.css">
 </head>
+
 <body class="overflow-hidden">
     <div class="main d-flex align-items-center justify-content-center">
         <div class="bg-main">
@@ -58,51 +60,53 @@
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
-    
+
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
+            { id: 1, question: "Siapa nama asli Nabi Ya'qub?", answers: ["Israel", "Ishaq", "Yusuf", "Ibrahim"], correct: "Israel" },
+            { id: 2, question: "Siapa anak Nabi Ya'qub yang paling terkenal?", answers: ["Nabi Yusuf", "Nabi Musa", "Nabi Ibrahim", "Nabi Daud"], correct: "Nabi Yusuf" },
+            { id: 3, question: "Mengapa saudara-saudara Nabi Yusuf cemburu?", answers: ["Karena ayah mereka sangat mencintai Nabi Yusuf", "Karena Yusuf lebih pintar", "Karena Yusuf lebih kaya", "Karena Yusuf lebih kuat"], correct: "Karena ayah mereka sangat mencintai Nabi Yusuf" },
+            { id: 4, question: "Apa yang dilakukan saudara-saudara Nabi Yusuf karena kecemburuan mereka?", answers: ["Melemparkan Yusuf ke dalam sumur", "Mereka membunuh Yusuf", "Mereka mengusir Yusuf", "Mereka menghancurkan barang-barang Yusuf"], correct: "Melemparkan Yusuf ke dalam sumur" },
+            { id: 5, question: "Apa yang diberitahukan saudara-saudara Nabi Yusuf kepada Nabi Ya'qub?", answers: ["Bahwa Yusuf telah dimakan serigala", "Bahwa Yusuf telah pergi", "Bahwa Yusuf meninggal", "Bahwa Yusuf menjadi raja"], correct: "Bahwa Yusuf telah dimakan serigala" },
+            { id: 6, question: "Bagaimana reaksi Nabi Ya'qub ketika mendengar kabar tentang Yusuf?", answers: ["Ia sangat sedih dan berdoa kepada Allah", "Ia marah kepada saudara-saudara Yusuf", "Ia menerima tanpa protes", "Ia pergi mencari Yusuf"], correct: "Ia sangat sedih dan berdoa kepada Allah" },
+            { id: 7, question: "Apa yang terjadi dengan Nabi Yusuf setelah ia dibuang ke sumur?", answers: ["Ia dijual sebagai budak dan akhirnya menjadi penguasa Mesir", "Ia menjadi seorang pelancong", "Ia kembali ke rumahnya", "Ia dibawa oleh serigala"], correct: "Ia dijual sebagai budak dan akhirnya menjadi penguasa Mesir" },
+            { id: 8, question: "Bagaimana cara Nabi Yusuf mengungkapkan identitas dirinya kepada saudara-saudaranya?", answers: ["Dengan mengatakan bahwa ia adalah Yusuf", "Dengan menunjukkan tanda-tanda yang ia kenal", "Dengan menceritakan mimpinya", "Dengan memberikan mereka hadiah"], correct: "Dengan mengatakan bahwa ia adalah Yusuf" },
+            { id: 9, question: "Apa yang dilakukan Nabi Yusuf kepada saudara-saudaranya setelah mengenali mereka?", answers: ["Ia memaafkan mereka dan mengundang mereka tinggal di Mesir", "Ia membalas dendam kepada mereka", "Ia mengusir mereka dari Mesir", "Ia tidak mengakui mereka"], correct: "Ia memaafkan mereka dan mengundang mereka tinggal di Mesir" },
+            { id: 10, question: "Bagaimana reaksi Nabi Ya'qub saat dipertemukan kembali dengan Yusuf?", answers: ["Ia sangat bahagia dan bersyukur", "Ia marah kepada Yusuf", "Ia tidak percaya dengan kejadian tersebut", "Ia merasa kecewa"], correct: "Ia sangat bahagia dan bersyukur" },
+            { id: 11, question: "Apa yang diajarkan Nabi Ya'qub tentang kesabaran?", answers: ["Kesabaran adalah kunci menghadapi ujian hidup", "Kesabaran tidak penting dalam hidup", "Kesabaran hanya penting dalam hal agama", "Kesabaran hanya berlaku dalam hubungan keluarga"], correct: "Kesabaran adalah kunci menghadapi ujian hidup" },
+            { id: 12, question: "Apa yang Nabi Ya'qub lakukan meskipun menghadapi ujian hidup yang berat?", answers: ["Tetap sabar dan bertawakal kepada Allah", "Mengeluh dan merasa putus asa", "Menghukum saudara-saudara Yusuf", "Berusaha keluar dari masalah dengan kekuatan sendiri"], correct: "Tetap sabar dan bertawakal kepada Allah" },
+            { id: 13, question: "Apa yang harus kita lakukan saat menghadapi kesulitan dalam hidup?", answers: ["Bersabar dan bertawakal kepada Allah", "Menghindari masalah", "Mengabaikan doa", "Mencari cara untuk melawan"], correct: "Bersabar dan bertawakal kepada Allah" },
+            { id: 14, question: "Apa yang diajarkan Nabi Ya'qub tentang memaafkan?", answers: ["Memaafkan adalah hal yang mulia dan membawa kedamaian", "Memaafkan itu tidak perlu", "Memaafkan hanya untuk keluarga", "Memaafkan adalah tanda kelemahan"], correct: "Memaafkan adalah hal yang mulia dan membawa kedamaian" },
+            { id: 15, question: "Apa yang menjadi kebahagiaan terakhir Nabi Ya'qub?", answers: ["Bertemu kembali dengan anaknya, Yusuf", "Menjadi pemimpin keluarga besar", "Menjadi kaya", "Mendapatkan harta yang banyak"], correct: "Bertemu kembali dengan anaknya, Yusuf" },
+            { id: 16, question: "Apa yang dapat kita pelajari dari kehidupan Nabi Ya'qub?", answers: ["Kesabaran, ketakwaan, dan memaafkan", "Kekayaan dan kesuksesan", "Mencari kekuatan di luar diri", "Menjadi terkenal di dunia"], correct: "Kesabaran, ketakwaan, dan memaafkan" },
+            { id: 17, question: "Apa yang menjadi teladan dari Nabi Ya'qub?", answers: ["Kesabaran dan ketakwaan dalam menghadapi ujian", "Mencari keuntungan", "Berperang untuk mencapai tujuan", "Mencari jalan keluar dengan cara cepat"], correct: "Kesabaran dan ketakwaan dalam menghadapi ujian" },
+            { id: 18, question: "Apa yang harus kita lakukan dalam menghadapi ujian kehidupan?", answers: ["Bersabar dan bertawakal kepada Allah", "Mengabaikan ujian", "Menyerah pada keadaan", "Berhenti berdoa"], correct: "Bersabar dan bertawakal kepada Allah" },
+            { id: 19, question: "Apa yang bisa didapatkan setelah ujian hidup yang berat menurut kisah Nabi Ya'qub?", answers: ["Kebahagiaan yang luar biasa", "Kekayaan yang melimpah", "Kekuasaan yang besar", "Kesendirian yang abadi"], correct: "Kebahagiaan yang luar biasa" },
+            { id: 20, question: "Apa yang bisa kita pelajari tentang keluarga dari kisah Nabi Ya'qub?", answers: ["Keluarga yang saling menyayangi dan memaafkan akan diberkahi Allah", "Keluarga yang kaya akan bahagia", "Keluarga yang kuat akan selalu menang", "Keluarga yang besar akan selalu bersatu"], correct: "Keluarga yang saling menyayangi dan memaafkan akan diberkahi Allah" },
+            { id: 21, question: "Apa pesan moral utama dari kisah Nabi Ya'qub?", answers: ["Kesabaran dan memaafkan adalah kunci kebahagiaan", "Kekuasaan adalah tujuan hidup", "Kekayaan yang banyak membawa kebahagiaan", "Mengalahkan musuh adalah hal yang penting"], correct: "Kesabaran dan memaafkan adalah kunci kebahagiaan" },
+            { id: 22, question: "Bagaimana Nabi Ya'qub menunjukkan keteguhan imannya?", answers: ["Dengan tetap sabar dan tawakal kepada Allah", "Dengan melawan masalah dengan kekuatannya sendiri", "Dengan mengabaikan doanya", "Dengan berdoa hanya di waktu tertentu"], correct: "Dengan tetap sabar dan tawakal kepada Allah" },
+            { id: 23, question: "Apa yang diajarkan Nabi Ya'qub kepada anak-anaknya?", answers: ["Untuk tetap taat kepada Allah dan berserah diri kepada-Nya", "Untuk menjadi pemimpin yang kuat", "Untuk mencari kekayaan", "Untuk menghindari masalah dan kesulitan"], correct: "Untuk tetap taat kepada Allah dan berserah diri kepada-Nya" }
         ];
-    
+
+
         let randomQuestions = [];
         let currentQuestionIndex = 0;
         let correctAnswersCount = 0;
-    
+
         function getRandomQuestions(total) {
             const shuffled = [...questions].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, total);
         }
-    
+
         function loadQuestion(index) {
             const questionElement = document.getElementById("question");
             const buttons = document.querySelectorAll(".btn-container .btn button");
-        
+
             if (index >= randomQuestions.length) {
-                const stars = correctAnswersCount > 0 
+                const stars = correctAnswersCount > 0
                     ? `⭐️`.repeat(correctAnswersCount)
                     : "";
-        
+
                 buttons.forEach((button, i) => {
                     if (i === 0) {
                         if (correctAnswersCount > 0) {
@@ -120,34 +124,34 @@
                         button.onclick = () => {
                             window.location.href = "../page/list/yakub.html"; // Ganti href sesuai keinginan
                         };
-                    }else if (i === 2) {
+                    } else if (i === 2) {
                         button.style.display = "block"; // Pastikan tombol kedua terlihat
                         button.textContent = "Kembali Ke Daftar Isi";
                         button.onclick = () => {
                             window.location.href = "../page/DaftarIsi.html"; // Ganti href sesuai keinginan
                         };
                     }
-                     else {
+                    else {
                         button.style.display = "none";
                     }
                 });
                 return;
             }
-        
+
             const currentQuestion = randomQuestions[index];
             questionElement.textContent = currentQuestion.question;
-        
+
             buttons.forEach((button, i) => {
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
             });
         }
-    
+
         function handleAnswer(question, selectedAnswer) {
             const modalOverlay = document.getElementById("modal-overlay");
             const modalContent = document.getElementById("modal-contents");
-    
+
             if (selectedAnswer === question.correct) {
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
@@ -156,14 +160,14 @@
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
             }
-    
+
             modalOverlay.style.display = "flex"; // Tampilkan modal
             modalOverlay.classList.add("fade-in");
-    
+
             setTimeout(() => {
                 modalOverlay.classList.remove("fade-in");
                 modalOverlay.classList.add("fade-out");
-    
+
                 setTimeout(() => {
                     modalOverlay.style.display = "none";
                     modalOverlay.classList.remove("fade-out");
@@ -172,13 +176,14 @@
                 }, 500);
             }, 2000);
         }
-    
+
         document.addEventListener("DOMContentLoaded", () => {
             randomQuestions = getRandomQuestions(5);
             loadQuestion(currentQuestionIndex);
         });
     </script>
     <script src="../node_modules/swiper/swiper-element-bundle.min.js"></script>
-    
+
 </body>
+
 </html>

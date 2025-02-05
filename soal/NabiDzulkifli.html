@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapakah Nabi yang dikenal dengan kesabarannya yang luar biasa?", answers: ["Nabi Ayub", "Nabi Dzulkifli", "Nabi Musa", "Nabi Isa"], correct: "Nabi Dzulkifli" },
+    { id: 2, question: "Apa arti dari nama Dzulkifli?", answers: ["Yang memiliki dua tanggung jawab", "Yang paling sabar", "Yang kuat menghadapi cobaan", "Yang mendapat wahyu pertama"], correct: "Yang memiliki dua tanggung jawab" },
+    { id: 3, question: "Apa tugas utama Nabi Dzulkifli?", answers: ["Menjadi pemimpin yang adil", "Membimbing umat ke jalan Allah", "Menegakkan hukum Allah", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 4, question: "Bagaimana sifat utama Nabi Dzulkifli?", answers: ["Pemarah", "Sabar dan rendah hati", "Mudah menyerah", "Tidak peduli dengan umatnya"], correct: "Sabar dan rendah hati" },
+    { id: 5, question: "Apa yang dilakukan Nabi Dzulkifli ketika umatnya menolak ajarannya?", answers: ["Marah dan menyerah", "Tetap sabar dan terus berdakwah", "Mengutuk umatnya", "Pergi meninggalkan mereka"], correct: "Tetap sabar dan terus berdakwah" },
+    { id: 6, question: "Apa yang menjadi ujian terbesar bagi Nabi Dzulkifli?", answers: ["Kaumnya menentang dakwahnya", "Kehilangan seluruh hartanya", "Mengalami penyakit berat", "Diusir dari kampungnya"], correct: "Kaumnya menentang dakwahnya" },
+    { id: 7, question: "Bagaimana sikap Nabi Dzulkifli dalam menghadapi kesulitan?", answers: ["Sabar dan tetap berdoa", "Menyerah dan berhenti berdakwah", "Marah kepada umatnya", "Menghindari masalah"], correct: "Sabar dan tetap berdoa" },
+    { id: 8, question: "Mengapa Nabi Dzulkifli disebut sebagai pemimpin yang adil?", answers: ["Karena ia selalu memberi keputusan yang bijaksana", "Karena ia tidak memihak kepada siapa pun", "Karena ia menjalankan tugasnya dengan penuh tanggung jawab", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 9, question: "Apa yang diajarkan Nabi Dzulkifli kepada umatnya?", answers: ["Berbuat adil", "Sabar dalam menghadapi cobaan", "Memohon ampun kepada Allah", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 10, question: "Bagaimana Allah membantu Nabi Dzulkifli dalam menghadapi kaumnya?", answers: ["Memberinya kesabaran dan kekuatan", "Membinasakan kaumnya secara langsung", "Menggantikan dengan umat yang baru", "Membantu dengan mukjizat besar"], correct: "Memberinya kesabaran dan kekuatan" },
+    { id: 11, question: "Apa yang menjadi pelajaran dari kisah Nabi Dzulkifli?", answers: ["Kesabaran dalam menghadapi ujian hidup", "Jangan pernah menyerah dalam berdakwah", "Pentingnya berbuat adil dan sabar", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 12, question: "Bagaimana sikap Nabi Dzulkifli terhadap orang yang bertaubat?", answers: ["Menerima mereka dengan kasih sayang", "Menolak mereka", "Menghukum mereka dengan keras", "Mengingatkan mereka tetapi tetap waspada"], correct: "Menerima mereka dengan kasih sayang" },
+    { id: 13, question: "Apa yang Nabi Dzulkifli lakukan ketika menghadapi tantangan besar?", answers: ["Tetap sabar dan berdoa kepada Allah", "Menghindari masalah dan pergi", "Memohon bantuan manusia", "Berhenti berdakwah"], correct: "Tetap sabar dan berdoa kepada Allah" },
+    { id: 14, question: "Siapa yang sering menemani dan mendukung Nabi Dzulkifli?", answers: ["Para sahabat setia", "Orang-orang yang beriman", "Keluarganya yang taat", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 15, question: "Bagaimana Nabi Dzulkifli memperlakukan orang yang berbuat dosa?", answers: ["Dengan penuh pengampunan dan kasih sayang", "Dengan kemarahan dan hukuman", "Dengan mengabaikan mereka", "Dengan menjauhi mereka"], correct: "Dengan penuh pengampunan dan kasih sayang" },
+    { id: 16, question: "Mengapa kesabaran sangat penting dalam kehidupan?", answers: ["Karena membantu menghadapi ujian hidup", "Karena membuat seseorang lebih tenang", "Karena Allah mencintai orang yang sabar", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 17, question: "Apa pesan moral dari kisah Nabi Dzulkifli?", answers: ["Sabar dan tidak mudah putus asa", "Selalu meminta pertolongan Allah", "Berbuat adil dan kasih sayang", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 18, question: "Apa yang dilakukan Nabi Dzulkifli saat menghadapi kaumnya yang membangkang?", answers: ["Tetap sabar dan tidak putus asa", "Marah kepada mereka", "Mengancam mereka dengan hukuman", "Meninggalkan mereka"], correct: "Tetap sabar dan tidak putus asa" },
+    { id: 19, question: "Apa yang diberikan Allah kepada Nabi Dzulkifli karena kesabarannya?", answers: ["Kekuatan dalam menghadapi tantangan", "Kebijaksanaan dalam memimpin", "Rahmat dan keberkahan", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 20, question: "Apa yang membuat Nabi Dzulkifli berbeda dari nabi lainnya?", answers: ["Ia memiliki dua tanggung jawab besar", "Ia selalu memimpin dengan adil", "Ia tidak pernah menyerah dalam dakwahnya", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 21, question: "Bagaimana cara kita meneladani Nabi Dzulkifli?", answers: ["Menjadi orang yang sabar dan adil", "Tidak mudah marah", "Menghargai setiap ujian sebagai bentuk pembelajaran", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 22, question: "Apa yang menjadi kunci utama keberhasilan Nabi Dzulkifli dalam berdakwah?", answers: ["Kesabaran dan keteguhan hati", "Keberanian dan kekuatan fisik", "Kekayaan dan pengaruh besar", "Mukjizat yang luar biasa"], correct: "Kesabaran dan keteguhan hati" },
+    { id: 23, question: "Apa yang harus kita lakukan saat menghadapi kesulitan hidup?", answers: ["Bersabar dan berdoa kepada Allah", "Menyerah dan putus asa", "Menyalahkan orang lain", "Menghindari masalah"], correct: "Bersabar dan berdoa kepada Allah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

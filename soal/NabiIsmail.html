@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa ibu Nabi Ismail?", answers: ["Hajar", "Sarah", "Maryam", "Aisyah"], correct: "Hajar" },
+    { id: 2, question: "Siapa ayah Nabi Ismail?", answers: ["Nabi Ibrahim", "Nabi Musa", "Nabi Nuh", "Nabi Muhammad"], correct: "Nabi Ibrahim" },
+    { id: 3, question: "Berapa usia Nabi Ibrahim ketika Nabi Ismail lahir?", answers: ["Sudah cukup tua", "Masih muda", "40 tahun", "30 tahun"], correct: "Sudah cukup tua" },
+    { id: 4, question: "Apa yang menjadi ujian bagi Nabi Ibrahim dan Nabi Ismail?", answers: ["Perintah untuk menyembelih Nabi Ismail", "Perintah untuk berhijrah", "Perintah untuk berdakwah", "Perintah untuk berperang"], correct: "Perintah untuk menyembelih Nabi Ismail" },
+    { id: 5, question: "Apa yang Nabi Ibrahim rasakan saat menerima wahyu untuk menyembelih Nabi Ismail?", answers: ["Perasaan berat dan penuh keraguan", "Perasaan bahagia", "Perasaan marah", "Perasaan biasa saja"], correct: "Perasaan berat dan penuh keraguan" },
+    { id: 6, question: "Apa yang Nabi Ibrahim katakan kepada Nabi Ismail saat memberitahukan wahyu tersebut?", answers: ["Aku bermimpi bahwa aku menyembelihmu", "Aku ingin kamu pergi bersama aku", "Aku ingin kamu berdoa bersama", "Aku ingin kamu melakukan sesuatu untukku"], correct: "Aku bermimpi bahwa aku menyembelihmu" },
+    { id: 7, question: "Apa jawaban Nabi Ismail ketika ayahnya memberitahukan wahyu tersebut?", answers: ["Lakukanlah apa yang diperintahkan kepadamu", "Aku tidak ingin mati", "Aku tidak percaya dengan mimpi itu", "Aku tidak siap"], correct: "Lakukanlah apa yang diperintahkan kepadamu" },
+    { id: 8, question: "Apa yang ditunjukkan oleh jawaban Nabi Ismail kepada ayahnya?", answers: ["Ketundukan dan keteguhan iman", "Keputusasaan", "Ketidaksabaran", "Kepasrahan yang lemah"], correct: "Ketundukan dan keteguhan iman" },
+    { id: 9, question: "Apa yang terjadi saat Nabi Ibrahim hendak menyembelih Nabi Ismail?", answers: ["Allah menggantikan Ismail dengan domba", "Nabi Ibrahim dihentikan oleh malaikat", "Nabi Ismail lolos", "Allah merubah wahyu tersebut"], correct: "Allah menggantikan Ismail dengan domba" },
+    { id: 10, question: "Apa firman Allah yang menyatakan penggantian Nabi Ismail dengan domba?", answers: ["Sesungguhnya, itu adalah ujian yang nyata, dan Kami menebusnya dengan seekor sembelihan yang besar", "Kami akan memberikanmu kekayaan", "Anakmu akan menjadi pemimpin umat", "Kamu akan menjadi nabi yang besar"], correct: "Sesungguhnya, itu adalah ujian yang nyata, dan Kami menebusnya dengan seekor sembelihan yang besar" },
+    { id: 11, question: "Apa yang membuktikan ketakwaan Nabi Ibrahim dan Nabi Ismail?", answers: ["Pengorbanan mereka yang diterima Allah", "Kekayaan yang mereka miliki", "Kepopuleran mereka di kalangan umat", "Keberanian mereka dalam berperang"], correct: "Pengorbanan mereka yang diterima Allah" },
+    { id: 12, question: "Apa peran Nabi Ismail setelah peristiwa pengorbanan?", answers: ["Menjadi nabi yang membimbing kaumnya", "Menjadi pemimpin kerajaan", "Menjadi raja yang kaya", "Menjadi pejuang besar"], correct: "Menjadi nabi yang membimbing kaumnya" },
+    { id: 13, question: "Apa sifat yang dimiliki Nabi Ismail yang sangat dihargai?", answers: ["Sabar dan taat kepada Allah", "Kaya dan bijaksana", "Kuat dan berani", "Pintar dan berpendidikan"], correct: "Sabar dan taat kepada Allah" },
+    { id: 14, question: "Apa yang dilakukan Nabi Ismail bersama ayahnya dalam pembangunan Ka'bah?", answers: ["Membantu membangun Ka'bah", "Membangun masjid", "Membuat patung", "Menjadi penjaga Ka'bah"], correct: "Membantu membangun Ka'bah" },
+    { id: 15, question: "Apa yang diajarkan oleh Nabi Ismail tentang pengorbanan?", answers: ["Pengorbanan yang tulus kepada Allah akan dibalas dengan rahmat", "Pengorbanan membawa kemiskinan", "Pengorbanan tidak perlu dilakukan", "Pengorbanan hanya untuk orang kaya"], correct: "Pengorbanan yang tulus kepada Allah akan dibalas dengan rahmat" },
+    { id: 16, question: "Apa yang dapat dipelajari dari kisah Nabi Ismail?", answers: ["Keikhlasan, pengorbanan, dan ketundukan kepada Allah", "Kekayaan, kemewahan, dan ketenaran", "Kekuatan fisik dan keberanian", "Kepandaian dalam ilmu pengetahuan"], correct: "Keikhlasan, pengorbanan, dan ketundukan kepada Allah" },
+    { id: 17, question: "Apa yang ditekankan dalam pesan moral kisah Nabi Ismail?", answers: ["Kesabaran dan ketaatan kepada Allah", "Kekayaan dan kekuasaan", "Berjuang keras dalam perang", "Mengutamakan duniawi"], correct: "Kesabaran dan ketaatan kepada Allah" },
+    { id: 18, question: "Apa yang menunjukkan keteguhan hati Nabi Ibrahim dan Nabi Ismail?", answers: ["Mereka menjalankan perintah Allah meski sangat berat", "Mereka menolak untuk melakukan perintah Allah", "Mereka hanya mengikuti perintah yang mudah", "Mereka memikirkan keuntungan pribadi"], correct: "Mereka menjalankan perintah Allah meski sangat berat" },
+    { id: 19, question: "Apa yang bisa kita pelajari dari kesabaran Nabi Ismail?", answers: ["Kesabaran adalah kunci untuk mendapatkan rahmat Allah", "Kesabaran membuat seseorang lemah", "Kesabaran hanya untuk orang miskin", "Kesabaran tidak ada gunanya"], correct: "Kesabaran adalah kunci untuk mendapatkan rahmat Allah" },
+    { id: 20, question: "Apa yang penting dalam menjalankan perintah Allah menurut Nabi Ismail?", answers: ["Ketundukan dan keikhlasan dalam menjalankan perintah-Nya", "Kekuatan fisik", "Kekayaan untuk mendukung perjuangan", "Kepopuleran"], correct: "Ketundukan dan keikhlasan dalam menjalankan perintah-Nya" },
+    { id: 21, question: "Apa yang terjadi setelah pengorbanan Nabi Ismail?", answers: ["Allah menggantikan pengorbanan tersebut dengan domba", "Nabi Ismail menjadi raja", "Nabi Ibrahim dimuliakan oleh semua orang", "Nabi Ibrahim dihukum"], correct: "Allah menggantikan pengorbanan tersebut dengan domba" },
+    { id: 22, question: "Bagaimana kisah Nabi Ismail berakhir?", answers: ["Nabi Ismail hidup sebagai nabi yang taat dan sabar", "Nabi Ismail menjadi raja yang kaya", "Nabi Ismail meninggal dalam peperangan", "Nabi Ismail terkenal sebagai pemimpin dunia"], correct: "Nabi Ismail hidup sebagai nabi yang taat dan sabar" },
+    { id: 23, question: "Apa yang bisa kita aplikasikan dalam kehidupan sehari-hari dari kisah Nabi Ismail?", answers: ["Pentingnya sabar, ikhlas, dan taat kepada Allah", "Mengutamakan kekayaan dan kemewahan", "Mencari kemenangan dalam perang", "Berdoa tanpa berusaha"], correct: "Pentingnya sabar, ikhlas, dan taat kepada Allah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

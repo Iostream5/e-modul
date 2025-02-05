@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../animate/node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="../bootstrap/mix.css">
 </head>
+
 <body class="overflow-hidden">
     <div class="d-flex align-items-center justify-content-center">
         <div class="bg-mainSoal">
@@ -56,51 +58,53 @@
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
-    
+
     <script>
         const questions = [
-            { id: 1, question: "Siapa yang diciptakan Allah sebelum manusia?", answers: ["Malaikat", "Jin", "Langit Dan Bumi", "Hewan"], correct: "Langit Dan Bumi" },
+            { id: 1, question: "Siapa yang diciptakan Allah sebelum manusia?", answers: ["Malaikat", "Jin", "Langit dan Bumi", "Hewan"], correct: "Langit dan Bumi" },
             { id: 2, question: "Apa yang dikatakan Allah kepada para malaikat mengenai penciptaan khalifah di bumi?", answers: ["Allah akan menciptakan malaikat lain", "Allah akan menciptakan seorang khalifah di bumi", "Allah akan menciptakan hewan-hewan", "Allah akan menghancurkan bumi"], correct: "Allah akan menciptakan seorang khalifah di bumi" },
             { id: 3, question: "Apa pertanyaan yang diajukan oleh malaikat kepada Allah terkait penciptaan khalifah di bumi?", answers: ["Mengapa Engkau menciptakan makhluk yang akan membuat kerusakan di bumi?", "Mengapa Engkau menciptakan manusia yang akan membangun kerajaan?", "Mengapa Engkau menciptakan langit dan bumi?", "Mengapa Engkau menciptakan malaikat yang tidak terlihat?"], correct: "Mengapa Engkau menciptakan makhluk yang akan membuat kerusakan di bumi?" },
             { id: 4, question: "Apa yang dilakukan malaikat setelah mendengar bahwa Allah akan menciptakan khalifah di bumi?", answers: ["Mereka menyetujui keputusan Allah", "Mereka bertanya mengapa Allah menciptakan makhluk yang bisa membuat kerusakan", "Mereka merasa khawatir dengan masa depan bumi", "Mereka berdoa untuk manusia"], correct: "Mereka bertanya mengapa Allah menciptakan makhluk yang bisa membuat kerusakan" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
+            { id: 5, question: "Dari apa Allah menciptakan Nabi Adam?", answers: ["Api", "Air", "Tanah liat", "Cahaya"], correct: "Tanah liat" },
+            { id: 6, question: "Apa yang Allah berikan kepada Nabi Adam setelah menciptakannya?", answers: ["Sayap", "Ilmu", "Pedang", "Rumah di surga"], correct: "Ilmu" },
+            { id: 7, question: "Mengapa Iblis menolak bersujud kepada Nabi Adam?", answers: ["Karena merasa lebih baik dari Adam", "Karena tidak mengenali Nabi Adam", "Karena takut kepada Allah", "Karena diperintahkan untuk pergi"], correct: "Karena merasa lebih baik dari Adam" },
+            { id: 8, question: "Dari apa Iblis mengklaim dirinya lebih baik dibanding Nabi Adam?", answers: ["Dari tanah", "Dari air", "Dari api", "Dari cahaya"], correct: "Dari api" },
+            { id: 9, question: "Apa hukuman yang diberikan Allah kepada Iblis karena kesombongannya?", answers: ["Diangkat menjadi pemimpin", "Diusir dari surga", "Diberi kesempatan kedua", "Dibuat tidak terlihat"], correct: "Diusir dari surga" },
+            { id: 10, question: "Di mana Nabi Adam dan Hawa tinggal setelah diciptakan?", answers: ["Di bumi", "Di surga", "Di gunung", "Di laut"], correct: "Di surga" },
+            { id: 11, question: "Bagaimana Allah menciptakan Hawa?", answers: ["Dari tanah", "Dari air", "Dari tulang rusuk Nabi Adam", "Dari cahaya"], correct: "Dari tulang rusuk Nabi Adam" },
+            { id: 12, question: "Apa larangan Allah kepada Nabi Adam dan Hawa di surga?", answers: ["Tidak boleh tidur", "Tidak boleh makan dari pohon tertentu", "Tidak boleh berbicara dengan malaikat", "Tidak boleh terbang"], correct: "Tidak boleh makan dari pohon tertentu" },
+            { id: 13, question: "Siapa yang menggoda Nabi Adam dan Hawa untuk melanggar perintah Allah?", answers: ["Malaikat", "Iblis", "Jin", "Binatang"], correct: "Iblis" },
+            { id: 14, question: "Apa yang terjadi setelah Nabi Adam dan Hawa memakan buah dari pohon terlarang?", answers: ["Mereka mendapatkan ilmu baru", "Mereka diusir dari surga", "Mereka menjadi malaikat", "Mereka menjadi lebih kuat"], correct: "Mereka diusir dari surga" },
+            { id: 15, question: "Apa yang dilakukan Nabi Adam dan Hawa setelah diusir ke bumi?", answers: ["Mereka membangun kerajaan", "Mereka meminta ampun kepada Allah", "Mereka melawan Iblis", "Mereka kembali ke surga"], correct: "Mereka meminta ampun kepada Allah" },
+            { id: 16, question: "Apa yang Allah lakukan setelah Nabi Adam dan Hawa bertaubat?", answers: ["Allah mengampuni mereka", "Allah mengembalikan mereka ke surga", "Allah menjadikan mereka malaikat", "Allah menghukum mereka lebih berat"], correct: "Allah mengampuni mereka" },
+            { id: 17, question: "Apa tugas Nabi Adam di bumi setelah diampuni oleh Allah?", answers: ["Menjadi raja", "Mengajarkan manusia tentang Allah", "Mencari jalan kembali ke surga", "Melawan Iblis"], correct: "Mengajarkan manusia tentang Allah" },
+            { id: 18, question: "Apa pelajaran utama dari kisah Nabi Adam?", answers: ["Manusia harus taat kepada Allah", "Manusia harus menjadi kuat", "Manusia tidak boleh tidur", "Manusia harus selalu takut"], correct: "Manusia harus taat kepada Allah" },
+            { id: 19, question: "Apa sifat buruk Iblis yang menyebabkan ia diusir dari surga?", answers: ["Kesombongan", "Kesabaran", "Ketulusan", "Kejujuran"], correct: "Kesombongan" },
+            { id: 20, question: "Apa yang harus dilakukan manusia ketika melakukan kesalahan?", answers: ["Menyembunyikan kesalahan", "Minta ampun kepada Allah", "Mengabaikan kesalahan", "Menyalakan orang lain"], correct: "Minta ampun kepada Allah" },
+            { id: 21, question: "Bagaimana Iblis berhasil menipu Nabi Adam dan Hawa?", answers: ["Dengan ilmu sihir", "Dengan tipu daya", "Dengan kekuatan", "Dengan rayuan malaikat"], correct: "Dengan tipu daya" },
+            { id: 22, question: "Apa yang Allah berikan kepada Nabi Adam yang tidak diberikan kepada malaikat?", answers: ["Sayap", "Ilmu tentang nama-nama segala sesuatu", "Kekuatan fisik", "Kemampuan terbang"], correct: "Ilmu tentang nama-nama segala sesuatu" },
+            { id: 23, question: "Apa tujuan utama manusia di bumi menurut kisah Nabi Adam?", answers: ["Menjadi khalifah di bumi", "Mencari harta", "Mengalahkan Iblis", "Menjadi malaikat"], correct: "Menjadi khalifah di bumi" }
         ];
-    
+
+
         let randomQuestions = [];
         let currentQuestionIndex = 0;
         let correctAnswersCount = 0;
-    
+
         function getRandomQuestions(total) {
             const shuffled = [...questions].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, total);
         }
-    
+
         function loadQuestion(index) {
             const questionElement = document.getElementById("question");
             const buttons = document.querySelectorAll(".btn-container .btn button");
-        
+
             if (index >= randomQuestions.length) {
-                const stars = correctAnswersCount > 0 
+                const stars = correctAnswersCount > 0
                     ? `⭐️`.repeat(correctAnswersCount)
                     : "";
-        
+
                 buttons.forEach((button, i) => {
                     if (i === 0) {
                         if (correctAnswersCount > 0) {
@@ -118,34 +122,34 @@
                         button.onclick = () => {
                             window.location.href = "../page/list/adam.html"; // Ganti href sesuai keinginan
                         };
-                    }else if (i === 2) {
+                    } else if (i === 2) {
                         button.style.display = "block"; // Pastikan tombol kedua terlihat
                         button.textContent = "Kembali Ke Daftar Isi";
                         button.onclick = () => {
                             window.location.href = "../page/DaftarIsi.html"; // Ganti href sesuai keinginan
                         };
                     }
-                     else {
+                    else {
                         button.style.display = "none";
                     }
                 });
                 return;
             }
-        
+
             const currentQuestion = randomQuestions[index];
             questionElement.textContent = currentQuestion.question;
-        
+
             buttons.forEach((button, i) => {
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
             });
         }
-    
+
         function handleAnswer(question, selectedAnswer) {
             const modalOverlay = document.getElementById("modal-overlay");
             const modalContent = document.getElementById("modal-contents");
-    
+
             if (selectedAnswer === question.correct) {
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
@@ -154,14 +158,14 @@
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
             }
-    
+
             modalOverlay.style.display = "flex"; // Tampilkan modal
             modalOverlay.classList.add("fade-in");
-    
+
             setTimeout(() => {
                 modalOverlay.classList.remove("fade-in");
                 modalOverlay.classList.add("fade-out");
-    
+
                 setTimeout(() => {
                     modalOverlay.style.display = "none";
                     modalOverlay.classList.remove("fade-out");
@@ -170,13 +174,14 @@
                 }, 500);
             }, 2000);
         }
-    
+
         document.addEventListener("DOMContentLoaded", () => {
             randomQuestions = getRandomQuestions(5);
             loadQuestion(currentQuestionIndex);
         });
     </script>
     <script src="../node_modules/swiper/swiper-element-bundle.min.js"></script>
-    
+
 </body>
+
 </html>

@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapakah Nabi yang dikenal karena kesabarannya dalam berdoa kepada Allah?", answers: ["Nabi Musa", "Nabi Zakaria", "Nabi Daud", "Nabi Isa"], correct: "Nabi Zakaria" },
+    { id: 2, question: "Apa yang diminta Nabi Zakaria dalam doanya kepada Allah?", answers: ["Kekayaan", "Keturunan", "Kerajaan", "Mukjizat"], correct: "Keturunan" },
+    { id: 3, question: "Siapakah anak Nabi Zakaria?", answers: ["Nabi Isa", "Nabi Yahya", "Nabi Sulaiman", "Nabi Musa"], correct: "Nabi Yahya" },
+    { id: 4, question: "Mengapa Nabi Zakaria ingin memiliki anak?", answers: ["Agar bisa mewarisi hartanya", "Agar bisa meneruskan dakwah", "Agar bisa menjadi raja", "Agar bisa memiliki keluarga besar"], correct: "Agar bisa meneruskan dakwah" },
+    { id: 5, question: "Bagaimana cara Nabi Zakaria berdoa kepada Allah?", answers: ["Dengan suara lantang", "Dengan penuh keyakinan dan keikhlasan", "Dengan tergesa-gesa", "Dengan bantuan orang lain"], correct: "Dengan penuh keyakinan dan keikhlasan" },
+    { id: 6, question: "Apa yang menjadi tanda bahwa Nabi Zakaria akan mendapatkan anak?", answers: ["Malaikat datang memberitahu", "Tiba-tiba mendengar suara gaib", "Mimpi bertemu dengan anaknya", "Allah langsung berbicara kepadanya"], correct: "Malaikat datang memberitahu" },
+    { id: 7, question: "Apa mukjizat yang diberikan Allah kepada Nabi Zakaria setelah menerima kabar gembira?", answers: ["Tidak bisa berbicara selama tiga hari", "Bisa berbicara dengan hewan", "Mendapatkan kekayaan", "Menjadi lebih muda"], correct: "Tidak bisa berbicara selama tiga hari" },
+    { id: 8, question: "Di mana Nabi Zakaria berdoa kepada Allah?", answers: ["Di rumah", "Di pasar", "Di mihrab", "Di gunung"], correct: "Di mihrab" },
+    { id: 9, question: "Siapakah yang mengabarkan kepada Nabi Zakaria bahwa doanya dikabulkan?", answers: ["Seorang petani", "Malaikat", "Seorang anak kecil", "Seorang pedagang"], correct: "Malaikat" },
+    { id: 10, question: "Apa sifat utama yang diajarkan oleh kisah Nabi Zakaria?", answers: ["Kesombongan", "Kesabaran dan keikhlasan", "Ketamakan", "Kegelisahan"], correct: "Kesabaran dan keikhlasan" },
+    { id: 11, question: "Mengapa kelahiran Nabi Yahya dianggap sebagai mukjizat?", answers: ["Karena ibunya sudah tua dan mandul", "Karena ia lahir dengan sayap", "Karena ia langsung bisa berbicara", "Karena ia tidak membutuhkan makanan"], correct: "Karena ibunya sudah tua dan mandul" },
+    { id: 12, question: "Bagaimana perasaan Nabi Zakaria ketika mendengar kabar tentang anaknya?", answers: ["Terkejut tetapi bersyukur", "Marah", "Kecewa", "Tidak peduli"], correct: "Terkejut tetapi bersyukur" },
+    { id: 13, question: "Apa pesan moral dari kisah Nabi Zakaria?", answers: ["Jangan pernah berharap kepada Allah", "Bersabar dan selalu berdoa dengan ikhlas", "Mengutamakan kekayaan dunia", "Mengabaikan doa"], correct: "Bersabar dan selalu berdoa dengan ikhlas" },
+    { id: 14, question: "Apa yang dilakukan Nabi Zakaria saat kehilangan suaranya?", answers: ["Berhenti beribadah", "Menggunakan isyarat dan tetap berzikir", "Marah kepada Allah", "Menyerah dan tidak mau berbicara lagi"], correct: "Menggunakan isyarat dan tetap berzikir" },
+    { id: 15, question: "Bagaimana karakter Nabi Zakaria dalam menghadapi ujian hidup?", answers: ["Sabar dan penuh harapan", "Putus asa", "Mudah menyerah", "Tidak peduli"], correct: "Sabar dan penuh harapan" },
+    { id: 16, question: "Apa yang menunjukkan keikhlasan Nabi Zakaria dalam berdoa?", answers: ["Ia tetap berdoa meskipun merasa mustahil", "Ia meminta orang lain untuk berdoa", "Ia memaksa Allah untuk memberi jawaban", "Ia berhenti berdoa setelah beberapa saat"], correct: "Ia tetap berdoa meskipun merasa mustahil" },
+    { id: 17, question: "Bagaimana Nabi Yahya di masa dewasanya?", answers: ["Menjadi nabi yang mulia", "Menjadi pedagang kaya", "Menjadi raja", "Menjadi penyair terkenal"], correct: "Menjadi nabi yang mulia" },
+    { id: 18, question: "Siapa yang memberi nama Yahya?", answers: ["Nabi Zakaria", "Malaikat", "Kaumnya", "Ibunya"], correct: "Malaikat" },
+    { id: 19, question: "Apa yang dilakukan Nabi Zakaria setelah menerima kabar gembira?", answers: ["Bersyukur dan terus beribadah", "Menjadi sombong", "Menjadi kaya raya", "Meninggalkan umatnya"], correct: "Bersyukur dan terus beribadah" },
+    { id: 20, question: "Siapakah Nabi yang lahir setelah mukjizat doa Nabi Zakaria?", answers: ["Nabi Musa", "Nabi Yahya", "Nabi Isa", "Nabi Yusuf"], correct: "Nabi Yahya" },
+    { id: 21, question: "Bagaimana Allah menjawab doa Nabi Zakaria?", answers: ["Dengan langsung mengabulkannya", "Dengan mengirimkan malaikat untuk memberi kabar", "Dengan memberikan harta lebih banyak", "Dengan menguji lebih berat"], correct: "Dengan mengirimkan malaikat untuk memberi kabar" },
+    { id: 22, question: "Apa yang dilakukan Nabi Zakaria sebagai seorang nabi?", answers: ["Mengajarkan tauhid dan kebaikan", "Menjadi seorang pedagang", "Memimpin perang", "Mengabaikan umatnya"], correct: "Mengajarkan tauhid dan kebaikan" },
+    { id: 23, question: "Apa yang kita pelajari dari kisah Nabi Zakaria?", answers: ["Keutamaan bersabar dan berdoa", "Pentingnya menjadi kaya", "Bahwa doa tidak berguna", "Bahwa mukjizat itu tidak ada"], correct: "Keutamaan bersabar dan berdoa" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;

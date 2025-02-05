@@ -61,29 +61,31 @@
     
     <script>
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Apa kelebihan yang diberikan Allah kepada Nabi Sulaiman?", answers: ["Kebijaksanaan, kemampuan berbicara dengan binatang, dan kekuasaan besar", "Kekayaan dan kekuatan tubuh", "Kecerdasan dan kemampuan berbicara dengan manusia", "Keahlian dalam memimpin perang"], correct: "Kebijaksanaan, kemampuan berbicara dengan binatang, dan kekuasaan besar" },
+    { id: 2, question: "Siapakah ayah Nabi Sulaiman?", answers: ["Nabi Daud", "Nabi Ibrahim", "Nabi Musa", "Nabi Adam"], correct: "Nabi Daud" },
+    { id: 3, question: "Apa yang terjadi ketika dua wanita datang menghadap Nabi Sulaiman?", answers: ["Mereka mengklaim bayi mereka", "Mereka meminta bantuan untuk berperang", "Mereka meminta bantuan ekonomi", "Mereka meminta tempat tinggal"], correct: "Mereka mengklaim bayi mereka" },
+    { id: 4, question: "Apa keputusan Nabi Sulaiman dalam kasus dua wanita yang mengklaim bayi?", answers: ["Membelah bayi tersebut", "Memberi bayi itu kepada wanita yang pertama", "Memberi bayi itu kepada wanita yang kedua", "Meminta bayi itu dibawa ke tempat lain"], correct: "Membelah bayi tersebut" },
+    { id: 5, question: "Bagaimana Nabi Sulaiman mengetahui ibu asli bayi?", answers: ["Wanita yang menangis dan meminta agar bayi tidak dibelah", "Wanita yang diam", "Wanita yang menenangkan bayi", "Wanita yang membela bayinya"], correct: "Wanita yang menangis dan meminta agar bayi tidak dibelah" },
+    { id: 6, question: "Apa yang menjadi tanda kebesaran kekuasaan Nabi Sulaiman?", answers: ["Kemampuan mengendalikan angin, jin, dan binatang", "Kemampuan berbicara dalam berbagai bahasa", "Kekayaan yang melimpah", "Kemampuan menyembuhkan penyakit"], correct: "Kemampuan mengendalikan angin, jin, dan binatang" },
+    { id: 7, question: "Apa yang dilakukan Nabi Sulaiman ketika mendengar percakapan semut?", answers: ["Memerintahkan pasukannya untuk berhati-hati", "Mempercepat perjalanannya", "Membaca doa", "Memberi perintah untuk menangkap semut-semut tersebut"], correct: "Memerintahkan pasukannya untuk berhati-hati" },
+    { id: 8, question: "Apa yang diperintahkan Nabi Sulaiman kepada pasukannya?", answers: ["Untuk berjalan dengan hati-hati agar tidak menginjak semut", "Untuk mempercepat perjalanan", "Untuk menghentikan perjalanan", "Untuk menangkap semut-semut tersebut"], correct: "Untuk berjalan dengan hati-hati agar tidak menginjak semut" },
+    { id: 9, question: "Siapa yang datang untuk menguji kebesaran Nabi Sulaiman?", answers: ["Ratu Saba", "Raja Babilonia", "Ratu Mesir", "Nabi Musa"], correct: "Ratu Saba" },
+    { id: 10, question: "Apa yang dibawa oleh Ratu Saba untuk Nabi Sulaiman?", answers: ["Hadiah-hadiah mewah", "Surat-surat", "Pasukan", "Unta-unta"], correct: "Hadiah-hadiah mewah" },
+    { id: 11, question: "Apa reaksi Nabi Sulaiman terhadap hadiah yang diberikan oleh Ratu Saba?", answers: ["Mengatakan bahwa apa yang dibawa Ratu Saba tidak lebih besar dari yang telah Allah berikan kepadanya", "Menerima hadiah dengan sukacita", "Mengabaikan hadiah tersebut", "Membagi hadiah kepada rakyatnya"], correct: "Mengatakan bahwa apa yang dibawa Ratu Saba tidak lebih besar dari yang telah Allah berikan kepadanya" },
+    { id: 12, question: "Apa mukjizat yang ditunjukkan Nabi Sulaiman kepada Ratu Saba?", answers: ["Meminta jin membawa singgasana Ratu Saba dalam waktu singkat", "Menunjukkan istana megah", "Memberi Ratu Saba kekayaan", "Menyembuhkan penyakit Ratu Saba"], correct: "Meminta jin membawa singgasana Ratu Saba dalam waktu singkat" },
+    { id: 13, question: "Apa yang dilakukan Ratu Saba setelah melihat mukjizat Nabi Sulaiman?", answers: ["Ia menerima kebenaran dan memeluk agama Islam", "Ia marah", "Ia meminta maaf kepada Nabi Sulaiman", "Ia memberikan lebih banyak hadiah"], correct: "Ia menerima kebenaran dan memeluk agama Islam" },
+    { id: 14, question: "Apa yang selalu dipohonkan Nabi Sulaiman kepada Allah?", answers: ["Kebijaksanaan dan keadilan", "Kekayaan dan kemakmuran", "Kesehatan dan umur panjang", "Kemenangan dalam perang"], correct: "Kebijaksanaan dan keadilan" },
+    { id: 15, question: "Apa doa Nabi Sulaiman dalam memimpin umatnya?", answers: ["Ya Allah, berikanlah aku hikmah yang benar, dan jadikan aku pemimpin yang adil", "Ya Allah, berikan aku kekayaan yang melimpah", "Ya Allah, jadikan aku pemimpin yang kuat", "Ya Allah, lindungilah umatku dari musuh"], correct: "Ya Allah, berikanlah aku hikmah yang benar, dan jadikan aku pemimpin yang adil" },
+    { id: 16, question: "Apa yang diajarkan oleh Nabi Sulaiman tentang kekuasaan?", answers: ["Kekuasaan harus digunakan dengan bijaksana dan tidak untuk kesombongan", "Kekuasaan adalah hak mutlak", "Kekuasaan adalah ujian dari Allah", "Kekuasaan harus dimanfaatkan untuk mengalahkan musuh"], correct: "Kekuasaan harus digunakan dengan bijaksana dan tidak untuk kesombongan" },
+    { id: 17, question: "Apa yang diajarkan oleh Nabi Sulaiman tentang syukur?", answers: ["Selalu bersyukur kepada Allah atas segala nikmat-Nya", "Syukur hanya diberikan pada waktu sulit", "Syukur dapat dilakukan hanya dengan kata-kata", "Syukur adalah tindakan yang tidak perlu dilakukan secara terbuka"], correct: "Selalu bersyukur kepada Allah atas segala nikmat-Nya" },
+    { id: 18, question: "Bagaimana Nabi Sulaiman menunjukkan rasa kasih sayang kepada makhluk Allah?", answers: ["Dengan mendengarkan dan memahami bahasa binatang", "Dengan memberi makanan kepada orang miskin", "Dengan menolong orang yang kesulitan", "Dengan berdoa untuk keselamatan umatnya"], correct: "Dengan mendengarkan dan memahami bahasa binatang" },
+    { id: 19, question: "Apa yang selalu diingatkan Nabi Sulaiman kepada kaumnya?", answers: ["Untuk tidak sombong dan selalu bersyukur kepada Allah", "Untuk memperbanyak doa", "Untuk selalu berperang", "Untuk menyebarkan kekayaan"], correct: "Untuk tidak sombong dan selalu bersyukur kepada Allah" },
+    { id: 20, question: "Apa yang menjadi pesan moral dari kisah Nabi Sulaiman?", answers: ["Memimpin dengan kebijaksanaan, keadilan, dan rendah hati", "Selalu mencari kekuasaan", "Mengabaikan makhluk kecil", "Mengutamakan kekayaan dan kekuasaan"], correct: "Memimpin dengan kebijaksanaan, keadilan, dan rendah hati" },
+    { id: 21, question: "Apa yang dapat kita pelajari dari Nabi Sulaiman mengenai kekuasaan?", answers: ["Kekuasaan harus dimanfaatkan untuk kebaikan umat manusia", "Kekuasaan harus diperjuangkan dengan keras", "Kekuasaan adalah tujuan hidup", "Kekuasaan hanya untuk kepentingan pribadi"], correct: "Kekuasaan harus dimanfaatkan untuk kebaikan umat manusia" },
+    { id: 22, question: "Apa yang menjadi tanda kebesaran Allah dalam kisah Nabi Sulaiman?", answers: ["Kemampuan Nabi Sulaiman memahami bahasa binatang dan kekuasaan atas angin dan jin", "Kehebatan dalam perang", "Keberanian dalam menghadapi musuh", "Kekuatan fisik yang luar biasa"], correct: "Kemampuan Nabi Sulaiman memahami bahasa binatang dan kekuasaan atas angin dan jin" },
+    { id: 23, question: "Apa yang diajarkan Nabi Sulaiman mengenai kehidupan makhluk kecil?", answers: ["Makhluk kecil harus dihargai dan dilindungi", "Makhluk kecil tidak penting", "Makhluk kecil harus diperangi", "Makhluk kecil harus dijadikan makanan"], correct: "Makhluk kecil harus dihargai dan dilindungi" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
