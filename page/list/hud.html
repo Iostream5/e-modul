@@ -32,7 +32,7 @@
         </div>
         <div class="content ">
 <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
-            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../images/img.png" alt="">        </div>
+            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../asset/cerita/Hud/1Hud.png" alt="">        </div>
         <div class="text animate__animated ">
             <p id="text" class="animate__animated animate__fadeIn">Di tanah Al-Ahqaf, hiduplah kaum 'Ad, sebuah bangsa yang kuat dan makmur. Mereka diberi kekayaan melimpah oleh Allah, berupa tanah subur, bangunan megah, dan tubuh yang perkasa. 
                 Namun, kaum 'Ad menjadi sombong. Mereka menyembah berhala dan melupakan Allah yang telah memberi mereka nikmat.
@@ -169,6 +169,7 @@ function updateContent() {
         case 0:
             part.innerHTML = 'Pendahuluan:';
             title.innerHTML = 'Nabi Hud dan Kaum \'Ad';
+            image_cerita.src = '../../asset/cerita/Hud/1Hud.png';
             canvas.innerHTML = `Di tanah Al-Ahqaf, hiduplah kaum 'Ad, sebuah bangsa yang kuat dan makmur. Mereka diberi kekayaan melimpah oleh Allah, berupa tanah subur, bangunan megah, dan tubuh yang perkasa. 
             Namun, kaum 'Ad menjadi sombong. Mereka menyembah berhala dan melupakan Allah yang telah memberi mereka nikmat.
 
@@ -178,6 +179,7 @@ function updateContent() {
         case 1:
             part.innerHTML = 'Bagian Tengah:';
             title.innerHTML = 'Dakwah Nabi Hud';
+            image_cerita.src = '../../asset/cerita/Hud/2Hud.png';
             canvas.innerHTML = `Nabi Hud adalah seorang nabi yang bijaksana dan penuh kasih. Ia mengajak kaumnya untuk berhenti menyembah berhala dan hanya menyembah Allah. 
             Dengan sabar, Nabi Hud berkata, "Wahai kaumku, sembahlah Allah. Tidak ada Tuhan bagi kalian selain Dia. Mengapa kalian tidak bertakwa?"
 
@@ -189,6 +191,7 @@ function updateContent() {
         case 2:
             part.innerHTML = 'Bagian Tengah:';
             title.innerHTML = 'Azab yang Dijanjikan';
+            image_cerita.src = '../../asset/cerita/Hud/3Hud.png';
             canvas.innerHTML = `Kaum 'Ad tetap sombong. Mereka merasa tidak membutuhkan Allah karena kekuatan dan kekayaan yang mereka miliki. Nabi Hud memperingatkan mereka bahwa kesombongan hanya akan membawa kehancuran.
 
             Ketika kaum 'Ad tidak juga bertaubat, Allah mengirimkan angin kencang yang sangat dingin sebagai azab. Angin tersebut bertiup selama tujuh malam delapan hari tanpa henti, menghancurkan semua yang ada di negeri kaum 'Ad. Bangunan megah dan kekayaan mereka musnah.
@@ -199,12 +202,14 @@ function updateContent() {
         case 3:
             part.innerHTML = 'Penutup:';
             title.innerHTML = 'Penutup';
+            image_cerita.src = '../../asset/cerita/Hud/4Hud.png';
             canvas.innerHTML = `Setelah kaum 'Ad binasa, Nabi Hud melanjutkan hidupnya bersama umat yang beriman. Ia mengajarkan mereka untuk hidup dengan tawadhu, bersyukur atas nikmat Allah, dan menjauhi kesombongan.`;
             break;
 
         case 4:
             part.innerHTML = 'Pesan Moral:';
             title.innerHTML = ' ';
+            image_cerita.src = '../../asset/cerita/Hud/5Hud.png';
             canvas.innerHTML = `Kisah Nabi Hud mengajarkan bahwa kesombongan dan penyembahan kepada selain Allah hanya akan membawa kehancuran. 
             Kesabaran dalam menghadapi ujian dan ketaatan kepada Allah adalah kunci keselamatan dunia dan akhirat.`;
             break;

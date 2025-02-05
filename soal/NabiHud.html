@@ -6,7 +6,7 @@
     <title>SOAL - Nabi Hud A.S</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../animate/node_modules/animate.css/animate.min.css">
-    <link rel="stylesheet" href="../bootstrap/DaftarIsi.css">
+    <link rel="stylesheet" href="../bootstrap/mix.css">
 </head>
 <body class="overflow-hidden">
     <div class="main d-flex align-items-center justify-content-center">
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="contain">
+    <div class="containSoal">
         <div class="headerSoal overflow-hidden">
             <img class="roll img-fluid " src="../images/roll2.png" alt="">
             <div class="question-container">
@@ -38,7 +38,7 @@
             <!-- <p class="bagian">Pendahuluan</p>
             <p class="part">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nihilut animi expedita dicta in iusto quia recusandae, illum?</p> -->
         </div>
-        <div class="content">
+        <div class="contents">
             <div class="btn-container">
                 <div class="btn">
                     <button type="button" id="btn1"></button>
@@ -56,7 +56,7 @@
         </div>
     </div>
     <div id="modal-overlay">
-        <div id="modal-content"></div>
+        <div id="modal-contents"></div>
     </div>
     
     <script>
@@ -146,7 +146,7 @@
     
         function handleAnswer(question, selectedAnswer) {
             const modalOverlay = document.getElementById("modal-overlay");
-            const modalContent = document.getElementById("modal-content");
+            const modalContent = document.getElementById("modal-contents");
     
             if (selectedAnswer === question.correct) {
                 correctAnswersCount++;

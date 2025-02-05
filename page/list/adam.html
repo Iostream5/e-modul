@@ -32,7 +32,7 @@
         </div>
         <div class="content ">
             <img class="paperin animate__animated animate__bounceInUp img-fluid" src="../../images/paper.png" alt="">
-            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../images/img.png"
+            <img id="image_cerita" class="image_cerita animate__animated animate__fadeIn" src="../../asset/cerita/Adam/1Adam.png"
                 alt="">
         </div>
         <div class="text animate__animated ">
@@ -176,7 +176,7 @@
                 case 0:
                     part.innerHTML = 'Pendahuluan:';
                     title.innerHTML = 'Awal Kehidupan Nabi Adam';
-                    image_cerita.src = '../../images/img.png';
+                    image_cerita.src = '../../asset/cerita/Adam/1Adam.png';
                     canvas.innerHTML = `Di masa yang sangat lampau, sebelum manusia diciptakan, Allah menciptakan langit, bumi, dan segala isinya.
             Allah kemudian berkata kepada para malaikat bahwa Dia akan menciptakan seorang khalifah di bumi. Malaikat bertanya, 
             "Mengapa Engkau ingin menciptakan makhluk yang akan membuat kerusakan di bumi dan saling menumpahkan darah, sedangkan kami selalu 
@@ -186,7 +186,7 @@
                 case 1:
                     part.innerHTML = 'Bagian Tengah:';
                     title.innerHTML = 'Penciptaan Nabi Adam';
-                    image_cerita.src = '../../images/asset-langit.png';
+                    image_cerita.src = '../../asset/cerita/Adam/2Adam.png';
                     canvas.innerHTML = `Allah kemudian menciptakan manusia pertama, yaitu Nabi Adam, dari tanah liat yang terbaik.
             Setelah bentuknya sempurna, Allah meniupkan ruh ke dalamnya, sehingga Nabi Adam pun hidup. Allah memberikan ilmu yang luar biasa 
             kepada Nabi Adam, mengajarkannya nama-nama segala sesuatu, yang bahkan malaikat tidak mengetahuinya.`;
@@ -195,6 +195,7 @@
                 case 2:
                     part.innerHTML = 'Bagian Tengah:';
                     title.innerHTML = 'Penolakan Iblis';
+                    image_cerita.src = '../../asset/cerita/Adam/3Adam.png';
                     canvas.innerHTML = `Ketika Allah memerintahkan malaikat untuk bersujud kepada Nabi Adam sebagai bentuk penghormatan, semua malaikat menaati perintah 
             tersebut, kecuali Iblis. Iblis menolak dengan angkuh, berkata, "Aku lebih baik dari dia. Engkau menciptakan aku dari api, sedangkan dia 
             Engkau ciptakan dari tanah." Karena kesombongan ini, Allah mengusir Iblis dari surga dan menjadikannya makhluk terkutuk.`;
@@ -203,6 +204,7 @@
                 case 3:
                     part.innerHTML = 'Bagian Tengah:';
                     title.innerHTML = 'Nabi Adam di Surga';
+                    image_cerita.src = '../../asset/cerita/Adam/4Adam.png';
                     canvas.innerHTML = `Allah memberikan tempat tinggal yang indah di surga kepada Nabi Adam dan menciptakan Hawa, pasangan hidupnya, dari tulang rusuk Nabi Adam.
             Mereka hidup bahagia di surga, dengan satu larangan dari Allah: mereka tidak boleh mendekati sebuah pohon tertentu dan memakan buahnya.`;
                     break;
@@ -210,6 +212,7 @@
                 case 4:
                     part.innerHTML = 'Bagian Tengah:';
                     title.innerHTML = 'Godaan Iblis';
+                    image_cerita.src = '../../asset/cerita/Adam/5Adam.png';
                     canvas.innerHTML = `Namun, Iblis yang penuh dengki dan dendam menggoda Nabi Adam dan Hawa untuk melanggar larangan tersebut.
             Dengan tipu daya, Iblis berhasil membuat mereka memakan buah dari pohon terlarang. Karena kesalahan ini, Allah menurunkan Nabi Adam 
             dan Hawa ke bumi sebagai tempat tinggal mereka.`;
@@ -218,6 +221,7 @@
                 case 5:
                     part.innerHTML = 'Penutup';
                     title.innerHTML = 'Penutup';
+                    image_cerita.src = '../../asset/cerita/Adam/6Adam.png';
                     canvas.innerHTML = `Di bumi, Nabi Adam dan Hawa memohon ampun kepada Allah atas kesalahan mereka, dan Allah menerima taubat mereka.
             Nabi Adam memulai hidupnya di bumi sebagai nabi pertama, mengajarkan manusia tentang Allah, kehidupan, dan bagaimana menjadi khalifah 
             yang baik di dunia.`;
@@ -226,6 +230,7 @@
                 case 6:
                     part.innerHTML = 'Pesan Moral:';
                     title.innerHTML = ' ';
+                    image_cerita.src = '../../asset/cerita/Adam/7Adam.png';
                     canvas.innerHTML = `Kisah Nabi Adam mengajarkan bahwa manusia harus senantiasa taat kepada Allah dan menjauhi godaan setan. 
             Pentingnya memohon ampun atas kesalahan yang dilakukan dan belajar dari kesalahan tersebut menjadi inti dari kehidupan yang baik.`;
                     break;
@@ -233,7 +238,7 @@
 
             prevButton.disabled = (page === 0);
             if (page >= maxPage) {
-                nextImg.src = '../../images/gameBtn.png';
+                nextImg.src = '../../asset/button/game.png';
                 nextButton.onclick = () => {
                     transitionOutAll()
                     bubble()
