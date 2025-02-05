@@ -55,11 +55,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
     { id: 1, question: "Apa kelebihan yang diberikan Allah kepada Nabi Sulaiman?", answers: ["Kebijaksanaan, kemampuan berbicara dengan binatang, dan kekuasaan besar", "Kekayaan dan kekuatan tubuh", "Kecerdasan dan kemampuan berbicara dengan manusia", "Keahlian dalam memimpin perang"], correct: "Kebijaksanaan, kemampuan berbicara dengan binatang, dan kekuasaan besar" },
     { id: 2, question: "Siapakah ayah Nabi Sulaiman?", answers: ["Nabi Daud", "Nabi Ibrahim", "Nabi Musa", "Nabi Adam"], correct: "Nabi Daud" },

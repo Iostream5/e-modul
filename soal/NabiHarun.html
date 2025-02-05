@@ -55,11 +55,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
     { id: 1, question: "Siapakah Nabi Harun dalam hubungan dengan Nabi Musa?", answers: ["Saudara kandung", "Sepupu", "Murid", "Paman"], correct: "Saudara kandung" },
     { id: 2, question: "Apa sifat utama Nabi Harun yang terkenal?", answers: ["Kekuatan fisik", "Kesabaran dan kebijaksanaan", "Kepemimpinan dalam perang", "Keahlian dalam perdagangan"], correct: "Kesabaran dan kebijaksanaan" },

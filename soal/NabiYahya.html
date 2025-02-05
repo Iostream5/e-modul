@@ -55,11 +55,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
     { id: 1, question: "Siapa nama ayah Nabi Yahya?", answers: ["Nabi Zakaria", "Nabi Ibrahim", "Nabi Musa", "Nabi Daud"], correct: "Nabi Zakaria" },
     { id: 2, question: "Apa sifat utama yang dimiliki oleh Nabi Yahya?", answers: ["Keteguhan iman, keberanian, dan kesalehan", "Kekayaan, kecerdasan, dan ketenaran", "Kekuatan fisik, kebijaksanaan, dan keberanian", "Kesabaran, kejujuran, dan kedamaian"], correct: "Keteguhan iman, keberanian, dan kesalehan" },

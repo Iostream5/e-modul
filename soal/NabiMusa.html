@@ -55,11 +55,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
     { id: 1, question: "Siapa yang menyelamatkan Nabi Musa dari pembunuhan Fir'aun?", answers: ["Istri Fir'aun", "Ibunya", "Saudaranya", "Asiyah"], correct: "Istri Fir'aun" },
     { id: 2, question: "Mengapa Fir'aun takut terhadap bayi laki-laki Bani Israil?", answers: ["Mereka akan menggulingkan kekuasaannya", "Karena mereka kuat", "Karena mereka terlalu pintar", "Karena mereka mendukung Nabi Musa"], correct: "Mereka akan menggulingkan kekuasaannya" },

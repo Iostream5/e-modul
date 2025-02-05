@@ -57,11 +57,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
 
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
             { id: 1, question: "Siapakah Nabi Daud?", answers: ["Seorang penyair", "Seorang nabi dan raja", "Seorang saudagar", "Seorang panglima perang"], correct: "Seorang nabi dan raja" },
             { id: 2, question: "Apa mukjizat yang dimiliki oleh Nabi Daud?", answers: ["Membelah lautan", "Menghidupkan orang mati", "Melunakkan besi", "Menyembuhkan orang sakit"], correct: "Melunakkan besi" },

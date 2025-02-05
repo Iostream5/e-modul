@@ -55,11 +55,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
             { id: 1, question: "Siapakah nabi yang diutus Allah setelah Nabi Adam yang dikenal penuh kebijaksanaan dan ilmu pengetahuan?", answers: ["Nabi Syits", "Nabi Idris", "Nabi Nuh", "Nabi Musa"], correct: "Nabi Idris" },
             { id: 2, question: "Siapa yang merupakan ayah dari Nabi Idris?", answers: ["Nabi Nuh", "Nabi Adam", "Nabi Syits", "Nabi Ibrahim"], correct: "Nabi Adam" },

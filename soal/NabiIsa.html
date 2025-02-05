@@ -55,11 +55,25 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
     { id: 1, question: "Siapa ibu Nabi Isa?", answers: ["Maryam", "Aisyah", "Fatimah", "Hawa"], correct: "Maryam" },
     { id: 2, question: "Apa mukjizat pertama Nabi Isa ketika masih bayi?", answers: ["Berbicara kepada ibunya", "Menghidupkan orang mati", "Menyembuhkan orang sakit", "Menyembuhkan orang buta"], correct: "Berbicara kepada ibunya" },
