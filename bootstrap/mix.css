@@ -5,6 +5,9 @@
     font-family: 'Bryndan', sans-serif;
 
 }
+*::-webkit-scrollbar {
+    display: none;
+}
 
 @font-face {
     font-family: 'Bryndan'; 
@@ -15,13 +18,13 @@
 
 body {
     height: 100vh;
-    /* overflow: hidden; */
+    width: 100%;
     background: orange;
     position: relative;
 }
 .main{
     position: absolute;
-    top: -10%;
+    /* top: -10%; */
     width: 100%;
     height: 100%;
 }
@@ -590,10 +593,10 @@ body {
     width: 12em;
     height: auto;
     position: absolute;
-    right: 45px;
-    bottom: 213px;
+    right: 60px;
+    bottom: 220px;
     transform: rotateZ(-34deg);
-    font-size: 13px;
+    font-size: 11px;
     z-index: 999;
     text-align: center;
 }
@@ -613,9 +616,9 @@ body {
     }
 
     .pesan {
-        right: 10px;
-        bottom: 125px;
-        font-size: 10px;
+        right: 25px;
+        bottom: 135px;
+        font-size: 8px;
     }
 }
 
@@ -841,6 +844,7 @@ body {
 .grid-container {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    max-height: 750px;
 }
 
 .grid-item {
@@ -1250,6 +1254,7 @@ body {
     flex: 1 1 100%;
     max-width: 100%;
     animation: jawaban 20s ease 0s infinite alternate;
+    font-weight: 600;
 }
 
 @keyframes jawaban {

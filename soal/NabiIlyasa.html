@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang diutus untuk menggantikan Nabi Ilyas dalam menyampaikan wahyu?", answers: ["Nabi Ilyasa", "Nabi Musa", "Nabi Daud", "Nabi Muhammad"], correct: "Nabi Ilyasa" },
+    { id: 2, question: "Apa yang dikenal tentang Nabi Ilyasa?", answers: ["Sabar, penyayang, dan penuh kebijaksanaan", "Cepat marah dan keras", "Tidak suka berdoa", "Penyembah berhala"], correct: "Sabar, penyayang, dan penuh kebijaksanaan" },
+    { id: 3, question: "Apa yang menjadi tantangan besar yang dihadapi Nabi Ilyasa?", answers: ["Kaumnya yang keras kepala dan menyembah berhala", "Kaumnya yang tidak mendengarkan doa", "Kaumnya yang tidak percaya mukjizat", "Kaumnya yang tidak mau berperang"], correct: "Kaumnya yang keras kepala dan menyembah berhala" },
+    { id: 4, question: "Apa yang Nabi Ilyasa ajarkan kepada kaumnya?", answers: ["Beriman hanya kepada Allah dan meninggalkan penyembahan berhala", "Menyembah berhala", "Menjadi kaya", "Menyerah kepada nasib"], correct: "Beriman hanya kepada Allah dan meninggalkan penyembahan berhala" },
+    { id: 5, question: "Apa yang dilakukan Nabi Ilyasa ketika kaumnya tidak mau mendengarkan ajakannya?", answers: ["Tetap sabar dan berdoa kepada Allah", "Menyerah dan pergi", "Mengutuk mereka", "Menggunakan kekerasan untuk memaksa mereka"], correct: "Tetap sabar dan berdoa kepada Allah" },
+    { id: 6, question: "Apa mukjizat yang dimiliki Nabi Ilyasa untuk membantu dakwahnya?", answers: ["Kemampuan menyembuhkan orang sakit", "Kemampuan mengendalikan angin", "Kemampuan berbicara dalam bahasa asing", "Kemampuan mengubah batu menjadi makanan"], correct: "Kemampuan menyembuhkan orang sakit" },
+    { id: 7, question: "Apa yang terjadi pada seorang wanita miskin yang meminta bantuan kepada Nabi Ilyasa?", answers: ["Wadah minyaknya tidak pernah kosong", "Dia diberi banyak uang", "Dia diberi kekuatan untuk melawan musuh", "Dia mendapatkan makanan berlimpah"], correct: "Wadah minyaknya tidak pernah kosong" },
+    { id: 8, question: "Apa yang diajarkan oleh kisah wanita miskin yang dibantu Nabi Ilyasa?", answers: ["Keajaiban mukjizat dan kebesaran Allah", "Kekayaan material", "Kekuatan untuk bertahan hidup", "Cara menghadapi musuh"], correct: "Keajaiban mukjizat dan kebesaran Allah" },
+    { id: 9, question: "Apa yang Nabi Ilyasa lakukan ketika kaumnya masih tidak mau beriman?", answers: ["Terus berdoa untuk mereka", "Menggunakan kekerasan untuk memaksa mereka", "Menyerah dan tidak melanjutkan dakwah", "Mengutuk mereka dengan kata-kata kasar"], correct: "Terus berdoa untuk mereka" },
+    { id: 10, question: "Apa yang Nabi Ilyasa doakan kepada Allah?", answers: ["Agar kaumnya diberikan petunjuk dan dihentikan dari dosa", "Agar kaumnya diberi banyak kekayaan", "Agar kaumnya dihukum segera", "Agar kaumnya dihukum mati"], correct: "Agar kaumnya diberikan petunjuk dan dihentikan dari dosa" },
+    { id: 11, question: "Apa yang terjadi setelah Nabi Ilyasa berdoa kepada Allah?", answers: ["Allah mengabulkan doa Nabi Ilyasa", "Kaumnya menerima semua ajarannya", "Kaumnya meninggalkan Nabi Ilyasa", "Kaumnya tetap menolak kebenaran"], correct: "Allah mengabulkan doa Nabi Ilyasa" },
+    { id: 12, question: "Bagaimana ketulusan Nabi Ilyasa dalam berdoa?", answers: ["Doa yang penuh keikhlasan dan kesungguhan hati", "Doa untuk mengutuk kaumnya", "Doa untuk kekayaan dan kemenangan", "Doa untuk menghukum kaumnya"], correct: "Doa yang penuh keikhlasan dan kesungguhan hati" },
+    { id: 13, question: "Apa yang bisa kita pelajari dari ketulusan Nabi Ilyasa dalam berdoa?", answers: ["Doa yang tulus didengar oleh Allah", "Doa hanya untuk mendapatkan kekayaan", "Doa untuk menghukum orang lain", "Doa untuk keuntungan pribadi"], correct: "Doa yang tulus didengar oleh Allah" },
+    { id: 14, question: "Apa yang membuat Nabi Ilyasa tidak pernah menyerah dalam dakwah?", answers: ["Kesabaran dan keteguhan hati", "Keinginan untuk dihormati", "Keinginan untuk memperoleh kekayaan", "Keinginan untuk menang dalam pertempuran"], correct: "Kesabaran dan keteguhan hati" },
+    { id: 15, question: "Apa yang diajarkan kisah Nabi Ilyasa kepada kita?", answers: ["Pentingnya keteguhan hati, kesabaran, dan ketulusan dalam berusaha", "Pentingnya kekayaan dan kemenangan", "Pentingnya menghukum orang yang salah", "Pentingnya berbicara dengan keras"], correct: "Pentingnya keteguhan hati, kesabaran, dan ketulusan dalam berusaha" },
+    { id: 16, question: "Apa yang perlu kita lakukan ketika menghadapi ujian dan penolakan?", answers: ["Tetap sabar, berdoa, dan berusaha", "Menghindari tantangan", "Menyerah dan tidak melanjutkan usaha", "Menggunakan kekerasan untuk menang"], correct: "Tetap sabar, berdoa, dan berusaha" },
+    { id: 17, question: "Apa yang bisa kita pelajari dari mukjizat Nabi Ilyasa dalam membantu umatnya?", answers: ["Bahwa Allah memberikan karunia luar biasa untuk membantu umat", "Bahwa mukjizat datang tanpa usaha", "Bahwa kekayaan adalah kunci kebahagiaan", "Bahwa mukjizat hanya untuk kepentingan pribadi"], correct: "Bahwa Allah memberikan karunia luar biasa untuk membantu umat" },
+    { id: 18, question: "Apa yang menjadi dasar dalam doa Nabi Ilyasa?", answers: ["Keikhlasan dan kesungguhan hati", "Keinginan untuk dipuji", "Keinginan untuk menang dalam peperangan", "Keinginan untuk mendapatkan kekayaan"], correct: "Keikhlasan dan kesungguhan hati" },
+    { id: 19, question: "Apa yang menjadi pesan moral dari kisah Nabi Ilyasa?", answers: ["Jangan pernah menyerah meskipun menghadapi banyak tantangan", "Kekayaan adalah yang paling penting", "Mengutuk orang yang salah adalah cara terbaik", "Menghindari ujian adalah yang terbaik"], correct: "Jangan pernah menyerah meskipun menghadapi banyak tantangan" },
+    { id: 20, question: "Apa yang diajarkan Nabi Ilyasa tentang doa?", answers: ["Doa yang tulus dan ikhlas akan didengar oleh Allah", "Doa harus disertai dengan kekerasan", "Doa hanya untuk kepentingan pribadi", "Doa harus dilakukan dengan marah"], correct: "Doa yang tulus dan ikhlas akan didengar oleh Allah" },
+    { id: 21, question: "Apa yang perlu kita lakukan untuk membawa kebenaran kepada orang lain?", answers: ["Tidak menyerah dan tetap sabar", "Menggunakan kekerasan untuk memaksa mereka", "Menyerah ketika tidak diterima", "Mengabaikan mereka"], correct: "Tidak menyerah dan tetap sabar" },
+    { id: 22, question: "Apa yang bisa kita pelajari dari kisah Nabi Ilyasa dalam membantu sesama?", answers: ["Pentingnya membantu orang lain dengan ketulusan", "Pentingnya mencari keuntungan dari membantu orang lain", "Pentingnya menolong hanya yang dapat memberi manfaat", "Pentingnya tidak menolong siapa pun"], correct: "Pentingnya membantu orang lain dengan ketulusan" },
+    { id: 23, question: "Apa yang diajarkan oleh kesabaran Nabi Ilyasa?", answers: ["Kesabaran adalah kunci untuk mengatasi ujian hidup", "Kesabaran membuat kita lemah", "Kesabaran tidak ada gunanya", "Kesabaran hanya untuk orang yang kuat"], correct: "Kesabaran adalah kunci untuk mengatasi ujian hidup" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

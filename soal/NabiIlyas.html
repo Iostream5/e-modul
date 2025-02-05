@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang diutus untuk membimbing umatnya agar menyembah Allah?", answers: ["Nabi Ilyas", "Nabi Musa", "Nabi Ibrahim", "Nabi Muhammad"], correct: "Nabi Ilyas" },
+    { id: 2, question: "Kaum apa yang menjadi tempat dakwah Nabi Ilyas?", answers: ["Kaum Ba'al", "Kaum Ad", "Kaum Tsamud", "Kaum Madyan"], correct: "Kaum Ba'al" },
+    { id: 3, question: "Apa yang dikenal tentang kaum Ba'al?", answers: ["Menyembah berhala Ba'al", "Menyembah Allah", "Menyembah dewa-dewa lain", "Menyembah kekayaan"], correct: "Menyembah berhala Ba'al" },
+    { id: 4, question: "Apa yang dilakukan Nabi Ilyas untuk mengajak kaumnya kembali ke jalan yang benar?", answers: ["Menyampaikan wahyu Allah", "Menyerang berhala mereka", "Berdoa agar mereka mengikuti", "Meninggalkan mereka"], correct: "Menyampaikan wahyu Allah" },
+    { id: 5, question: "Apa yang ditolak oleh kaum Ba'al?", answers: ["Menyembah Allah yang Maha Esa", "Menjauhi penyembahan berhala", "Mendengarkan nasihat Nabi Ilyas", "Meninggalkan kebiasaan buruk"], correct: "Menyembah Allah yang Maha Esa" },
+    { id: 6, question: "Apa yang dilakukan Nabi Ilyas saat kaumnya menolak dakwahnya?", answers: ["Tetap sabar dan melanjutkan dakwah", "Menyerah dan pergi", "Menggunakan kekerasan", "Mengabaikan mereka"], correct: "Tetap sabar dan melanjutkan dakwah" },
+    { id: 7, question: "Bagaimana kaum Ba'al menganggap Nabi Ilyas?", answers: ["Mereka menganggapnya tidak waras", "Mereka memujanya", "Mereka mengikuti ajarannya", "Mereka mengusirnya dengan hormat"], correct: "Mereka menganggapnya tidak waras" },
+    { id: 8, question: "Apa yang diperintahkan Allah kepada Nabi Ilyas setelah banyak penolakan?", answers: ["Untuk meninggalkan kaum tersebut", "Untuk menyerang kaum tersebut", "Untuk berdoa", "Untuk menulis wahyu baru"], correct: "Untuk meninggalkan kaum tersebut" },
+    { id: 9, question: "Apa yang Nabi Ilyas lakukan untuk kaumnya yang masih tersesat?", answers: ["Berdoa agar mereka diberi petunjuk", "Menyerah dan tidak peduli", "Mengutuk mereka", "Meninggalkan mereka selamanya"], correct: "Berdoa agar mereka diberi petunjuk" },
+    { id: 10, question: "Apa yang diinginkan Nabi Ilyas dalam doanya?", answers: ["Kaumnya dapat kembali ke jalan yang benar", "Kaumnya diberi kekayaan", "Kaumnya diberi kekuatan", "Kaumnya diberi kemenangan"], correct: "Kaumnya dapat kembali ke jalan yang benar" },
+    { id: 11, question: "Apa yang diberikan oleh Allah sebagai mukjizat kepada Nabi Ilyas?", answers: ["Turunnya hujan", "Matahari yang bersinar lebih terang", "Makanan yang berlimpah", "Bantuan dari malaikat"], correct: "Turunnya hujan" },
+    { id: 12, question: "Apa yang dilakukan hujan yang turun dengan izin Allah?", answers: ["Menyiram bumi yang kering dan memberi harapan baru", "Menenggelamkan kaumnya", "Menyuburkan tanaman", "Menyirami berhala-berhala mereka"], correct: "Menyiram bumi yang kering dan memberi harapan baru" },
+    { id: 13, question: "Apa yang terjadi meskipun sebagian kaumnya mulai menerima ajaran Nabi Ilyas?", answers: ["Jumlah yang menerima sangat sedikit", "Kaumnya semua menerima", "Mereka berbalik menentang Nabi Ilyas", "Mereka mulai menyembah Allah dan berbalik taat"], correct: "Jumlah yang menerima sangat sedikit" },
+    { id: 14, question: "Apa yang bisa kita pelajari dari kesabaran Nabi Ilyas?", answers: ["Kesabaran dalam menghadapi ujian dan penolakan", "Cara berdakwah yang tegas", "Cara menghadapi musuh", "Cara menerima kemenangan"], correct: "Kesabaran dalam menghadapi ujian dan penolakan" },
+    { id: 15, question: "Apa yang diajarkan oleh kisah Nabi Ilyas tentang dakwah?", answers: ["Pentingnya kesabaran dan keteguhan hati", "Cara menjadi pemimpin yang hebat", "Cara menghadapi penolakan", "Cara berdakwah dengan kekerasan"], correct: "Pentingnya kesabaran dan keteguhan hati" },
+    { id: 16, question: "Apa yang menjadi salah satu karakter Nabi Ilyas dalam perjuangannya?", answers: ["Keteguhan hati", "Keberanian", "Kekayaan", "Ketahanan fisik"], correct: "Keteguhan hati" },
+    { id: 17, question: "Apa yang ditekankan Nabi Ilyas dalam dakwahnya?", answers: ["Menyembah Allah yang Maha Esa", "Menyembah berhala", "Mendapatkan kekayaan", "Mengikuti tradisi lama"], correct: "Menyembah Allah yang Maha Esa" },
+    { id: 18, question: "Apa yang menjadi pesan moral dari kisah Nabi Ilyas?", answers: ["Bersabar dalam menghadapi kesulitan dan penolakan", "Menyerah pada tantangan", "Menggunakan kekerasan untuk mendapatkan kebenaran", "Menghormati berhala-berhala"], correct: "Bersabar dalam menghadapi kesulitan dan penolakan" },
+    { id: 19, question: "Apa yang Nabi Ilyas harapkan dari kaumnya?", answers: ["Kembali ke jalan yang benar", "Meninggalkan penyembahan berhala", "Menjadi kaya", "Mendukungnya dalam peperangan"], correct: "Kembali ke jalan yang benar" },
+    { id: 20, question: "Bagaimana Nabi Ilyas berdoa untuk kaumnya?", answers: ["Dengan tulus dan penuh harapan", "Dengan marah", "Dengan kekerasan", "Dengan penuh kemarahan terhadap mereka"], correct: "Dengan tulus dan penuh harapan" },
+    { id: 21, question: "Apa yang Nabi Ilyas ajarkan tentang menghadapi ujian dalam hidup?", answers: ["Untuk tidak pernah menyerah dan terus berusaha", "Untuk menghindari ujian", "Untuk mengalah kepada musuh", "Untuk melarikan diri dari masalah"], correct: "Untuk tidak pernah menyerah dan terus berusaha" },
+    { id: 22, question: "Apa yang membuat Nabi Ilyas terus berjuang meskipun banyak penolakan?", answers: ["Kepercayaan bahwa Allah selalu bersama orang-orang sabar", "Keinginan untuk memperoleh kemenangan", "Keinginan untuk dihormati", "Keinginan untuk memimpin"], correct: "Kepercayaan bahwa Allah selalu bersama orang-orang sabar" },
+    { id: 23, question: "Apa yang bisa kita pelajari dari keteguhan hati Nabi Ilyas?", answers: ["Keteguhan dalam menjalankan tugas dakwah", "Meninggalkan semua tantangan", "Mengalah kepada musuh", "Menyerah dalam situasi sulit"], correct: "Keteguhan dalam menjalankan tugas dakwah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

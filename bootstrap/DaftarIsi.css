@@ -202,66 +202,6 @@
     background: none;
 }
 
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Warna semi-transparan */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Tampilkan di atas semua elemen */
-}
-
-/* Gaya untuk modal box */
-.modal-box {
-    background-color: whitesmoke;
-    border: 3px solid #ffb300;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    color: black;
-}
-
-/* Tombol Close */
-.btn-danger {
-    background-color: #ffb300;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-danger:hover {
-    background-color: white;
-    color: #ffb300;
-    border: 3px solid #ffb300;
-}
-
-/* Tombol Open */
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.farbtn{
-   animation: customBaca 1.5s ease 0s infinite normal none;
-}
-
 .grid-item img {
     width: 90%;
     height: auto;

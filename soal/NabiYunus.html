@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang diutus untuk membimbing kaum Niniwe?", answers: ["Nabi Yunus", "Nabi Ibrahim", "Nabi Muhammad", "Nabi Musa"], correct: "Nabi Yunus" },
+    { id: 2, question: "Apa yang dilakukan oleh kaum Niniwe setelah diberi peringatan oleh Nabi Yunus?", answers: ["Mereka menolak ajaran Nabi Yunus", "Mereka segera bertobat", "Mereka mengikuti ajaran Nabi Yunus", "Mereka mengusir Nabi Yunus"], correct: "Mereka menolak ajaran Nabi Yunus" },
+    { id: 3, question: "Apa yang membuat Nabi Yunus akhirnya meninggalkan kaumnya?", answers: ["Kaumnya tidak mau mendengarkan dakwahnya", "Nabi Yunus diminta untuk pergi", "Nabi Yunus merasa senang dengan keputusan kaumnya", "Kaumnya menerima ajaran Nabi Yunus"], correct: "Kaumnya tidak mau mendengarkan dakwahnya" },
+    { id: 4, question: "Kemana Nabi Yunus pergi setelah meninggalkan kaumnya?", answers: ["Ke sebuah kapal menuju kota lain", "Ke hutan", "Ke tempat yang jauh dari kaumnya", "Ke rumah saudara-saudara Nabi Yunus"], correct: "Ke sebuah kapal menuju kota lain" },
+    { id: 5, question: "Apa yang terjadi saat kapal yang ditumpangi Nabi Yunus berlayar?", answers: ["Datang badai besar yang mengancam kapal", "Kapal melaju dengan sangat cepat", "Kapal tenggelam", "Kapal menghindari badai dengan mudah"], correct: "Datang badai besar yang mengancam kapal" },
+    { id: 6, question: "Bagaimana para penumpang kapal memutuskan untuk meredakan badai?", answers: ["Dengan melempar salah satu penumpang ke laut", "Dengan memohon kepada Tuhan", "Dengan menurunkan layar kapal", "Dengan berdoa bersama-sama"], correct: "Dengan melempar salah satu penumpang ke laut" },
+    { id: 7, question: "Siapa yang dipilih untuk dilempar ke laut?", answers: ["Nabi Yunus", "Nabi Zakaria", "Seorang penumpang lain", "Kapal itu sendiri"], correct: "Nabi Yunus" },
+    { id: 8, question: "Apa yang terjadi setelah Nabi Yunus terjun ke laut?", answers: ["Badai langsung reda", "Kapal terbalik", "Angin semakin kencang", "Para penumpang merasa takut"], correct: "Badai langsung reda" },
+    { id: 9, question: "Setelah dilempar ke laut, apa yang dikirimkan Allah untuk Nabi Yunus?", answers: ["Seekor ikan besar", "Seekor burung raksasa", "Sekelompok ikan kecil", "Seekor naga"], correct: "Seekor ikan besar" },
+    { id: 10, question: "Berapa lama Nabi Yunus berada di dalam perut ikan?", answers: ["Tiga hari tiga malam", "Satu minggu", "Tiga hari", "Tujuh malam"], correct: "Tiga hari tiga malam" },
+    { id: 11, question: "Apa yang Nabi Yunus rasakan di dalam perut ikan?", answers: ["Penyesalan dan kesadaran atas kesalahannya", "Kebahagiaan", "Kehilangan harapan", "Ketakutan yang sangat besar"], correct: "Penyesalan dan kesadaran atas kesalahannya" },
+    { id: 12, question: "Apa doa yang dipanjatkan oleh Nabi Yunus di dalam perut ikan?", answers: ["Tidak ada Tuhan selain Engkau, Maha Suci Engkau", "Ya Allah, ampunilah dosa-dosaku", "Tuhan, berikanlah aku kekuatan", "Ya Allah, jangan hukum aku"], correct: "Tidak ada Tuhan selain Engkau, Maha Suci Engkau" },
+    { id: 13, question: "Apa yang dilakukan Allah setelah mendengar doa Nabi Yunus?", answers: ["Mengabulkan doa Nabi Yunus dan memerintahkan ikan untuk memuntahkannya", "Memberikan Nabi Yunus kekuatan", "Mengirimkan malaikat untuk menolongnya", "Menghukum Nabi Yunus lebih keras"], correct: "Mengabulkan doa Nabi Yunus dan memerintahkan ikan untuk memuntahkannya" },
+    { id: 14, question: "Setelah keluar dari perut ikan, apa yang dilakukan Nabi Yunus?", answers: ["Kembali ke kaumnya untuk mengajak mereka bertobat", "Pergi ke tempat lain", "Menjadi raja", "Beristirahat di pantai"], correct: "Kembali ke kaumnya untuk mengajak mereka bertobat" },
+    { id: 15, question: "Apa yang terjadi dengan kaum Niniwe setelah Nabi Yunus kembali?", answers: ["Sebagian besar dari mereka bertobat dan menerima ajaran Nabi Yunus", "Mereka mengusir Nabi Yunus", "Mereka tetap dalam kekufuran", "Mereka menantang Nabi Yunus"], correct: "Sebagian besar dari mereka bertobat dan menerima ajaran Nabi Yunus" },
+    { id: 16, question: "Apa yang diajarkan Nabi Yunus setelah kembali ke kaumnya?", answers: ["Beriman kepada Allah dan meninggalkan kebiasaan buruk", "Menyerah dan berhenti berdakwah", "Menjadi raja", "Menghancurkan tempat ibadah mereka"], correct: "Beriman kepada Allah dan meninggalkan kebiasaan buruk" },
+    { id: 17, question: "Apa pesan moral dari kisah Nabi Yunus?", answers: ["Kesabaran dalam menghadapi kesulitan dakwah", "Keberanian dalam melawan raja", "Kemewahan dan kekayaan tidak penting", "Menghindari perjuangan dalam hidup"], correct: "Kesabaran dalam menghadapi kesulitan dakwah" },
+    { id: 18, question: "Apa yang Nabi Yunus ajarkan kepada kita tentang kesalahan?", answers: ["Kita harus segera bertaubat dan memohon ampunan Allah", "Kita harus menghindari segala jenis kesalahan", "Kesalahan tidak perlu diperbaiki", "Kesalahan bisa dibiarkan begitu saja"], correct: "Kita harus segera bertaubat dan memohon ampunan Allah" },
+    { id: 19, question: "Apa yang Nabi Yunus tunjukkan setelah kembali ke kaumnya?", answers: ["Semangat dan harapan dalam dakwah", "Keputusasaan dan kebingungannya", "Kekecewaan yang mendalam", "Ketidaktertarikan dalam dakwah"], correct: "Semangat dan harapan dalam dakwah" },
+    { id: 20, question: "Apa yang Nabi Yunus ajarkan tentang menyerah dalam berdakwah?", answers: ["Kita tidak boleh mudah menyerah", "Kita harus menyerah jika mendapat tantangan", "Kita harus berhenti berdakwah setelah kesulitan", "Kita tidak perlu melakukan dakwah sama sekali"], correct: "Kita tidak boleh mudah menyerah" },
+    { id: 21, question: "Bagaimana Nabi Yunus menunjukkan penyesalannya?", answers: ["Dengan berdoa kepada Allah dengan tulus", "Dengan mengabaikan kesalahannya", "Dengan pergi ke tempat lain dan menghindari masalah", "Dengan menyalahkan orang lain"], correct: "Dengan berdoa kepada Allah dengan tulus" },
+    { id: 22, question: "Apa yang bisa kita pelajari dari kisah Nabi Yunus?", answers: ["Untuk tidak putus asa dalam menghadapi kesulitan dan selalu berdoa", "Untuk menghindari semua masalah", "Untuk menyerah pada keadaan", "Untuk mencari jalan pintas dalam hidup"], correct: "Untuk tidak putus asa dalam menghadapi kesulitan dan selalu berdoa" },
+    { id: 23, question: "Apa yang dapat kita ambil dari doa Nabi Yunus?", answers: ["Pentingnya mengakui kesalahan dan memohon ampunan Allah", "Pentingnya menyalahkan orang lain", "Pentingnya bertindak tanpa pertimbangan", "Pentingnya melupakan dosa-dosa"], correct: "Pentingnya mengakui kesalahan dan memohon ampunan Allah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

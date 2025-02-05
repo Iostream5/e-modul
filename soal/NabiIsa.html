@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa ibu Nabi Isa?", answers: ["Maryam", "Aisyah", "Fatimah", "Hawa"], correct: "Maryam" },
+    { id: 2, question: "Apa mukjizat pertama Nabi Isa ketika masih bayi?", answers: ["Berbicara kepada ibunya", "Menghidupkan orang mati", "Menyembuhkan orang sakit", "Menyembuhkan orang buta"], correct: "Berbicara kepada ibunya" },
+    { id: 3, question: "Apa yang Nabi Isa ajarkan kepada umatnya?", answers: ["Mencintai sesama, rendah hati, dan bersyukur", "Menyerahkan hidup kepada kekayaan", "Menang dalam peperangan", "Berdoa sepanjang waktu"], correct: "Mencintai sesama, rendah hati, dan bersyukur" },
+    { id: 4, question: "Siapa yang menentang ajaran Nabi Isa?", answers: ["Pemimpin agama yang merasa terancam", "Penguasa kerajaan", "Raja-raja besar", "Kaum miskin"], correct: "Pemimpin agama yang merasa terancam" },
+    { id: 5, question: "Apa yang terjadi ketika orang-orang yang menentang Nabi Isa merencanakan untuk menangkapnya?", answers: ["Allah mengangkat Nabi Isa ke langit", "Nabi Isa melarikan diri", "Nabi Isa ditangkap dan dihukum", "Mereka berhasil menangkap Nabi Isa"], correct: "Allah mengangkat Nabi Isa ke langit" },
+    { id: 6, question: "Apa yang terjadi kepada orang yang diserupakan dengan Nabi Isa?", answers: ["Dia ditangkap dan disalibkan", "Dia melarikan diri", "Dia menjadi pengikut Nabi Isa", "Dia diangkat ke langit"], correct: "Dia ditangkap dan disalibkan" },
+    { id: 7, question: "Apa yang dapat dilakukan Nabi Isa dengan mukjizat penyembuhan?", answers: ["Menyembuhkan orang sakit, buta, lumpuh, dan menghidupkan orang mati", "Mengubah air menjadi darah", "Menyerang musuh dengan petir", "Menjadi kaya raya"], correct: "Menyembuhkan orang sakit, buta, lumpuh, dan menghidupkan orang mati" },
+    { id: 8, question: "Siapa yang datang kepada Nabi Isa untuk meminta pertolongan ketika sakit?", answers: ["Seorang wanita yang sakit berat", "Seorang raja yang terluka", "Seorang anak kecil yang kehilangan orang tua", "Seorang pengemis"], correct: "Seorang wanita yang sakit berat" },
+    { id: 9, question: "Bagaimana Nabi Isa menyembuhkan seorang yang buta sejak lahir?", answers: ["Dengan menyentuh mata dan berdoa kepada Allah", "Dengan berbicara kepadanya", "Dengan memberikan obat", "Dengan memberikan doa panjang"], correct: "Dengan menyentuh mata dan berdoa kepada Allah" },
+    { id: 10, question: "Apa yang Nabi Isa ajarkan tentang beribadah?", answers: ["Pentingnya niat yang ikhlas dalam beribadah", "Beribadah dengan cara yang sulit", "Beribadah untuk mendapatkan kekayaan", "Beribadah tanpa hati"], correct: "Pentingnya niat yang ikhlas dalam beribadah" },
+    { id: 11, question: "Apa yang Nabi Isa ajarkan melalui perumpamaan tentang menabur benih?", answers: ["Benih yang baik akan menghasilkan buah yang baik", "Benih yang baik tidak akan tumbuh", "Benih tidak perlu disiram", "Benih yang buruk akan menghasilkan tanaman baik"], correct: "Benih yang baik akan menghasilkan buah yang baik" },
+    { id: 12, question: "Apa yang Nabi Isa katakan tentang mencintai sesama?", answers: ["Mencintai sesama tanpa membeda-bedakan", "Mencintai hanya orang kaya", "Mencintai orang yang memberikan hadiah", "Mencintai hanya keluarga"], correct: "Mencintai sesama tanpa membeda-bedakan" },
+    { id: 13, question: "Apa yang harus dilakukan umat Nabi Isa untuk berbuat baik?", answers: ["Memberi bantuan kepada yang membutuhkan", "Menghindari orang miskin", "Mencari keuntungan pribadi", "Hanya beribadah di tempat ibadah"], correct: "Memberi bantuan kepada yang membutuhkan" },
+    { id: 14, question: "Apa yang terjadi setelah orang-orang yang menentang Nabi Isa gagal menangkapnya?", answers: ["Allah mengangkat Nabi Isa ke langit", "Mereka berhasil menangkap Nabi Isa", "Mereka membuat Nabi Isa mengaku bersalah", "Mereka meninggalkan agama"], correct: "Allah mengangkat Nabi Isa ke langit" },
+    { id: 15, question: "Apa yang dijanjikan Allah kepada Nabi Isa setelah diangkat ke langit?", answers: ["Nabi Isa akan kembali ke bumi pada akhir zaman", "Nabi Isa akan hidup abadi di langit", "Nabi Isa akan dihukum", "Nabi Isa tidak akan kembali lagi"], correct: "Nabi Isa akan kembali ke bumi pada akhir zaman" },
+    { id: 16, question: "Apa yang Nabi Isa ajarkan tentang kasih sayang?", answers: ["Kasih sayang adalah kunci hidup yang penuh kedamaian", "Kasih sayang hanya untuk keluarga", "Kasih sayang hanya untuk orang kaya", "Kasih sayang adalah kelemahan"], correct: "Kasih sayang adalah kunci hidup yang penuh kedamaian" },
+    { id: 17, question: "Apa yang menjadi teladan dari kisah Nabi Isa?", answers: ["Kasih sayang, kesabaran, dan keberanian", "Kekayaan dan kemewahan", "Menang dalam pertempuran", "Menghukum orang yang salah"], correct: "Kasih sayang, kesabaran, dan keberanian" },
+    { id: 18, question: "Apa yang bisa kita pelajari dari ketulusan Nabi Isa dalam menyampaikan kebenaran?", answers: ["Ketulusan dalam menyampaikan kebenaran akan menginspirasi banyak orang", "Kebenaran harus disampaikan dengan kekerasan", "Kebenaran hanya diterima oleh orang kaya", "Kebenaran hanya diterima oleh orang kuat"], correct: "Ketulusan dalam menyampaikan kebenaran akan menginspirasi banyak orang" },
+    { id: 19, question: "Apa yang diajarkan oleh perbuatan baik Nabi Isa?", answers: ["Perbuatan baik akan selalu membawa kebaikan", "Perbuatan baik hanya untuk orang kaya", "Perbuatan baik tidak penting", "Perbuatan baik hanya untuk keluarga"], correct: "Perbuatan baik akan selalu membawa kebaikan" },
+    { id: 20, question: "Apa yang menjadi pesan moral dari kisah Nabi Isa?", answers: ["Selalu berbuat baik dan hidup dengan hati yang tulus", "Berbuat baik hanya kepada orang yang kaya", "Mencari keuntungan pribadi lebih penting", "Menyerah ketika menghadapi penolakan"], correct: "Selalu berbuat baik dan hidup dengan hati yang tulus" },
+    { id: 21, question: "Apa yang Nabi Isa ajarkan tentang penolakan?", answers: ["Tidak menyerah meskipun menghadapi penolakan", "Menyerah ketika ditolak", "Menghukum orang yang menolak", "Menghindari tantangan"], correct: "Tidak menyerah meskipun menghadapi penolakan" },
+    { id: 22, question: "Apa yang bisa kita pelajari dari kebaikan Nabi Isa?", answers: ["Kebaikan akan selalu menang, meskipun ada tantangan", "Kebaikan hanya untuk orang tertentu", "Kebaikan tidak penting", "Kebaikan hanya diterima oleh orang kuat"], correct: "Kebaikan akan selalu menang, meskipun ada tantangan" },
+    { id: 23, question: "Apa yang penting dalam beribadah menurut Nabi Isa?", answers: ["Niat yang ikhlas", "Hanya ibadah fisik", "Menghindari doa", "Mengikuti tradisi tanpa hati"], correct: "Niat yang ikhlas" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

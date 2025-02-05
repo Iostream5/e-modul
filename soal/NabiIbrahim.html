@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Di negeri mana Nabi Ibrahim hidup?", answers: ["Babilonia", "Mesir", "Mekah", "Medina"], correct: "Babilonia" },
+    { id: 2, question: "Apa yang disembah oleh penduduk Babilonia?", answers: ["Allah", "Berhala", "Matahari", "Bintang"], correct: "Berhala" },
+    { id: 3, question: "Apa yang diyakini oleh Nabi Ibrahim tentang Tuhan?", answers: ["Tuhan hanya ada satu", "Tuhan ada di mana-mana", "Tuhan tidak ada", "Tuhan ada di langit"], correct: "Tuhan hanya ada satu" },
+    { id: 4, question: "Apa yang Nabi Ibrahim lakukan untuk menghancurkan berhala?", answers: ["Menghancurkan dengan kapak", "Membakar berhala", "Mencuri berhala", "Menendang berhala"], correct: "Menghancurkan dengan kapak" },
+    { id: 5, question: "Apa alasan Nabi Ibrahim tidak menghancurkan berhala terbesar?", answers: ["Karena ia menggantungkan kapak di lehernya", "Karena berhala itu paling kuat", "Karena ia ingin menyelamatkan berhala terbesar", "Karena berhala terbesar berbicara"], correct: "Karena ia menggantungkan kapak di lehernya" },
+    { id: 6, question: "Apa reaksi penduduk saat melihat berhala mereka hancur?", answers: ["Mereka marah", "Mereka menangis", "Mereka bersyukur", "Mereka bingung"], correct: "Mereka marah" },
+    { id: 7, question: "Siapa yang dianggap melakukan penghancuran berhala oleh Nabi Ibrahim?", answers: ["Berhala terbesar", "Raja Namrud", "Nabi Ismail", "Allah"], correct: "Berhala terbesar" },
+    { id: 8, question: "Apa hukuman yang diberikan kepada Nabi Ibrahim oleh Raja Namrud?", answers: ["Dibakar hidup-hidup", "Dipenjara", "Diusir", "Dilempar ke laut"], correct: "Dibakar hidup-hidup" },
+    { id: 9, question: "Apa yang terjadi pada api yang digunakan untuk menghukum Nabi Ibrahim?", answers: ["Api menjadi dingin", "Api semakin besar", "Api padam sendiri", "Api tidak bisa dinyalakan"], correct: "Api menjadi dingin" },
+    { id: 10, question: "Siapa yang digantikan oleh Allah dalam ujian penyembelihan Nabi Ibrahim?", answers: ["Nabi Ismail", "Nabi Ishaq", "Seekor domba", "Nabi Musa"], correct: "Seekor domba" },
+    { id: 11, question: "Apa yang diajarkan oleh kisah Nabi Ibrahim?", answers: ["Keberanian dan ketaatan kepada Allah", "Keberanian untuk berperang", "Cara hidup sederhana", "Cara berdoa"], correct: "Keberanian dan ketaatan kepada Allah" },
+    { id: 12, question: "Apa yang dikatakan Nabi Ibrahim kepada kaumnya tentang berhala?", answers: ["Berhala tidak bisa mendengar atau menolong", "Berhala adalah Tuhan kita", "Berhala adalah benda suci", "Berhala bisa menyelamatkan kita"], correct: "Berhala tidak bisa mendengar atau menolong" },
+    { id: 13, question: "Apa yang dilakukan Nabi Ibrahim saat penduduk Babilonia pergi merayakan hari besar?", answers: ["Memusnahkan berhala-berhala", "Berdoa di kuil", "Mengajak penduduk untuk shalat", "Melakukan ibadah lain"], correct: "Memusnahkan berhala-berhala" },
+    { id: 14, question: "Apa yang digantungkan oleh Nabi Ibrahim pada berhala terbesar?", answers: ["Kapak", "Kain", "Cincin", "Kunci"], correct: "Kapak" },
+    { id: 15, question: "Apa yang terjadi setelah Nabi Ibrahim dihukum dibakar?", answers: ["Ia diselamatkan oleh Allah", "Ia terbakar hidup-hidup", "Ia berhasil melarikan diri", "Ia mengaku salah"], correct: "Ia diselamatkan oleh Allah" },
+    { id: 16, question: "Mengapa Allah menggantikan Nabi Ismail dengan seekor domba?", answers: ["Sebagai tanda ketaatan Nabi Ibrahim", "Karena Nabi Ibrahim tidak jadi menyembelih", "Karena Nabi Ismail terlalu muda", "Karena ada perintah lain"], correct: "Sebagai tanda ketaatan Nabi Ibrahim" },
+    { id: 17, question: "Apa yang menjadi simbol keteguhan iman Nabi Ibrahim?", answers: ["Pengorbanan dan ketaatan", "Kekayaan", "Kekuatan", "Popularitas"], correct: "Pengorbanan dan ketaatan" },
+    { id: 18, question: "Apa yang diteruskan oleh anak-anak Nabi Ibrahim?", answers: ["Ajaran tauhid", "Ajaran perdamaian", "Ajaran politik", "Ajaran perdagangan"], correct: "Ajaran tauhid" },
+    { id: 19, question: "Siapa anak Nabi Ibrahim yang juga menjadi nabi?", answers: ["Nabi Ismail dan Nabi Ishaq", "Nabi Musa dan Nabi Ismail", "Nabi Yusuf dan Nabi Ishaq", "Nabi Muhammad dan Nabi Ismail"], correct: "Nabi Ismail dan Nabi Ishaq" },
+    { id: 20, question: "Apa yang dimaksud dengan ajaran tauhid yang diajarkan Nabi Ibrahim?", answers: ["Menyembah hanya kepada Allah", "Berdoa setiap hari", "Mengikuti ajaran nabi-nabi", "Membantu sesama"], correct: "Menyembah hanya kepada Allah" },
+    { id: 21, question: "Apa yang diajarkan Nabi Ibrahim tentang kesabaran?", answers: ["Kesabaran dalam menghadapi ujian hidup", "Kesabaran dalam menghadapi kemiskinan", "Kesabaran dalam berperang", "Kesabaran dalam menunggu doa terkabul"], correct: "Kesabaran dalam menghadapi ujian hidup" },
+    { id: 22, question: "Apa yang menjadi ciri utama dari iman Nabi Ibrahim?", answers: ["Ketaatan mutlak kepada Allah", "Kemampuan untuk memimpin", "Kekuatan tubuh", "Keteguhan dalam berbicara"], correct: "Ketaatan mutlak kepada Allah" },
+    { id: 23, question: "Apa yang dapat kita pelajari dari kisah Nabi Ibrahim?", answers: ["Keberanian, kesabaran, dan ketaatan kepada Allah", "Menjadi pemimpin yang bijaksana", "Cara menghadapi musuh", "Cara hidup sederhana dan damai"], correct: "Keberanian, kesabaran, dan ketaatan kepada Allah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

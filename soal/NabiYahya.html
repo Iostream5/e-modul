@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa nama ayah Nabi Yahya?", answers: ["Nabi Zakaria", "Nabi Ibrahim", "Nabi Musa", "Nabi Daud"], correct: "Nabi Zakaria" },
+    { id: 2, question: "Apa sifat utama yang dimiliki oleh Nabi Yahya?", answers: ["Keteguhan iman, keberanian, dan kesalehan", "Kekayaan, kecerdasan, dan ketenaran", "Kekuatan fisik, kebijaksanaan, dan keberanian", "Kesabaran, kejujuran, dan kedamaian"], correct: "Keteguhan iman, keberanian, dan kesalehan" },
+    { id: 3, question: "Apa yang Nabi Yahya ajarkan kepada umatnya?", answers: ["Untuk hidup sesuai dengan wahyu Allah", "Untuk hidup dalam kemewahan", "Untuk menghormati raja", "Untuk meninggalkan agama"], correct: "Untuk hidup sesuai dengan wahyu Allah" },
+    { id: 4, question: "Sejak kecil, bagaimana Nabi Yahya dikenal?", answers: ["Sebagai anak yang sangat saleh", "Sebagai anak yang suka bermain", "Sebagai anak yang kaya", "Sebagai anak yang cerdas"], correct: "Sebagai anak yang sangat saleh" },
+    { id: 5, question: "Apa yang menjadi prinsip Nabi Yahya dalam dakwahnya?", answers: ["Tidak takut untuk menyampaikan wahyu Allah meskipun menghadapi tantangan", "Menghindari konflik", "Bergantung pada kekuatan dunia", "Mengikuti aturan yang ada tanpa mempertanyakan"], correct: "Tidak takut untuk menyampaikan wahyu Allah meskipun menghadapi tantangan" },
+    { id: 6, question: "Apa yang Nabi Yahya ajarkan kepada umatnya selain kebenaran?", answers: ["Untuk menjauhi kemaksiatan dan kembali kepada jalan Allah", "Untuk hidup dalam kemewahan", "Untuk menghindari kebaikan", "Untuk mengejar kekuasaan"], correct: "Untuk menjauhi kemaksiatan dan kembali kepada jalan Allah" },
+    { id: 7, question: "Apa yang dilakukan Nabi Yahya untuk menghindari godaan dunia?", answers: ["Ia hidup dalam kesederhanaan", "Ia mencari kekayaan", "Ia mengasingkan diri", "Ia mengejar kekuasaan dunia"], correct: "Ia hidup dalam kesederhanaan" },
+    { id: 8, question: "Apa yang menjadi tujuan utama Nabi Yahya diutus oleh Allah?", answers: ["Untuk membawa umatnya kembali kepada jalan yang benar", "Untuk menjadi raja", "Untuk mengumpulkan harta", "Untuk mengalahkan musuh-musuhnya"], correct: "Untuk membawa umatnya kembali kepada jalan yang benar" },
+    { id: 9, question: "Apa yang terjadi ketika Nabi Yahya menyampaikan dakwahnya?", answers: ["Banyak yang menolak dan merasa terganggu dengan ajarannya", "Semua orang langsung mengikutinya", "Banyak orang menjadi kaya", "Semua orang berubah menjadi lebih baik tanpa rintangan"], correct: "Banyak yang menolak dan merasa terganggu dengan ajarannya" },
+    { id: 10, question: "Siapa yang merasa terancam dengan dakwah Nabi Yahya?", answers: ["Beberapa pemimpin kaumnya", "Semua orang", "Raja-raja di seluruh dunia", "Rakyat biasa"], correct: "Beberapa pemimpin kaumnya" },
+    { id: 11, question: "Mengapa Raja Herodes marah kepada Nabi Yahya?", answers: ["Karena Nabi Yahya menegur perbuatannya yang zalim dan pernikahannya yang tidak sah", "Karena Nabi Yahya menantangnya dalam pertempuran", "Karena Nabi Yahya menolak untuk menyembahnya", "Karena Nabi Yahya tidak mau membayar pajak"], correct: "Karena Nabi Yahya menegur perbuatannya yang zalim dan pernikahannya yang tidak sah" },
+    { id: 12, question: "Apa yang dilakukan Raja Herodes terhadap Nabi Yahya?", answers: ["Memerintahkan untuk menangkap dan memenjarakan Nabi Yahya", "Memberikan hadiah besar kepada Nabi Yahya", "Mengangkat Nabi Yahya sebagai penasihat", "Mengusir Nabi Yahya dari kerajaan"], correct: "Memerintahkan untuk menangkap dan memenjarakan Nabi Yahya" },
+    { id: 13, question: "Apa yang terjadi pada Nabi Yahya setelah dipenjara?", answers: ["Ia tetap sabar dan terus menyampaikan kebenaran", "Ia menyerah dan menghentikan dakwahnya", "Ia melarikan diri", "Ia bergabung dengan musuh-musuhnya"], correct: "Ia tetap sabar dan terus menyampaikan kebenaran" },
+    { id: 14, question: "Bagaimana cara Raja Herodes memutuskan untuk mengeksekusi Nabi Yahya?", answers: ["Setelah putrinya, Salome, meminta kepala Nabi Yahya sebagai hadiah", "Setelah Nabi Yahya mengancamnya", "Setelah Salome meminta agar Nabi Yahya dibebaskan", "Setelah Nabi Yahya meminta untuk dihukum"], correct: "Setelah putrinya, Salome, meminta kepala Nabi Yahya sebagai hadiah" },
+    { id: 15, question: "Apa yang diminta Salome kepada Raja Herodes?", answers: ["Kepala Nabi Yahya", "Harta yang banyak", "Tahta kerajaan", "Rakyat yang taat kepada raja"], correct: "Kepala Nabi Yahya" },
+    { id: 16, question: "Apa yang dilakukan Raja Herodes setelah menerima permintaan Salome?", answers: ["Ia memerintahkan untuk mengeksekusi Nabi Yahya", "Ia membebaskan Nabi Yahya", "Ia memberi hadiah kepada Salome", "Ia menggulingkan pemerintahannya"], correct: "Ia memerintahkan untuk mengeksekusi Nabi Yahya" },
+    { id: 17, question: "Bagaimana cara Nabi Yahya dieksekusi?", answers: ["Dengan cara yang sangat tragis", "Dengan cara yang mulia", "Dengan cara yang cepat dan mudah", "Dengan cara yang tidak adil"], correct: "Dengan cara yang sangat tragis" },
+    { id: 18, question: "Apa yang tetap dimiliki Nabi Yahya meskipun menghadapi eksekusi?", answers: ["Kesabaran dan tawakal", "Kekayaan dan tahta", "Kepemilikan tanah", "Kekuatan fisik"], correct: "Kesabaran dan tawakal" },
+    { id: 19, question: "Apa yang menjadi warisan dari Nabi Yahya setelah kematiannya?", answers: ["Perjuangan dan ajaran beliau tetap hidup dalam hati umat yang percaya", "Kekayaan yang melimpah", "Kerajaan yang luas", "Kekuatan fisik yang diwariskan"], correct: "Perjuangan dan ajaran beliau tetap hidup dalam hati umat yang percaya" },
+    { id: 20, question: "Apa yang diajarkan Nabi Yahya kepada kita?", answers: ["Keberanian untuk berbicara kebenaran meskipun menghadapi tantangan besar", "Menghindari masalah apapun", "Menjauhi agama", "Menjadi raja yang adil"], correct: "Keberanian untuk berbicara kebenaran meskipun menghadapi tantangan besar" },
+    { id: 21, question: "Apa yang Nabi Yahya ajarkan tentang hidup?", answers: ["Hidup dengan keteguhan iman, kesederhanaan, dan keberanian", "Hidup untuk mencapai kekuasaan", "Hidup untuk memperoleh harta", "Hidup hanya untuk diri sendiri"], correct: "Hidup dengan keteguhan iman, kesederhanaan, dan keberanian" },
+    { id: 22, question: "Apa yang bisa kita pelajari dari kisah Nabi Yahya?", answers: ["Kita tidak boleh takut dalam menyampaikan kebenaran", "Kita harus menghindari konflik apapun", "Kita harus mengejar kekayaan", "Kita harus mengalah kepada raja"], correct: "Kita tidak boleh takut dalam menyampaikan kebenaran" },
+    { id: 23, question: "Apa pesan moral utama dari kisah Nabi Yahya?", answers: ["Keteguhan hati dan hidup sesuai dengan ajaran Allah", "Menghindari kesulitan dalam hidup", "Mengejar kekuasaan dengan cara apapun", "Menjauhi orang yang berbeda pendapat"], correct: "Keteguhan hati dan hidup sesuai dengan ajaran Allah" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

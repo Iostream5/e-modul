@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang diutus Allah untuk membimbing kaum Sodom?", answers: ["Nabi Luth", "Nabi Ibrahim", "Nabi Muhammad", "Nabi Musa"], correct: "Nabi Luth" },
+    { id: 2, question: "Apa perbuatan buruk yang dilakukan oleh kaum Sodom?", answers: ["Perbuatan sesama jenis, perampokan, dan kedzaliman", "Menyembah berhala", "Mencuri harta umat", "Membunuh orang tak bersalah"], correct: "Perbuatan sesama jenis, perampokan, dan kedzaliman" },
+    { id: 3, question: "Apa yang Nabi Luth serukan kepada kaum Sodom?", answers: ["Untuk meninggalkan perbuatan keji dan menyembah Allah", "Untuk berperang melawan musuh", "Untuk membangun masjid", "Untuk mencari kekayaan"], correct: "Untuk meninggalkan perbuatan keji dan menyembah Allah" },
+    { id: 4, question: "Apa yang dikatakan kaum Sodom kepada Nabi Luth?", answers: ["Usirlah Luth dan keluarganya, mereka berpura-pura suci", "Kita akan mengikuti seruannya", "Kami akan menerima kebaikan yang ia ajarkan", "Kami akan melawan Allah"], correct: "Usirlah Luth dan keluarganya, mereka berpura-pura suci" },
+    { id: 5, question: "Bagaimana sikap Nabi Luth terhadap ejekan dan ancaman kaum Sodom?", answers: ["Ia tetap sabar dan terus memperingatkan mereka", "Ia mengalah dan berhenti berdakwah", "Ia melawan dengan kekuatan", "Ia meninggalkan kota tersebut"], correct: "Ia tetap sabar dan terus memperingatkan mereka" },
+    { id: 6, question: "Apa bentuk kedatangan para malaikat kepada Nabi Luth?", answers: ["Mereka datang dalam wujud manusia tampan", "Mereka datang dalam bentuk burung", "Mereka datang dalam bentuk cahaya", "Mereka datang sebagai awan"], correct: "Mereka datang dalam wujud manusia tampan" },
+    { id: 7, question: "Apa yang dilakukan oleh penduduk Sodom ketika melihat tamu Nabi Luth?", answers: ["Mereka berusaha mendatangi rumah Nabi Luth dengan niat jahat", "Mereka menyambut tamu dengan baik", "Mereka melarikan diri", "Mereka berdoa bersama"], correct: "Mereka berusaha mendatangi rumah Nabi Luth dengan niat jahat" },
+    { id: 8, question: "Apa yang dikatakan Nabi Luth untuk melindungi tamunya?", answers: ["Jangan mencemarkan tamuku, bertakwalah kepada Allah", "Silakan ambil tamu kami", "Tamu kami tidak penting", "Kami akan meninggalkan kota ini"], correct: "Jangan mencemarkan tamuku, bertakwalah kepada Allah" },
+    { id: 9, question: "Apa yang diungkapkan oleh para malaikat kepada Nabi Luth?", answers: ["Kami adalah utusan Tuhanmu, pergilah dari kota ini", "Kami datang untuk menguji keimananmu", "Kami datang untuk menghancurkan kota ini", "Kami akan menyelamatkan semua orang di kota ini"], correct: "Kami adalah utusan Tuhanmu, pergilah dari kota ini" },
+    { id: 10, question: "Apa yang terjadi saat fajar menyingsing di kota Sodom?", answers: ["Azab Allah datang menghancurkan kota tersebut", "Kaum Sodom bertobat", "Kaum Sodom kabur meninggalkan kota", "Malaikat memberi peringatan lebih lanjut"], correct: "Azab Allah datang menghancurkan kota tersebut" },
+    { id: 11, question: "Apa bentuk azab yang menimpa kaum Sodom?", answers: ["Tanah dibalikkan dan dihujani batu-batu dari tanah yang terbakar", "Air bah yang melanda kota", "Petir yang menghancurkan rumah mereka", "Angin kencang yang menghancurkan kota"], correct: "Tanah dibalikkan dan dihujani batu-batu dari tanah yang terbakar" },
+    { id: 12, question: "Siapa yang selamat dari azab Allah di kota Sodom?", answers: ["Nabi Luth dan keluarganya yang beriman", "Kaum Sodom yang bertobat", "Semua penduduk Sodom", "Nabi Luth seorang diri"], correct: "Nabi Luth dan keluarganya yang beriman" },
+    { id: 13, question: "Apa yang terjadi dengan istri Nabi Luth?", answers: ["Ia ikut binasa karena berkhianat dan memilih bersama kaum Sodom", "Ia diselamatkan bersama Nabi Luth", "Ia berubah menjadi batu", "Ia meninggalkan Nabi Luth dan pergi ke tempat lain"], correct: "Ia ikut binasa karena berkhianat dan memilih bersama kaum Sodom" },
+    { id: 14, question: "Apa yang dilakukan Nabi Luth setelah kehancuran kaum Sodom?", answers: ["Ia melanjutkan perjalanan hidupnya dan mengajarkan kebaikan", "Ia tinggal di kota Sodom yang telah hancur", "Ia pergi ke kota lain untuk berdakwah", "Ia berhenti dari dakwahnya"], correct: "Ia melanjutkan perjalanan hidupnya dan mengajarkan kebaikan" },
+    { id: 15, question: "Apa yang diajarkan Nabi Luth setelah kehancuran kaum Sodom?", answers: ["Kebaikan, ketakwaan, dan hidup sesuai dengan aturan Allah", "Hidup dengan kekayaan", "Membalas dendam pada kaum Sodom", "Meninggalkan dakwah dan mencari ketenaran"], correct: "Kebaikan, ketakwaan, dan hidup sesuai dengan aturan Allah" },
+    { id: 16, question: "Apa yang bisa kita pelajari dari kisah Nabi Luth?", answers: ["Perbuatan keji dan melawan aturan Allah akan membawa kehancuran", "Kekayaan akan menyelamatkan kita", "Kita harus menghindari dakwah", "Tidak perlu takut untuk melawan Allah"], correct: "Perbuatan keji dan melawan aturan Allah akan membawa kehancuran" },
+    { id: 17, question: "Apa yang menjadi kunci keselamatan menurut kisah Nabi Luth?", answers: ["Ketaatan, kesabaran, dan keimanan kepada Allah", "Kekayaan dan keberanian", "Keberuntungan dan ketenaran", "Kekuatan fisik"], correct: "Ketaatan, kesabaran, dan keimanan kepada Allah" },
+    { id: 18, question: "Apa yang membuat kaum Sodom mendapat azab?", answers: ["Mereka menentang peringatan Allah dan terus melakukan kejahatan", "Mereka melupakan Nabi Luth", "Mereka bertobat namun tidak diterima", "Mereka tidak melawan Nabi Luth"], correct: "Mereka menentang peringatan Allah dan terus melakukan kejahatan" },
+    { id: 19, question: "Apa yang bisa kita aplikasikan dari kesabaran Nabi Luth?", answers: ["Kesabaran dalam berdakwah meskipun dihina dan diancam", "Menghindari segala bentuk perlawanan", "Menyerah dalam menghadapi cobaan", "Tidak perlu berdakwah jika ditentang"], correct: "Kesabaran dalam berdakwah meskipun dihina dan diancam" },
+    { id: 20, question: "Apa yang ditekankan dalam pesan moral kisah Nabi Luth?", answers: ["Perbuatan keji dan melawan aturan Allah akan membawa kehancuran", "Kesuksesan duniawi lebih penting dari kesabaran", "Mengutamakan kekuasaan dan kekayaan", "Perang adalah solusi terbaik untuk masalah"], correct: "Perbuatan keji dan melawan aturan Allah akan membawa kehancuran" },
+    { id: 21, question: "Apa yang terjadi dengan kota Sodom setelah azab Allah?", answers: ["Kota tersebut hancur dan tidak ada yang tersisa", "Kota itu menjadi kota yang makmur", "Kaum Sodom menjadi taat kepada Allah", "Kota itu pindah ke tempat lain"], correct: "Kota tersebut hancur dan tidak ada yang tersisa" },
+    { id: 22, question: "Bagaimana perasaan Nabi Luth setelah kehancuran kaum Sodom?", answers: ["Sedih karena banyak yang tidak bertobat", "Senang karena ia dapat membalas kaum Sodom", "Tidak merasa apa-apa", "Marah kepada Allah"], correct: "Sedih karena banyak yang tidak bertobat" },
+    { id: 23, question: "Apa yang bisa kita pelajari dari sikap kaum Sodom?", answers: ["Jangan menentang aturan Allah dan terus berbuat dosa", "Keberanian akan selalu mengalahkan kebaikan", "Mengabaikan peringatan akan membawa keuntungan", "Tidak perlu takut berdosa"], correct: "Jangan menentang aturan Allah dan terus berbuat dosa" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

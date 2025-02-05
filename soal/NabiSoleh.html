@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Di mana kaum Tsamud tinggal?", answers: ["Al-Hijr", "Mekah", "Medinah", "Syam"], correct: "Al-Hijr" },
+    { id: 2, question: "Apa yang membuat kaum Tsamud sombong?", answers: ["Mereka melupakan Allah dan menyembah berhala", "Mereka miskin", "Mereka takut pada Nabi Saleh", "Mereka tidak percaya pada mukjizat"], correct: "Mereka melupakan Allah dan menyembah berhala" },
+    { id: 3, question: "Siapa yang diutus Allah untuk mengingatkan kaum Tsamud?", answers: ["Nabi Saleh", "Nabi Nuh", "Nabi Ibrahim", "Nabi Musa"], correct: "Nabi Saleh" },
+    { id: 4, question: "Apa yang diseru oleh Nabi Saleh kepada kaum Tsamud?", answers: ["Menyembah Allah", "Meninggalkan berhala", "Bertaubat", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 5, question: "Apa yang diminta oleh kaum Tsamud sebagai bukti bahwa Nabi Saleh adalah rasul?", answers: ["Tanda kekuasaan Allah", "Membawa mukjizat", "Menghancurkan berhala", "Menyelamatkan mereka dari kelaparan"], correct: "Tanda kekuasaan Allah" },
+    { id: 6, question: "Apa mukjizat yang diberikan oleh Allah kepada Nabi Saleh?", answers: ["Unta betina yang keluar dari batu", "Air yang keluar dari batu", "Api yang tidak membakar", "Roti yang turun dari langit"], correct: "Unta betina yang keluar dari batu" },
+    { id: 7, question: "Apa yang diperintahkan Nabi Saleh kepada kaum Tsamud tentang unta?", answers: ["Jangan mengganggunya", "Menyembelihnya sebagai korban", "Menghormatinya sebagai simbol Allah", "Membiarkannya hidup bebas"], correct: "Jangan mengganggunya" },
+    { id: 8, question: "Apa yang dilakukan oleh sebagian kaum Tsamud terhadap unta Allah?", answers: ["Membunuhnya", "Menghormatinya", "Membiarkannya bebas", "Menangkapnya"], correct: "Membunuhnya" },
+    { id: 9, question: "Apa akibat dari tindakan membunuh unta Allah?", answers: ["Azab dari Allah", "Kaum Tsamud dihancurkan oleh gempa", "Mereka bertobat", "Allah mengutus malaikat"], correct: "Azab dari Allah" },
+    { id: 10, question: "Bagaimana kaum Tsamud menantang Nabi Saleh?", answers: ["Menantang untuk mendatangkan azab", "Minta lebih banyak mukjizat", "Menghina Nabi Saleh", "Meminta pengampunan"], correct: "Menantang untuk mendatangkan azab" },
+    { id: 11, question: "Apa yang terjadi setelah kaum Tsamud menantang Nabi Saleh?", answers: ["Azab Allah datang berupa gempa bumi", "Mereka diberi kesempatan untuk bertaubat", "Nabi Saleh berdoa untuk mereka", "Allah mengutus hujan lebat"], correct: "Azab Allah datang berupa gempa bumi" },
+    { id: 12, question: "Siapa yang selamat dari azab yang menimpa kaum Tsamud?", answers: ["Nabi Saleh dan orang-orang yang beriman", "Semua orang yang bertobat", "Kaum Tsamud yang tidak ikut membunuh unta", "Tidak ada yang selamat"], correct: "Nabi Saleh dan orang-orang yang beriman" },
+    { id: 13, question: "Di mana Nabi Saleh dan umat yang selamat melanjutkan hidup mereka?", answers: ["Tempat lain setelah kehancuran Tsamud", "Kota Mekah", "Medinah", "Al-Hijr"], correct: "Tempat lain setelah kehancuran Tsamud" },
+    { id: 14, question: "Apa yang Nabi Saleh ajarkan setelah kehancuran kaum Tsamud?", answers: ["Kebaikan, ketakwaan, dan bersyukur kepada Allah", "Membangun peradaban baru", "Cara bertahan hidup di alam liar", "Bersiap untuk azab berikutnya"], correct: "Kebaikan, ketakwaan, dan bersyukur kepada Allah" },
+    { id: 15, question: "Apa yang menjadi pesan moral dari kisah Nabi Saleh?", answers: ["Kesombongan dan kedurhakaan membawa kehancuran", "Mukjizat hanya untuk orang yang taat", "Semua kaum harus mematuhi rasul", "Ketaatan kepada Allah adalah kunci keselamatan"], correct: "Kesombongan dan kedurhakaan membawa kehancuran" },
+    { id: 16, question: "Apa yang Allah tunjukkan kepada kaum Tsamud sebagai tanda kekuasaan-Nya?", answers: ["Mukjizat unta betina", "Tanah yang subur", "Hujan yang turun lebat", "Pembukaan lahan pertanian"], correct: "Mukjizat unta betina" },
+    { id: 17, question: "Apa yang harus dilakukan kaum Tsamud terhadap unta yang keluar dari batu?", answers: ["Tidak mengganggunya", "Memberinya makanan", "Menghormatinya sebagai tanda Allah", "Mengorbankannya"], correct: "Tidak mengganggunya" },
+    { id: 18, question: "Apa yang dilakukan sebagian kaum Tsamud setelah melihat mukjizat unta?", answers: ["Mereka merencanakan untuk membunuh unta", "Mereka mulai bertaubat", "Mereka menyembah unta", "Mereka menghormati Nabi Saleh"], correct: "Mereka merencanakan untuk membunuh unta" },
+    { id: 19, question: "Apa yang menjadi alasan kaum Tsamud menantang Nabi Saleh?", answers: ["Mereka tidak percaya pada azab Allah", "Mereka merasa lebih kuat dari Nabi Saleh", "Mereka ingin melihat lebih banyak mukjizat", "Mereka merasa iri pada Nabi Saleh"], correct: "Mereka tidak percaya pada azab Allah" },
+    { id: 20, question: "Apa akibat dari tindakan kaum Tsamud yang membunuh unta Allah?", answers: ["Azab berupa gempa bumi dan suara menggelegar", "Mereka dihukum dengan api", "Kaum mereka dibiarkan hidup normal", "Mereka diberi kesempatan kedua"], correct: "Azab berupa gempa bumi dan suara menggelegar" },
+    { id: 21, question: "Apa yang dilakukan Nabi Saleh setelah azab datang?", answers: ["Menyelamatkan orang-orang yang beriman", "Melawan azab dengan doa", "Menyerah pada takdir", "Mengutuk kaum Tsamud"], correct: "Menyelamatkan orang-orang yang beriman" },
+    { id: 22, question: "Bagaimana cara kaum Tsamud mengabaikan pesan Nabi Saleh?", answers: ["Mereka terus menyembah berhala", "Mereka menolak semua ajaran agama", "Mereka menghina Nabi Saleh", "Mereka mulai berperang"], correct: "Mereka terus menyembah berhala" },
+    { id: 23, question: "Apa yang terjadi setelah kehancuran kaum Tsamud?", answers: ["Nabi Saleh melanjutkan dakwah di tempat lain", "Kaum Tsamud dibangkitkan kembali", "Tempat mereka menjadi daerah tandus", "Mereka dipindahkan ke tempat lain"], correct: "Nabi Saleh melanjutkan dakwah di tempat lain" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapa yang sangat mencintai Nabi Yusuf?", answers: ["Nabi Ya'qub", "Nabi Ibrahim", "Nabi Muhammad", "Nabi Musa"], correct: "Nabi Ya'qub" },
+    { id: 2, question: "Apa yang membuat saudara-saudara Nabi Yusuf cemburu?", answers: ["Ayah mereka sangat mencintai Yusuf", "Yusuf menjadi raja", "Yusuf memiliki lebih banyak harta", "Yusuf lebih pintar dari mereka"], correct: "Ayah mereka sangat mencintai Yusuf" },
+    { id: 3, question: "Apa mimpi yang diceritakan Nabi Yusuf kepada ayahnya?", answers: ["Mimpi tentang sebelas bintang, matahari, dan bulan", "Mimpi tentang burung yang terbang", "Mimpi tentang bumi yang subur", "Mimpi tentang kerajaan yang besar"], correct: "Mimpi tentang sebelas bintang, matahari, dan bulan" },
+    { id: 4, question: "Apa yang direncanakan oleh saudara-saudara Yusuf akibat kecemburuan mereka?", answers: ["Melempar Yusuf ke dalam sumur", "Membuang Yusuf ke laut", "Menjual Yusuf", "Membunuh Yusuf"], correct: "Melempar Yusuf ke dalam sumur" },
+    { id: 5, question: "Apa alasan yang diberikan oleh saudara-saudara Nabi Yusuf kepada ayah mereka?", answers: ["Yusuf telah dimakan serigala", "Yusuf kabur", "Yusuf pergi dengan kafilah", "Yusuf menjadi raja"], correct: "Yusuf telah dimakan serigala" },
+    { id: 6, question: "Siapa yang menyelamatkan Nabi Yusuf setelah dilemparkan ke dalam sumur?", answers: ["Kafilah yang lewat", "Saudaranya", "Seorang pemuda", "Seorang malaikat"], correct: "Kafilah yang lewat" },
+    { id: 7, question: "Kemana Nabi Yusuf dibawa setelah diselamatkan?", answers: ["Ke Mesir", "Ke Medina", "Ke Yerusalem", "Ke Makkah"], correct: "Ke Mesir" },
+    { id: 8, question: "Siapa yang membeli Nabi Yusuf di Mesir?", answers: ["Al-Aziz", "Raja Mesir", "Sultan Mesir", "Amir Al-Mu'minin"], correct: "Al-Aziz" },
+    { id: 9, question: "Siapa yang tertarik dengan kecantikan Nabi Yusuf?", answers: ["Istri Al-Aziz", "Saudara-saudaranya", "Raja Mesir", "Putri Mesir"], correct: "Istri Al-Aziz" },
+    { id: 10, question: "Apa yang dilakukan istri Al-Aziz terhadap Nabi Yusuf?", answers: ["Berusaha menggoda Nabi Yusuf", "Membuat Nabi Yusuf menjadi raja", "Memberinya hadiah", "Memberi Yusuf tempat tinggal baru"], correct: "Berusaha menggoda Nabi Yusuf" },
+    { id: 11, question: "Apa akibat dari tuduhan palsu istri Al-Aziz terhadap Nabi Yusuf?", answers: ["Nabi Yusuf dipenjara", "Nabi Yusuf dibebaskan", "Nabi Yusuf dihukum mati", "Nabi Yusuf menjadi raja"], correct: "Nabi Yusuf dipenjara" },
+    { id: 12, question: "Apa yang Nabi Yusuf lakukan di dalam penjara?", answers: ["Menafsirkan mimpi narapidana", "Mencari cara untuk melarikan diri", "Berdoa untuk kebebasan", "Menciptakan strategi baru"], correct: "Menafsirkan mimpi narapidana" },
+    { id: 13, question: "Apa yang dialami raja Mesir yang membuatnya mencari Nabi Yusuf?", answers: ["Mimpi yang membingungkan", "Kesulitan ekonomi", "Penyakit yang aneh", "Kehilangan sumber daya"], correct: "Mimpi yang membingungkan" },
+    { id: 14, question: "Apa yang diramalkan oleh Nabi Yusuf tentang masa depan Mesir?", answers: ["Tujuh tahun subur diikuti dengan tujuh tahun kelaparan", "Pemberontakan besar", "Perang saudara", "Pembangunan besar-besaran"], correct: "Tujuh tahun subur diikuti dengan tujuh tahun kelaparan" },
+    { id: 15, question: "Apa yang terjadi ketika saudara-saudara Nabi Yusuf datang ke Mesir?", answers: ["Mereka tidak mengenali Yusuf yang telah menjadi penguasa", "Mereka menyambut Yusuf dengan suka cita", "Mereka menantang Yusuf", "Mereka membawa hadiah untuk Yusuf"], correct: "Mereka tidak mengenali Yusuf yang telah menjadi penguasa" },
+    { id: 16, question: "Bagaimana reaksi saudara-saudara Nabi Yusuf setelah mengetahui identitasnya?", answers: ["Mereka merasa terkejut dan bersalah", "Mereka marah kepada Yusuf", "Mereka ingin kembali ke kampung halaman", "Mereka bertindak sombong"], correct: "Mereka merasa terkejut dan bersalah" },
+    { id: 17, question: "Apa yang dilakukan Nabi Yusuf setelah mengetahui perasaan saudara-saudaranya?", answers: ["Ia memaafkan mereka", "Ia menghukum mereka", "Ia mengusir mereka", "Ia merencanakan balas dendam"], correct: "Ia memaafkan mereka" },
+    { id: 18, question: "Apa kata-kata Nabi Yusuf kepada saudara-saudaranya saat memaafkan mereka?", answers: ["Tidak ada dendam di hati saya terhadap kalian", "Saya tidak akan memaafkan kalian", "Saya akan membalas dendam", "Kalian harus pergi dari sini"], correct: "Tidak ada dendam di hati saya terhadap kalian" },
+    { id: 19, question: "Apa yang dilakukan Nabi Yusuf setelah memaafkan saudara-saudaranya?", answers: ["Mengundang seluruh keluarganya ke Mesir", "Menjadi penguasa baru di Mesir", "Pergi ke tempat lain", "Mengabaikan mereka"], correct: "Mengundang seluruh keluarganya ke Mesir" },
+    { id: 20, question: "Apa yang terjadi pada keluarga Nabi Ya'qub setelah mereka berkumpul kembali?", answers: ["Kebahagiaan datang kembali", "Mereka berpisah lagi", "Mereka berperang satu sama lain", "Mereka pindah ke tempat lain"], correct: "Kebahagiaan datang kembali" },
+    { id: 21, question: "Apa yang diajarkan oleh kisah Nabi Yusuf tentang kesabaran?", answers: ["Pentingnya bersabar dalam menghadapi ujian hidup", "Kesabaran hanya untuk orang miskin", "Kesabaran tidak membawa hasil", "Kesabaran hanya dibutuhkan pada masa sulit"], correct: "Pentingnya bersabar dalam menghadapi ujian hidup" },
+    { id: 22, question: "Apa pesan moral yang dapat diambil dari kisah Nabi Yusuf?", answers: ["Memaafkan orang yang telah menyakiti kita", "Menuntut balas dendam", "Menghindari ujian hidup", "Tidak perlu berdoa"], correct: "Memaafkan orang yang telah menyakiti kita" },
+    { id: 23, question: "Apa yang dapat kita pelajari dari keteguhan hati Nabi Yusuf?", answers: ["Keikhlasan dan kesabaran akan membawa kebahagiaan dan keberkahan hidup", "Kita harus melarikan diri dari ujian", "Kita tidak boleh memaafkan orang lain", "Kita harus selalu menghindari kesulitan"], correct: "Keikhlasan dan kesabaran akan membawa kebahagiaan dan keberkahan hidup" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

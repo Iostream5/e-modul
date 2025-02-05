@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <audio id="backgroundMusic" loop>
+    <audio style="display: none;" id="backgroundMusic" loop>
         <source src="../asset/sound/Kalam.mp3" type="audio/mpeg">
         <!-- Your browser does not support the audio element. -->
     </audio>
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div style="position: absolute;" class="container-fluid">
         <div class="title d-flex align-items-center justify-content-between mt-5">
             <!-- Teks di pojok kiri -->
             <h2 class="mb-0 d-flex">
@@ -39,7 +39,7 @@
         </div>
     </div>
     
-    <div class="content-container">
+    <div style="position: absolute; top:85px;" class="content-container">
         <div class="search-bar mt-2" data-wow-delay="0.1s">
             <i class="fas fa-search search-icon"></i>
             <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterItems()">
@@ -258,12 +258,15 @@
         const openModalBtn = document.getElementById('openModalBtn');
         const clickSound = document.getElementById('clickSound');
 
+        function clicks() {
+            clickSound.play();
+        }
 
         document.querySelectorAll('.grid-item').forEach(function(item, index) {
-            // Set delay sesuai dengan urutan item
-            item.style.animationDelay = (index * 0.2) + 's';
+            item.style.animationDelay = (index * 0.1) + 's';
     
             item.addEventListener('click', function(event) {
+                clicks()
                 // Dapatkan elemen <a> di dalam grid-item yang diklik
                 var link = this.querySelector('a');
                 var destinationUrl = link ? link.getAttribute('href') : '#';

@@ -55,35 +55,50 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Siapakah Nabi Harun dalam hubungan dengan Nabi Musa?", answers: ["Saudara kandung", "Sepupu", "Murid", "Paman"], correct: "Saudara kandung" },
+    { id: 2, question: "Apa sifat utama Nabi Harun yang terkenal?", answers: ["Kekuatan fisik", "Kesabaran dan kebijaksanaan", "Kepemimpinan dalam perang", "Keahlian dalam perdagangan"], correct: "Kesabaran dan kebijaksanaan" },
+    { id: 3, question: "Di mana Nabi Harun dilahirkan?", answers: ["Mekah", "Madinah", "Mesir", "Yerusalem"], correct: "Mesir" },
+    { id: 4, question: "Mengapa Nabi Musa meminta bantuan Nabi Harun dalam dakwahnya?", answers: ["Karena Nabi Harun lebih tua", "Karena Nabi Harun pandai berbicara", "Karena Nabi Harun lebih kuat", "Karena Nabi Harun kaya raya"], correct: "Karena Nabi Harun pandai berbicara" },
+    { id: 5, question: "Apa perintah Allah kepada Nabi Musa tentang Nabi Harun?", answers: ["Agar Nabi Harun menjadi asistennya", "Agar Nabi Harun memimpin perang", "Agar Nabi Harun menjadi raja", "Agar Nabi Harun tinggal di istana"], correct: "Agar Nabi Harun menjadi asistennya" },
+    { id: 6, question: "Siapakah yang menentang ajakan Nabi Musa dan Nabi Harun?", answers: ["Fir'aun", "Samiri", "Kaum Quraisy", "Kaum Yahudi"], correct: "Fir'aun" },
+    { id: 7, question: "Mukjizat apa yang diberikan kepada Nabi Musa saat menghadapi Fir'aun?", answers: ["Tongkat berubah jadi ular", "Membelah laut", "Tangan bercahaya", "Semua benar"], correct: "Semua benar" },
+    { id: 8, question: "Bagaimana sikap Fir'aun terhadap mukjizat Nabi Musa?", answers: ["Beriman", "Meninggalkan Mesir", "Tetap sombong dan menolak", "Menjadi murid Nabi Musa"], correct: "Tetap sombong dan menolak" },
+    { id: 9, question: "Siapakah yang membuat patung anak sapi emas?", answers: ["Samiri", "Fir'aun", "Kaum Yahudi", "Nabi Harun"], correct: "Samiri" },
+    { id: 10, question: "Bagaimana reaksi Nabi Harun terhadap penyembahan patung anak sapi?", answers: ["Marah dan menegur", "Mendukung", "Mengabaikan", "Menghancurkannya langsung"], correct: "Marah dan menegur" },
+    { id: 11, question: "Apa yang diajarkan Nabi Harun kepada kaumnya?", answers: ["Kesabaran dan ketakwaan", "Perdagangan dan kekayaan", "Ilmu sihir", "Seni berperang"], correct: "Kesabaran dan ketakwaan" },
+    { id: 12, question: "Bagaimana Nabi Harun membantu Nabi Musa dalam dakwahnya?", answers: ["Mendampingi dan berbicara dengan Fir'aun", "Menyiapkan pasukan perang", "Menulis kitab suci", "Menjadi pemimpin Bani Israil"], correct: "Mendampingi dan berbicara dengan Fir'aun" },
+    { id: 13, question: "Apa yang menjadi ujian terbesar bagi Nabi Harun?", answers: ["Kaumnya menyembah anak sapi", "Serangan Fir'aun", "Pengkhianatan saudara", "Penderitaan dalam pengasingan"], correct: "Kaumnya menyembah anak sapi" },
+    { id: 14, question: "Apa yang dilakukan Nabi Harun ketika kaumnya berpaling dari ajaran Allah?", answers: ["Mengajak kembali kepada kebenaran", "Meninggalkan mereka", "Menghukum mereka langsung", "Meminta bantuan Fir'aun"], correct: "Mengajak kembali kepada kebenaran" },
+    { id: 15, question: "Apa hikmah yang dapat diambil dari kisah Nabi Harun?", answers: ["Kesetiaan dan kesabaran", "Kekuatan fisik", "Kemakmuran dan kekayaan", "Kepemimpinan dalam perang"], correct: "Kesetiaan dan kesabaran" },
+    { id: 16, question: "Bagaimana Nabi Musa dan Nabi Harun menghadapi Fir'aun?", answers: ["Dengan kesabaran dan mukjizat", "Dengan peperangan", "Dengan perjanjian", "Dengan melarikan diri"], correct: "Dengan kesabaran dan mukjizat" },
+    { id: 17, question: "Apa peran Nabi Harun dalam perjuangan melawan Fir'aun?", answers: ["Sebagai pendukung dan juru bicara", "Sebagai pemimpin perang", "Sebagai penasihat Fir'aun", "Sebagai raja Bani Israil"], correct: "Sebagai pendukung dan juru bicara" },
+    { id: 18, question: "Apa yang terjadi setelah Fir'aun menolak ajakan Nabi Musa dan Nabi Harun?", answers: ["Allah menimpakan azab kepada Fir'aun", "Fir'aun bertobat", "Nabi Harun dihukum", "Bani Israil dihukum"], correct: "Allah menimpakan azab kepada Fir'aun" },
+    { id: 19, question: "Mengapa Bani Israil tergoda menyembah anak sapi emas?", answers: ["Karena pengaruh Samiri", "Karena ketakutan", "Karena keinginan untuk kekayaan", "Karena ancaman Fir'aun"], correct: "Karena pengaruh Samiri" },
+    { id: 20, question: "Apa yang dilakukan Nabi Musa setelah melihat kaumnya menyembah anak sapi?", answers: ["Marah dan menghancurkan patung", "Meninggalkan mereka", "Membantu mereka", "Menghukum Nabi Harun"], correct: "Marah dan menghancurkan patung" },
+    { id: 21, question: "Apa yang terjadi setelah Nabi Musa kembali kepada kaumnya?", answers: ["Kaum Bani Israil bertobat", "Nabi Harun dihukum", "Fir'aun bertobat", "Kaum Bani Israil meninggalkan Mesir"], correct: "Kaum Bani Israil bertobat" },
+    { id: 22, question: "Apa yang membuat Nabi Harun tetap setia kepada Nabi Musa?", answers: ["Keimanan kepada Allah", "Keinginan menjadi raja", "Tekanan dari Fir'aun", "Perintah dari Fir'aun"], correct: "Keimanan kepada Allah" },
+    { id: 23, question: "Apa pelajaran utama dari kisah Nabi Harun?", answers: ["Kesabaran dan keimanan", "Kekayaan dan kejayaan", "Keahlian dalam perang", "Kecepatan dalam berbicara"], correct: "Kesabaran dan keimanan" },
+];
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +153,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +168,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

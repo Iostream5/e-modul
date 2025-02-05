@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Di mana kaum 'Ad tinggal?", answers: ["Mekkah", "Al-Ahqaf", "Madinah", "Palestina"], correct: "Al-Ahqaf" },
+    { id: 2, question: "Apa yang membuat kaum 'Ad menjadi sombong?", answers: ["Kemiskinan", "Kesederhanaan", "Kekayaan dan kekuatan", "Rasa syukur"], correct: "Kekayaan dan kekuatan" },
+    { id: 3, question: "Apa yang disembah oleh kaum 'Ad selain Allah?", answers: ["Bintang", "Matahari", "Berhala", "Bulan"], correct: "Berhala" },
+    { id: 4, question: "Siapa nabi yang diutus untuk membimbing kaum 'Ad?", answers: ["Nabi Nuh", "Nabi Hud", "Nabi Shalih", "Nabi Ibrahim"], correct: "Nabi Hud" },
+    { id: 5, question: "Bagaimana sifat Nabi Hud?", answers: ["Sombong dan angkuh", "Bijaksana dan penuh kasih", "Pemarah dan pendendam", "Acuh tak acuh"], correct: "Bijaksana dan penuh kasih" },
+    { id: 6, question: "Apa ajakan Nabi Hud kepada kaumnya?", answers: ["Meninggalkan rumah mereka", "Menyembah Allah dan meninggalkan berhala", "Membangun lebih banyak patung", "Berperang dengan kaum lain"], correct: "Menyembah Allah dan meninggalkan berhala" },
+    { id: 7, question: "Bagaimana respon kaum 'Ad terhadap dakwah Nabi Hud?", answers: ["Mereka langsung bertobat", "Mereka mengabaikannya", "Mereka menyembah Allah", "Mereka meminta maaf"], correct: "Mereka mengabaikannya" },
+    { id: 8, question: "Apa alasan kaum 'Ad menolak ajaran Nabi Hud?", answers: ["Mereka tidak mengenal Nabi Hud", "Mereka tidak suka beribadah", "Mereka ingin mengikuti nenek moyang mereka", "Mereka tidak percaya pada kehidupan setelah mati"], correct: "Mereka ingin mengikuti nenek moyang mereka" },
+    { id: 9, question: "Bagaimana Nabi Hud menghadapi penolakan kaumnya?", answers: ["Ia menyerah", "Ia tetap bersabar dan berdakwah", "Ia membalas dengan kekerasan", "Ia meninggalkan kaumnya segera"], correct: "Ia tetap bersabar dan berdakwah" },
+    { id: 10, question: "Apa yang diperingatkan Nabi Hud kepada kaumnya jika mereka tidak bertaubat?", answers: ["Mereka akan mendapatkan harta lebih banyak", "Allah akan mengampuni mereka", "Mereka akan mendapatkan azab Allah", "Mereka akan menjadi lebih kuat"], correct: "Mereka akan mendapatkan azab Allah" },
+    { id: 11, question: "Apa bentuk azab yang ditimpakan kepada kaum 'Ad?", answers: ["Banjir besar", "Gempa bumi", "Angin kencang yang sangat dingin", "Wabah penyakit"], correct: "Angin kencang yang sangat dingin" },
+    { id: 12, question: "Berapa lama angin azab bertiup menghancurkan kaum 'Ad?", answers: ["3 hari 3 malam", "7 malam 8 hari", "10 hari 10 malam", "5 hari 5 malam"], correct: "7 malam 8 hari" },
+    { id: 13, question: "Apa yang terjadi pada bangunan megah kaum 'Ad saat azab datang?", answers: ["Tetap berdiri kokoh", "Hancur lebur", "Terbang ke langit", "Menjadi lebih kuat"], correct: "Hancur lebur" },
+    { id: 14, question: "Siapa yang selamat dari azab tersebut?", answers: ["Nabi Hud dan orang beriman", "Seluruh kaum 'Ad", "Para pemimpin kaum 'Ad", "Tidak ada yang selamat"], correct: "Nabi Hud dan orang beriman" },
+    { id: 15, question: "Kemana Nabi Hud pergi setelah kaum 'Ad binasa?", answers: ["Madinah", "Mekkah", "Mesir", "Tempat lain bersama orang beriman"], correct: "Tempat lain bersama orang beriman" },
+    { id: 16, question: "Apa yang diajarkan Nabi Hud kepada umatnya setelah azab kaum 'Ad?", answers: ["Untuk hidup dengan kesombongan", "Untuk bersyukur dan bertakwa kepada Allah", "Untuk mengumpulkan kekayaan", "Untuk membangun lebih banyak rumah"], correct: "Untuk bersyukur dan bertakwa kepada Allah" },
+    { id: 17, question: "Apa pesan utama dari kisah Nabi Hud?", answers: ["Kesombongan membawa kehancuran", "Kekayaan adalah segalanya", "Kita harus menyembah berhala", "Menyombongkan diri adalah hal yang baik"], correct: "Kesombongan membawa kehancuran" },
+    { id: 18, question: "Apa yang menyebabkan kehancuran kaum 'Ad?", answers: ["Kemiskinan mereka", "Penyakit yang menyebar", "Kesombongan dan kedurhakaan mereka kepada Allah", "Serangan dari bangsa lain"], correct: "Kesombongan dan kedurhakaan mereka kepada Allah" },
+    { id: 19, question: "Bagaimana cara agar kita terhindar dari kesalahan kaum 'Ad?", answers: ["Menghormati nenek moyang kita", "Berbuat baik dan bertakwa kepada Allah", "Mengumpulkan kekayaan", "Mengabaikan ajaran agama"], correct: "Berbuat baik dan bertakwa kepada Allah" },
+    { id: 20, question: "Apa yang menjadi kunci keselamatan dunia dan akhirat?", answers: ["Harta dan tahta", "Ketaatan dan kesabaran", "Kekuasaan dan ketenaran", "Mengikuti tradisi nenek moyang"], correct: "Ketaatan dan kesabaran" },
+    { id: 21, question: "Mengapa Allah mengutus para nabi kepada manusia?", answers: ["Untuk memberi hiburan", "Untuk mengajak manusia ke jalan yang benar", "Untuk menghancurkan orang-orang kaya", "Untuk mengumpulkan harta"], correct: "Untuk mengajak manusia ke jalan yang benar" },
+    { id: 22, question: "Apa yang bisa kita pelajari dari sikap Nabi Hud dalam berdakwah?", answers: ["Keberanian dan kesabaran", "Ketakutan dan putus asa", "Kemalasan dan ketidaksabaran", "Kekerasan dan pemaksaan"], correct: "Keberanian dan kesabaran" },
+    { id: 23, question: "Apa yang harus dilakukan jika kita mendapatkan peringatan dari Allah?", answers: ["Mengabaikannya", "Bertaubat dan kembali ke jalan yang benar", "Menyalahkan orang lain", "Terus berbuat dosa"], correct: "Bertaubat dan kembali ke jalan yang benar" },
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

@@ -55,35 +55,51 @@
             </div>
         </div>
     </div>
+    <audio style="display: none;" id="benar">
+        <source src="../asset/sound/benar.wav" type="audio/mpeg">
+    </audio>
+    <audio style="display: none;" id="salah">
+        <source src="../asset/sound/salah.wav" type="audio/mpeg">
+    </audio>
     <div id="modal-overlay">
         <div id="modal-contents"></div>
     </div>
     
     <script>
+        benarS = document.getElementById('benar')
+        salahS = document.getElementById('salah')
+        function benar() {
+            benarS.play();
+        }
+        function salah() {
+            salahS.play();
+        }
         const questions = [
-            { id: 1, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 2, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 3, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 4, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 5, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 7, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 8, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 9, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 10, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 11, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 12, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 13, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 14, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 15, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 16, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 17, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 18, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 19, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 20, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 21, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 22, question: "", answers: ["", "", "", ""], correct: "" },
-            { id: 23, question: "", answers: ["", "", "", ""], correct: "" },
-        ];
+    { id: 1, question: "Di mana Nabi Muhammad SAW lahir?", answers: ["Mekkah", "Madinah", "Baitul Maqdis", "Ta'if"], correct: "Mekkah" },
+    { id: 2, question: "Siapa yang mengasuh Nabi Muhammad setelah kematian ibunya?", answers: ["Abu Talib", "Abdul Muthalib", "Khadijah", "Utsman"], correct: "Abdul Muthalib" },
+    { id: 3, question: "Apa gelar yang diberikan kepada Nabi Muhammad karena sifat jujur dan amanahnya?", answers: ["Al-Amin", "Al-Siddiq", "Al-Kamil", "Al-Mustafa"], correct: "Al-Amin" },
+    { id: 4, question: "Pada usia berapa Nabi Muhammad mulai bekerja sebagai pedagang?", answers: ["15 tahun", "20 tahun", "25 tahun", "30 tahun"], correct: "25 tahun" },
+    { id: 5, question: "Siapa yang melamar Nabi Muhammad setelah melihat integritasnya?", answers: ["Aisyah", "Zaynab", "Khadijah", "Fatimah"], correct: "Khadijah" },
+    { id: 6, question: "Di mana Nabi Muhammad menerima wahyu pertama?", answers: ["Gua Tsur", "Gua Hira", "Masjid Al-Haram", "Masjid Nabawi"], correct: "Gua Hira" },
+    { id: 7, question: "Siapa malaikat yang membawa wahyu pertama kepada Nabi Muhammad?", answers: ["Mikail", "Jibril", "Israfil", "Azrael"], correct: "Jibril" },
+    { id: 8, question: "Apa ayat pertama yang diterima Nabi Muhammad?", answers: ["Bacalah dengan menyebut nama Tuhanmu", "Sesungguhnya Allah Maha Pengampun", "La ilaha illallah", "Qul huwallahu ahad"], correct: "Bacalah dengan menyebut nama Tuhanmu" },
+    { id: 9, question: "Siapa yang pertama kali menerima ajaran Islam setelah Nabi Muhammad?", answers: ["Ali", "Abu Bakr", "Utsman", "Khadijah"], correct: "Khadijah" },
+    { id: 10, question: "Apa yang diajarkan Nabi Muhammad di Mekkah?", answers: ["Keesaan Allah", "Perang Badar", "Rukun Islam", "Shalat Tarawih"], correct: "Keesaan Allah" },
+    { id: 11, question: "Mengapa para pemimpin Quraisy menentang dakwah Nabi Muhammad?", answers: ["Takut kehilangan kekuasaan", "Takut kehilangan harta", "Takut ajaran Islam berkembang", "Takut dihukum oleh Allah"], correct: "Takut kehilangan kekuasaan" },
+    { id: 12, question: "Apa yang terjadi pada tahun 622 M?", answers: ["Kelahiran Nabi Muhammad", "Perang Uhud", "Hijrah ke Madinah", "Perjanjian Hudaibiyah"], correct: "Hijrah ke Madinah" },
+    { id: 13, question: "Apa nama kota yang menjadi pusat Islam setelah hijrah?", answers: ["Mekkah", "Madinah", "Jerusalem", "Yatsrib"], correct: "Madinah" },
+    { id: 14, question: "Apa yang menjadi dasar hukum di Madinah setelah Nabi Muhammad tiba?", answers: ["Piagam Madinah", "Al-Qur'an", "Hadis", "Fatwa para sahabat"], correct: "Piagam Madinah" },
+    { id: 15, question: "Siapa yang ikut dalam Perang Badar?", answers: ["Ali", "Umar", "Abu Bakr", "Semua jawaban benar"], correct: "Semua jawaban benar" },
+    { id: 16, question: "Apa yang terjadi dalam Perang Uhud?", answers: ["Kemenangan besar bagi Muslim", "Kekalahan bagi Muslim", "Damai dengan Quraisy", "Penaklukan Mekkah"], correct: "Kekalahan bagi Muslim" },
+    { id: 17, question: "Apa yang dilakukan Nabi Muhammad setelah Perang Uhud?", answers: ["Mengundurkan diri", "Meninggalkan Madinah", "Melanjutkan dakwah", "Melakukan introspeksi"], correct: "Melanjutkan dakwah" },
+    { id: 18, question: "Apa yang disepakati dalam Perjanjian Hudaibiyah?", answers: ["Berhenti bertikai", "Perang dengan Mekkah", "Islam diperkenalkan di Mekkah", "Semua jawaban salah"], correct: "Berhenti bertikai" },
+    { id: 19, question: "Apa yang terjadi pada tahun 630 M?", answers: ["Perang Badar", "Perang Uhud", "Penaklukan Mekkah", "Wafatnya Nabi Muhammad"], correct: "Penaklukan Mekkah" },
+    { id: 20, question: "Apa yang Nabi Muhammad lakukan setelah menaklukkan Mekkah?", answers: ["Menghancurkan Ka'bah", "Menyebarkan Islam di seluruh dunia", "Memelihara Ka'bah", "Menjadi khalifah"], correct: "Memelihara Ka'bah" },
+    { id: 21, question: "Apa yang ditinggalkan oleh Nabi Muhammad sebagai warisan?", answers: ["Al-Qur'an dan Sunnah", "Hadis", "Piagam Madinah", "Perang Badar"], correct: "Al-Qur'an dan Sunnah" },
+    { id: 22, question: "Apa yang ditekankan Nabi Muhammad dalam Khutbah Wada?", answers: ["Menjaga persatuan umat", "Kewajiban puasa", "Perang melawan Quraisy", "Shalat Tarawih"], correct: "Menjaga persatuan umat" },
+    { id: 23, question: "Apa yang Nabi Muhammad ajarkan dalam hidupnya?", answers: ["Kesabaran", "Cinta kepada sesama", "Keteguhan iman", "Semua jawaban benar"], correct: "Semua jawaban benar" }
+];
+
     
         let randomQuestions = [];
         let currentQuestionIndex = 0;
@@ -138,6 +154,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -152,9 +169,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal
