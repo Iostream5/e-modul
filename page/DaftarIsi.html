@@ -288,6 +288,28 @@
             });
         });
 
+        //search
+
+        function filterItems() {
+            const input = document.getElementById('searchInput').value.toLowerCase(); // Ambil input dari user
+            const items = document.querySelectorAll('.grid-item'); // Ambil semua elemen dengan class 'grid-item'
+    
+            // Loop melalui semua elemen untuk memfilter
+            items.forEach(item => {
+                const itemId = item.id.toLowerCase(); // Ambil id elemen dan ubah ke lowercase
+                if (itemId.includes(input)) {
+                    item.style.display = 'block'; // Tampilkan elemen jika cocok
+                } else {
+                    item.style.display = 'none'; // Sembunyikan elemen jika tidak cocok
+                }
+            });
+        }
+    
+        function clearSearch() {
+            document.getElementById('searchInput').value = ''; // Kosongkan input
+            filterItems(); // Tampilkan kembali semua elemen
+        }
+
     </script>
     <script src="../asset/js/wow.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
