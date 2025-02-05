@@ -149,6 +149,7 @@
             questionElement.textContent = currentQuestion.question;
         
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -163,9 +164,11 @@
                 correctAnswersCount++;
                 modalContent.textContent = "Jawaban Benar 🎉";
                 modalContent.style.color = "green";
+                benar();
             } else {
                 modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
                 modalContent.style.color = "red";
+                salah();
             }
     
             modalOverlay.style.display = "flex"; // Tampilkan modal

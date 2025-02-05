@@ -25,10 +25,9 @@
     <div class="containSoal">
         <div class="headerSoal overflow-hidden">
             <img class="rollSoal img-fluid " src="../images/roll2.png" alt="">
-            <div class="question-container">
+            <div class="question-container" style="width: 280px;">
                 <div class="question" id="question">Loading question...</div>
                 <div class="btn-container" id="answers">
-                    <!-- Buttons for answers will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -62,7 +61,9 @@
         <source src="../asset/sound/salah.wav" type="audio/mpeg">
     </audio>
     <div id="modal-overlay">
-        <div id="modal-contents"></div>
+        <div class="bg-white p-lg-5 p-3" style="border-radius: 15px;">
+            <div id="modal-contents"></div>
+        </div>
     </div>
 
     <script>
@@ -127,16 +128,19 @@
                             questionElement.textContent = "Jawaban Kamu Belum Ada Yang Benar, Ayo Ulangi Membaca Lalu Bermain Quiz Kembali";
                         }
                         button.textContent = "Membaca Kisah Nabi Idris A.S";
+                        button.style.fontFamily = "'Bryndan', sans-serif";
                         button.onclick = () => {
                             window.location.href = "../page/list/idris.html";
                         };
                     } else if (i === 1) {
+                        button.style.fontFamily = "'Bryndan', sans-serif";
                         button.style.display = "block"; // Pastikan tombol kedua terlihat
                         button.textContent = "Membaca Ulang Kisah Nabi Adam A.S";
                         button.onclick = () => {
                             window.location.href = "../page/list/adam.html"; // Ganti href sesuai keinginan
                         };
                     } else if (i === 2) {
+                        button.style.fontFamily = "'Bryndan', sans-serif";
                         button.style.display = "block"; // Pastikan tombol kedua terlihat
                         button.textContent = "Kembali Ke Daftar Isi";
                         button.onclick = () => {
@@ -145,6 +149,7 @@
                     }
                     else {
                         button.style.display = "none";
+                        button.style.fontFamily = "'Bryndan', sans-serif";
                     }
                 });
                 return;
@@ -154,6 +159,7 @@
             questionElement.textContent = currentQuestion.question;
 
             buttons.forEach((button, i) => {
+                button.style.fontFamily = "'Bryndan', sans-serif";
                 button.style.display = "block"; // Pastikan semua tombol muncul untuk pertanyaan berikutnya
                 button.textContent = currentQuestion.answers[i] || "";
                 button.onclick = () => handleAnswer(currentQuestion, currentQuestion.answers[i]);
@@ -170,7 +176,7 @@
                 modalContent.style.color = "green";
                 benar();
             } else {
-                modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah: " + question.correct;
+                modalContent.textContent = "Jawaban Salah. Jawaban yang benar adalah:   " + question.correct;
                 modalContent.style.color = "red";
                 salah();
             }
