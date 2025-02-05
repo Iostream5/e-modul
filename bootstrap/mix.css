@@ -5,6 +5,9 @@
     font-family: 'Bryndan', sans-serif;
 
 }
+*::-webkit-scrollbar {
+    display: none;
+}
 
 @font-face {
     font-family: 'Bryndan'; 

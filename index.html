@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio Persistent Example</title>
+  <link rel="stylesheet" href="bootstrap/mix.css">
 
   <style>
-    /* Reset margin dan padding */
-    body, html {
-      margin: 0;
+    body{
       padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden; /* Mencegah scroll */
+      margin: 0;
     }
-
-    /* Iframe menutupi seluruh layar */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     iframe {
       width: 100%;
       height: 100vh;
       border: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1; /* Pastikan iframe di bawah elemen lain */
     }
-
-    /* Audio player */
     #audio-player {
-      display: none;
+        display: none;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -37,94 +30,49 @@
       background: #f1f1f1;
       padding: 10px;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000; /* Pastikan audio player di atas iframe */
     }
-
-    /* Tombol pengaturan */
-    .option {
-      position: fixed;
-      right: 10px;
-      top: 10px;
-      z-index: 1000; /* Pastikan tombol pengaturan di atas iframe */
-    }
-
-    /* Modal overlay */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999; /* Pastikan modal di atas semua elemen */
-    }
-
-    /* Modal box */
-    .modal-box {
-      background-color: whitesmoke;
-      border: 3px solid #ffb300;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      color: black;
-    }
-
-    /* Animasi tombol close */
-    .farbtn {
-      animation: customBaca 1.5s ease 0s infinite normal none;
-    }
-
-    @keyframes customBaca {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
+    .option{
+      position: absolute;
+      right: 10%;
+      top: 5%;
     }
   </style>
 </head>
-
 <body>
-  <!-- Audio Player -->
   <div id="audio-player">
-    <audio id="backgroundMusic" controls loop>
+    <audio id="backgroundMusic" controls  loop>
       <source src="asset/sound/happy-kids-background-286908.mp3" type="audio/mpeg">
     </audio>
   </div>
-
-  <!-- Tombol Pengaturan -->
   <div class="d-flex gap-0 option">
-    <a href="#" class="btn p-0" onclick="clicks()" id="openModalBtn">
-      <img src="asset/button/setting.png" alt="Settings" class="img-fluid rounded" width="35" height="35">
+    <a href="#" class="btn p-0" onclick="clicks()" id="openModalBtn" >
+        <img src="asset/button/setting.png" alt="Settings" class="img-fluid rounded" width="35" height="35">
     </a>
-  </div>
-
-  <!-- Modal -->
+</div>
   <div class="modal-overlay" id="modalOverlay" style="display: none;">
     <div class="modal-box">
-      <h3>Pengaturan</h3>
-      <h5 style="align-items: center; display: flex; justify-content: center;">
-        Music :
-        <img id="toggleMusicImage" src="asset/button/on-btn.png" alt="Music ON" style="width: 50px; cursor: pointer;" />
-      </h5>
-      <img src="asset/button/x-button.png" alt="Close" id="closeModalImg"
-        style="cursor: pointer; width: 50px; height: auto;" class="farbtn" onclick="clicks()" />
+        <h3>Pengaturan</h3>
+        <h5 style="align-items: center;display: flex;justify-content: center;">Music :       
+        <img id="toggleMusicImage" 
+             src="asset/button/on-btn.png" 
+             alt="Music ON" 
+             style="width: 50px; cursor: pointer;" />
+        </h5> 
+        <img 
+        src="asset/button/x-button.png" 
+        alt="Close" 
+        id="closeModalImg" 
+        style="cursor: pointer; width: 50px; height: auto;"
+        class="farbtn" 
+        onclick="clicks()"
+      />            
     </div>
-  </div>
+</div>
+
 
   <!-- Main Content with Iframe -->
   <iframe src="dashboard.html" id="content"></iframe>
 
-  <!-- Audio untuk efek suara -->
   <audio style="display: none;" id="clickSound">
     <source src="asset/sound/click.mp3" type="audio/mpeg">
   </audio>
@@ -133,63 +81,63 @@
   </audio>
 
   <script>
-    // Fungsi untuk navigasi iframe (opsional)
+    // Script to handle iframe navigation
     function navigateTo(url) {
       document.getElementById('content').src = url;
     }
 
-    // Ambil elemen-elemen yang diperlukan
+    
     const openModalBtn = document.getElementById('openModalBtn');
-    const closeModalBtn = document.getElementById('closeModalImg');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const toggleMusicImage = document.getElementById('toggleMusicImage');
-    const backgroundMusic = document.getElementById('backgroundMusic');
+       const closeModalBtn = document.getElementById('closeModalImg');
+       const modalOverlay = document.getElementById('modalOverlay');
+       const toggleMusicImage = document.getElementById('toggleMusicImage');
+       const backgroundMusic = document.getElementById('backgroundMusic');
+
+       // Membuka Layar Setting
+       openModalBtn.addEventListener('click', function() {
+           modalOverlay.style.display = 'flex'; // Tampilkan modal
+       });
+
+
+       // Menutup Layar setting
+       modalOverlay.addEventListener('click', function(e) {
+           if (e.target === modalOverlay) {
+               modalOverlay.style.display = 'none';
+           }
+       });
+   
+       // Event listener untuk tombol close modal
+       closeModalBtn.addEventListener('click', function () {
+           modalOverlay.style.display = 'none';
+       });
+   
+       // Event listener untuk tombol ON/OFF musik menggunakan gambar
+       let isMusicOn = true; // Status awal musik
+       toggleMusicImage.addEventListener('click', function () {
+           isMusicOn = !isMusicOn; // Toggle status
+   
+           if (isMusicOn) {
+               toggleMusicImage.src = "asset/button/on-btn.png"; // Gambar saat musik ON
+               backgroundMusic.play();
+               clicks2() // Putar musik
+           } else {
+               toggleMusicImage.src = "asset/button/off-btn.png"; // Gambar saat musik OFF
+               backgroundMusic.pause();
+               clicks2() // Hentikan musik
+           }
+       });
+
+       // Ambil elemen tombol dan elemen audio
     const clickSound = document.getElementById('clickSound');
     const clickSound2 = document.getElementById('clickSound2');
 
-    // Membuka modal
-    openModalBtn.addEventListener('click', function () {
-      modalOverlay.style.display = 'flex';
-      clicks(); // Memainkan suara klik
-    });
-
-    // Menutup modal
-    closeModalBtn.addEventListener('click', function () {
-      modalOverlay.style.display = 'none';
-      clicks(); // Memainkan suara klik
-    });
-
-    // Menutup modal saat mengklik di luar modal
-    modalOverlay.addEventListener('click', function (e) {
-      if (e.target === modalOverlay) {
-        modalOverlay.style.display = 'none';
-      }
-    });
-
-    // Toggle musik ON/OFF
-    let isMusicOn = true;
-    toggleMusicImage.addEventListener('click', function () {
-      isMusicOn = !isMusicOn;
-
-      if (isMusicOn) {
-        toggleMusicImage.src = "asset/button/on-btn.png";
-        backgroundMusic.play();
-      } else {
-        toggleMusicImage.src = "asset/button/off-btn.png";
-        backgroundMusic.pause();
-      }
-      clicks2(); // Memainkan suara klik
-    });
-
-    // Fungsi untuk memainkan suara klik
-    function clicks() {
+    // Tambahkan event listener untuk menangani klik
+    function clicks(){
       clickSound.play();
     }
-
-    function clicks2() {
+    function clicks2(){
       clickSound2.play();
     }
   </script>
 </body>
-
 </html>
