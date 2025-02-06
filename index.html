@@ -18,11 +18,8 @@
     }
     iframe {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       border: none;
-      /* position: absolute;
-      top: 0;
-      left: 0; */
     }
     #audio-player {
         display: none;
@@ -56,13 +53,11 @@
     <div class="modal-box">
         <h3>Pengaturan</h3>
         <h5 style="align-items: center;display: flex;justify-content: center;">Music :       
-        <!-- Tombol ON/OFF menggunakan gambar -->
         <img id="toggleMusicImage" 
              src="asset/button/on-btn.png" 
              alt="Music ON" 
              style="width: 50px; cursor: pointer;" />
         </h5> 
-        <!-- Tombol Close -->
         <img 
         src="asset/button/x-button.png" 
         alt="Close" 
@@ -80,11 +75,9 @@
 
   <audio style="display: none;" id="clickSound">
     <source src="asset/sound/click.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
   <audio style="display: none;" id="clickSound2">
     <source src="asset/sound/click2.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
 
   <script>

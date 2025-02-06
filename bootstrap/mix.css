@@ -1,3 +1,654 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bryndan', sans-serif;
+
+}
+
+@font-face {
+    font-family: 'Bryndan'; 
+    src: url('BryndanWriteBook-nGPM.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    /* overflow: hidden; */
+    background: orange;
+    position: relative;
+}
+.main{
+    position: absolute;
+    top: -10%;
+    width: 100%;
+    height: 100%;
+}
+
+.monochrome {
+    filter: grayscale(100%);
+}
+
+.bg-main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+}
+
+.asset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    height: 100%;
+    padding: 0;
+}
+
+.header .bagian {
+    position: relative;
+    padding: 0 15px;
+    margin-top: 5%;
+    top: -1.5%;
+    margin-bottom: 0;
+    width: auto;
+    font-size: 2em;
+    font-weight: 600;
+    color: #d6821c;
+    font-size: 1.2em;
+    text-shadow: -1px -1px 0 #eecfac,  
+         1px -1px 0 #eecfac,
+         -1px 1px 0 #eecfac,
+         1px 1px 0 #eecfac,
+         1px 1px 0 #eecfac;
+   
+    }
+
+.header .part {
+    position: relative;
+    top: -2%;
+    padding: 0 15px;
+   
+    font-size: 1.1em;
+    width: 50%;
+    color: #E3C49E;
+    text-shadow: -1px -1px 0 #6e4f2c,  
+         1px -1px 0 #6e4f2c,
+         -1px 1px 0 #6e4f2c,
+         1px 1px 0 #6e4f2c,
+         1px 1px 0 #6e4f2c;
+    line-height: 1em;
+}
+
+.roll {
+    width: 200px;
+}
+
+.content {
+    position: absolute;
+    top: 130px;
+    height: 80%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.paperin {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image_cerita{
+    position: absolute;
+    top: 7em;
+    left: 4.5em;
+    object-fit: 9/18;
+    width: 20em;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text {
+    position: absolute;
+    top: 57%;
+    height: 220px;
+    overflow-y: auto;
+    text-align: center;
+    max-width: 250px;
+    text-shadow: -1px -1px 0 #E3C49E,
+        1px -1px 0 #E3C49E,
+        -1px 1px 0 #E3C49E;
+    color: #6e4f2c;
+    font-size: 1em;
+}
+
+.next button{
+    border: none;
+    background: none;
+    outline: none;
+    height: 40px;
+    width: 40px;
+}
+
+.next{
+    position: absolute;
+    bottom: 4%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+@media (min-width:400px) {
+    .header {
+        margin-left: 10%;
+    }
+    .next{
+        width: 70%;
+    }
+}
+
+@media (min-width:500px) {
+    .header {
+        margin-left: 20%;
+    }
+    .next{
+        width: 50%;
+    }
+    .content .image_cerita{
+        left: 6em;
+    }
+}
+
+@media (min-width:700px) {
+    .header {
+        margin-left: 25%;
+    }
+    .next{
+        width: 50%;
+    }
+    .image_cerita{
+        left: 7em;
+    }
+}
+
+@media (min-width:850px) {
+    .header {
+        margin-left: 30%;
+    }
+    .bagian,.part{
+        left: 20px;
+    }
+    .bagian{
+        font-size: 1em;
+    }
+    .part{
+        font-size: 1em;
+    }
+    .next{
+        width: 50%;
+    }
+}
+
+@media (min-width:900px) {
+    .header {
+        margin-left: 30%;
+    }
+    .next{
+        width: 50%;
+    }
+    
+}
+
+@media (min-width:1000px) {
+    .header {
+        margin-left: 35%;
+        top: 25px;
+    }
+
+    .roll {
+        width: 350px;
+    }
+
+    .content {
+        top: 150px;
+    }
+    .next{
+        width: 30%;
+    }
+    .header .bagian{
+        font-size: 2.8em;
+    }
+    .header .part{
+        font-size: 1.8em;
+        width: 70%;
+    }
+    
+}
+
+
+
+
+@media(min-height:400px) {
+    .text {
+        top: 60%;
+        overflow-y: auto;
+        max-width: 200px;
+        height: 180px;
+        font-size: 15px;
+    }
+    .next{
+        bottom: 1%;
+       
+    }
+    .image_cerita{
+        width: 8em;
+        top: 1.5em;
+        left: 3.8em;
+    }
+}
+
+@media(min-height:500px) {
+    .image_cerita{
+        width: 12em;
+        top: 3em;
+        left: 3.8em;
+    }
+}
+@media(min-height:550px) {
+    .image_cerita{
+        width: 15em;
+        top: 3em;
+        left: 3.8em;
+    }
+}
+@media(min-height:600px) {
+    .text {
+        top: 60%;
+        overflow-y: auto;
+        max-width: 280px;
+        height: 200px;
+    }
+    .image_cerita{
+        width: 15em;
+        top: 4em;
+        left: 3.8em;
+    }
+}
+@media(min-height:650px) {
+    .text {
+        top: 57%;
+        overflow-y: auto;
+        max-width: 250px;
+        height: 250px;
+    }
+    .image_cerita{
+        width: 15em;
+        top: 4em;
+        left: 4.5em;
+    }
+}   
+
+@media(min-height:700px) {
+    .image_cerita{
+        width: 15em;
+        top: 5.5em;
+        left: 4em;
+    }
+    .next{
+        bottom: 4%;
+    }
+}
+@media(min-height:750px) {
+    .image_cerita{
+        width: 18em;
+        top: 4em;
+        left: 6em;
+    }
+
+    .next button{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+@media(min-height:800px) {
+    .text {
+        top: 57%;
+        overflow-y: auto;
+        max-width: 300px;
+        height: 250px;
+    }
+    .next{
+        bottom: 7%;
+    }
+    .image_cerita{
+        width: 16em;
+        top: 8em;
+        left: 4em;
+    }
+} 
+@media(min-height:850px) {
+    .image_cerita{
+        width: 16em;
+        top: 8em;
+        left: 5em;
+    }
+} 
+
+@media(min-height:900px) {
+    .text {
+        top: 57%;
+        overflow-y: auto;
+        max-width: 320px;
+        height: 250px;
+        font-size: 1.3em;
+    }
+    .image_cerita{
+        width: 17em;
+        top: 9em;
+        left: 5em;
+    }
+}
+@media(min-height:950px) {
+    .image_cerita{
+        width: 23em;
+        top: 8em;
+        left: 7.5em;
+    }
+}
+
+@media(min-height:1000px) {
+    .text {
+        top: 55%;
+        overflow-y: auto;
+        max-width: 400px;
+        height: 300px;
+        font-size: 20px;
+    }
+    .next button{
+        height: 60px;
+        width: 60px;
+    }  
+    .image_cerita{
+        width: 23em;
+        top: 8em;
+        left: 7.5em;
+    }      
+}
+@media(min-height:1050px) {
+    .image_cerita{
+        width: 25em;
+        top: 8em;
+        left: 7.5em;
+    }      
+}
+@media(min-height:1150px) {
+    .image_cerita{
+        width: 28em;
+        top: 8em;
+        left: 7.5em;
+    }      
+}
+
+@media(min-height:1200px) {
+    .text {
+        top: 50%;
+        overflow-y: auto;
+        max-width: 650px;
+        height: 400px;
+        font-size: 25px;
+    }
+    .image_cerita{
+        width: 30em;
+        top: 8em;
+        left: 7.5em;
+    }     
+}
+@media(min-height:1250px) {
+    .text {
+        top: 53%;
+        overflow-y: auto;
+        max-width: 650px;
+        height: 400px;
+        font-size: 25px;
+    }
+    .image_cerita{
+        width: 35em;
+        top: 8em;
+        left: 7.5em;
+    }     
+}
+
+@media(min-height:1300px) {
+    .text {
+        top: 53%;
+        overflow-y: auto;
+        max-width: 500px;
+        height: 400px;
+        font-size: 25px;
+    }
+    .image_cerita{
+        width: 35em;
+        top: 8em;
+        left: 8em;
+    }  
+}
+
+
+
+.asset2 {
+    object-fit: contain;
+    margin-top: 10em;
+}
+
+.cover {
+    position: absolute;
+    height :100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+.judul {
+    animation: judul 2s ease 0s infinite normal none;
+}
+
+@keyframes judul {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.judul h3 {
+    font-family: 'Bryndan', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.judul h2 {
+    font-family: 'Bryndan', sans-serif;
+    font-size: 2.3rem;
+    text-shadow: black;
+}
+
+.gambar img {
+    height: auto;
+}
+
+.angin {
+    animation: daun 3s ease 0s infinite normal none;
+}
+
+@keyframes daun {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.button {
+    animation: button 2s ease 0s infinite normal none;
+}
+
+@keyframes button {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+    }
+
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+    }
+
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+    }
+
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
+}
+
+
+.chat {
+    width: 12em;
+    height: auto;
+    position: absolute;
+    right: 25px;
+    bottom: 180px;
+    transform: rotateZ(-50deg);
+}
+
+.man {
+    width: 15em;
+    height: auto;
+    position: absolute;
+    right: -100px;
+    bottom: -150px;
+    transform: rotateZ(-50deg);
+}
+
+.pesan {
+    width: 12em;
+    height: auto;
+    position: absolute;
+    right: 45px;
+    bottom: 213px;
+    transform: rotateZ(-34deg);
+    font-size: 13px;
+    z-index: 999;
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+    .man {
+        width: 9em;
+        right: -70px;
+        bottom: -90px;
+    }
+
+    .chat {
+        width: 8.5em;
+        right: 3px;
+        bottom: 110px;
+    }
+
+    .pesan {
+        right: 10px;
+        bottom: 125px;
+        font-size: 10px;
+    }
+}
+
+
+
+.btn-gradient {
+    background: linear-gradient(to right, #ffa07a, #ff7f50);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button p {
+    font-size: 0.9rem;
+}
+.text::-webkit-scrollbar {
+    display: none;
+}
+
+.text {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+/* css 2 combination */
+
 @media (min-width: 600px){
     .org img{
         width: 50px;
@@ -90,7 +741,7 @@
         border-radius: 10px 0 0 10px;
     }
 }
-/*Efek: Aturan ini akan berlaku jika lebar layar ≤ 600px (tablet atau lebih kecil).*/
+
 @media (max-width: 600px){
         .org img{
         width: 50px;
@@ -138,20 +789,24 @@
         border-radius: 10px 0 0 10px;
     }
 }
+
+
+
 .body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100vh;
+    background-image: url('../images/D1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Hanya judul di kiri */
-    justify-content: flex-start; /* Judul tetap di atas */
+    align-items: flex-start;
+    justify-content: flex-start;
     font-family: Arial, sans-serif;
-    padding-left: 20px; /* Tambahkan jarak untuk judul */
+    padding-left: 20px;
 }   
 
 .title b{
@@ -169,17 +824,17 @@
     animation: customBaca 1s ease 0s infinite normal none;
 }
 
-/* Buat container baru untuk mengatur elemen lain ke tengah */
+
 .content-container {
-    width: 100%; /* Gunakan seluruh lebar */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Pusatkan search-bar dan grid */
-    margin-top: 2px; /* Jarak antara judul dan konten */
+    align-items: center;
+    margin-top: 2px;
 }
 
 
-/* Sembunyikan scrollbar untuk semua browser */
+
 .grid-container::-webkit-scrollbar {
     display: none;
 }
@@ -208,14 +863,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Warna semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Tampilkan di atas semua elemen */
+    z-index: 9999;
 }
 
-/* Gaya untuk modal box */
+
 .modal-box {
     background-color: whitesmoke;
     border: 3px solid #ffb300;
@@ -227,7 +882,7 @@
     color: black;
 }
 
-/* Tombol Close */
+
 .btn-danger {
     background-color: #ffb300;
     color: white;
@@ -244,7 +899,7 @@
     border: 3px solid #ffb300;
 }
 
-/* Tombol Open */
+
 .btn-primary {
     background-color: #007bff;
     color: white;
@@ -318,7 +973,7 @@
     -webkit-animation: org 5s ease 0s infinite normal none;
 }
 
-/* Copy this code after the above code */
+
 @keyframes org {
     0%,
     100% {
@@ -409,7 +1064,7 @@ body {
     position: absolute;
     top: 20px;
     left: 2px;
-    /* background-color: yellow; */
+   
     height: 100%;
     padding: 0;
 }
@@ -433,7 +1088,7 @@ body {
     animation: awan 5s ease 0s infinite alternate none;
 }
 
-/* Copy this code after the above code */
+
 @keyframes bln {
     0%,
     100% {
@@ -466,7 +1121,7 @@ body {
     }
 }
 
-/* Copy this code after the above code */
+
 @keyframes awan {
     0% {
     transform: translateX(10);
@@ -483,7 +1138,7 @@ body {
     width: 200px;
 }
 
-.content {
+.contents {
     position: absolute;
     top: 300px;
     height: 50%;
@@ -558,7 +1213,7 @@ body {
         width: 350px;
     }
 
-    .content {
+    .contents {
         top: 150px;
     }
     .headerSoal .icon .planet{
@@ -580,20 +1235,20 @@ body {
     border-radius: 8px;
     border: none;
 }
-.content {
+.contents {
     padding: 20px;
 }
 
-.content .btn-container {
+.contents .btn-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Jarak antar tombol */
+    gap: 10px;
     justify-content: center;
 }
 
 .btn-container .btn {
-    flex: 1 1 100%; /* Default: tombol lebar penuh */
-    max-width: 100%; /* Hindari tombol melebar lebih besar */
+    flex: 1 1 100%;
+    max-width: 100%;
     animation: jawaban 20s ease 0s infinite alternate;
 }
 
@@ -622,39 +1277,39 @@ body {
 }
 
 .btn-container .btn button {
-    width: 100%; /* Pastikan tombol mengikuti lebar kontainer */
+    width: 100%;
     padding: 10px 20px;
     font-size: 16px;
-    color: #5A3E2B; /* Warna teks */
-    background-color: #ddc082; /* Warna cokelat terang seperti kertas */
-    border: 2px solid #B89B6A; /* Border cokelat lebih gelap */
+    color: #5A3E2B;
+    background-color: #ddc082;
+    border: 2px solid #B89B6A;
     cursor: pointer;
     border-radius: 5px;
-    font-family: 'Georgia', serif; /* Gaya font yang klasik */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    font-family: 'Georgia', serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btn-container .btn button:hover {
-    background-color: #C4A778; /* Warna lebih gelap saat hover */
+    background-color: #C4A778;
     border-color: #9A7B4A;
     color: white;
 }
 
-/* Untuk layar tablet/ipad dan laptop (tampilkan 2 tombol per baris) */
+
 @media (min-width: 768px) {
     .btn-container .btn {
-        flex: 1 1 calc(50% - 10px); /* 2 tombol per baris */
-        max-width: calc(50% - 10px); /* Hindari overflow */
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
     }
-    .content{
+    .contents{
         margin-top: 20%;
     }
 }
 
-/* Untuk layar besar (desktop/laptop lebih besar) */
+
 @media (min-width: 1200px) {
     .btn-container .btn {
-        flex: 1 1 calc(25% - 10px); /* 4 tombol per baris */
+        flex: 1 1 calc(25% - 10px);
         max-width: calc(25% - 10px);
     }
 }
